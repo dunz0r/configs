@@ -26,8 +26,7 @@ scp $FILE $SERVER:/www/docs/hax0r.se/files/img/screenshots
 
 if [ $? -eq 0 ] ; then
     notify-send -i /usr/share/awesome/icons/awesome48.png "::shotgen::" "Files uploaded to server."
-    #SHOTLINK="[url=$WEBPAGE/$FILE][img]$WEBPAGE/$THUMB[/img][/url]"
-    SHOTLINK="$WEBPAGE/$FILE"
+    SHOTLINK="[url=$WEBPAGE/$FILE][img]$WEBPAGE/$THUMB[/img][/url]"
     echo "$SHOTLINK" > $LINKFILE
     notify-send -i /usr/share/awesome/icons/awesome48.png "::shotgen::" "Links Created!"
     xclip $LINKFILE

@@ -45,6 +45,7 @@ search_engines = {
     gl          = "http://google.com/search?q={0}&sourceid=navclient&gfns=1",
     gm          = "http://maps.google.com/maps?q={0}",
     yt          = "http://www.youtube.com/results?search_query={0}&search_sort=video_view_count",
+    gh          = "http://www.github.com/{0}"
 }
 
 -- Set google as fallback search engine
