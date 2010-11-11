@@ -198,7 +198,4 @@ dig +short txt $1.wp.dg.cx
 BROWSER=elinks
 export BROWSER
 alias dmget='wget --load-cookies=/home/dunz0r/.local/share/uzbl/cookies.txt --user-agent=Firefox'
-function iptget
-{
-wget --load-cookies=/home/dunz0r/.local/share/uzbl/cookies.txt --content-disposition --user-agent=Firefox "$1?torrent_pass=926acf49474367cd4619a28f1abe23ef"
-}
+
