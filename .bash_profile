@@ -126,8 +126,8 @@ case $TERM in
     *)
         TITLEBAR=""
         LINE="-"
-        LLINE="<"
-        ULINE=">"
+        LLINE=""
+        ULINE=""
 	ARROW=">"
         ;;
 esac
