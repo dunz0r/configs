@@ -66,7 +66,6 @@ alias aurbuild='sudo -E aurbuild'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias funfact='elinks -dump randomfunfacts.com | egrep "\|.*\||\+\-"'
 alias sshot='scrot -cd 5 screen-%y.%m.%d.%H.%m.png -e "mv \$f ~/gfx/pics/screenshots/ ; echo \" \$n: \$s\n \$wx\$h\n $s\""'
-alias scrotum='scrot -cd 5 %bscrot.png'
 if which git &> /dev/null ; then
 	alias gc='git commit -a' 
 	alias gb='git branch' 
@@ -79,8 +78,6 @@ if which git &> /dev/null ; then
 	alias gC='gc && gp'
 fi
 
-
-#alias jewtube='mplayer -fs $(echo "http://youtube.com/get_video.php?$(curl -s $youtube_url | sed -n "/watch_fullscreen/s;.*\(video_id.\+\)&title.*;\1;p")")'
 
 #----------------------------------------
 # Functions
