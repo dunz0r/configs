@@ -12,7 +12,7 @@ theme.bg_urgent     = "#303030"
 theme.bg_minimize   = "#444444"
 
 theme.fg_normal     = "#898989"
-theme.fg_focus      = "#a6a600"
+theme.fg_focus      = "#a9a9a9"
 theme.fg_unfocus    = "#606060"
 theme.fg_urgent     = "#98565e"
 theme.fg_highlight  = "#98565e"
@@ -20,7 +20,7 @@ theme.fg_minimize   = "#98565e"
 
 theme.border_width  = "1"
 theme.border_normal = "#000000"
-theme.border_focus  = "#a6a600"
+theme.border_focus  = "#a9a9a9"
 theme.border_marked = "#91231c"
 
 -- widget colours

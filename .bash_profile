@@ -23,6 +23,7 @@ source ~/.aliasrc
 #source $HOME/.git-completion.sh
 #set TERM rxvt-256color; export TERM
 # Set some variables
+export WINEARCH=win32
 PROMPT_COMMAND=pprom2
 export LESS="-P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
@@ -162,7 +163,7 @@ PS1="$TITLEBAR\
 $GREY$ULINE(:$ECOLOR$ESTATUS\
 $GREY)$GREY$LINE(\
 $WHITE\w\
-$GREY)$LINE($YELLOW\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
+$GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
 $LLINE($WHITE\j\
 $GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
 
