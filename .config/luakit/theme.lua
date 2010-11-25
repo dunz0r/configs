@@ -1,5 +1,5 @@
 --------------------------
--- Default luakit theme --
+-- luakit theme --
 --------------------------
 
 local theme = {}
@@ -60,4 +60,4 @@ theme.hint_color = theme.bg
 
 
 return theme
--- vim: et:sw=4:ts=8:sts=4:tw=80
+-

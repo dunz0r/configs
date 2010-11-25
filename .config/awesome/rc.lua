@@ -86,7 +86,7 @@
 		
 		-- {{{ Tags
 		shifty.config.tags = {
-                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux attach ", position = 1, },
+                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@62.109.46.153 tmux -u attach ", position = 1, },
 		www = { solitary = true, position = 2, max_clients = 5,
 				exclusive = false, layout = awful.layout.suit.max, nopopup = true, spawn = browser},
 		term = { persist = true, position = 3, },
