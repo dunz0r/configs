@@ -4,7 +4,7 @@ source /etc/bash_completion.d/git
 # shows a fortune upon login
 #fortune
 # sets the path
-PATH=/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$HOME/bin:/usr/local/bin:$HOME/.local/share/uzbl/scripts:/opt/nanoblogger:/opt/java/bin
+PATH=/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
 export PATH
 
 # dobbs rulez!
@@ -195,5 +195,5 @@ dig +short txt $1.wp.dg.cx
 }
 BROWSER=elinks
 export BROWSER
-alias dmget='wget --load-cookies=/home/dunz0r/.local/share/uzbl/cookies.txt --user-agent=Firefox'
+alias dmget='wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox'
 

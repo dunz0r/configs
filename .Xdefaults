@@ -2,6 +2,7 @@
 URxvt.font:xft:Monaco:pixelsize=10:antialias=false
 URxvt.boldFont:xft:Monaco:bold:pixelsize=10:antialias=false
 URxvt.loginShell: true
+URxvt.termName: rxvt-unicode
 
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -59,5 +60,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-color/ten"
+# include "/home/dunz0r/.xdefaults-color/four"
 ! EOF

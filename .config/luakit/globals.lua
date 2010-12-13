@@ -54,8 +54,8 @@ cookie_policy = { always = 0, never = 1, no_third_party = 2 }
 -- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
 domain_props = { 
     ["all"] = {
-        ["enable-scripts"]          = false,
-        ["enable-plugins"]          = false,
+        ["enable-scripts"]          = true,
+        ["enable-plugins"]          = true,
         ["enable-private-browsing"] = false,
         ["user-stylesheet-uri"]     = "/home/dunz0r/dark.css",
         ["accept-policy"]           = cookie_policy.no_third_party,

@@ -99,6 +99,7 @@
 		news = { position = 10, spawn = terminal .. " -name Newsbeuter -title '::newsbeuter::' -e newsbeuter" },
 		video = { nopopup = false, position = 4, layout = awful.layout.suit.float, },
 		PDF = { layout = awful.layout.suit.max.fullscreen, position = 8, nopopup = false },
+		arduino = { layout = awful.layout.suit.float, position = 11, nopopup = false },
 		img = { position = 9, layout = awful.layout.suit.max.fullscreen, nopopup = false, },
 		-- No fixed positions
 		gimp = { spawn = "gimp", layout = awful.layout.suit.max, sweep_delay = 2, screen = 1,  },
@@ -132,6 +133,7 @@
 			{ match = {"gimp%-image-window",             }, master = true, tag = "gimp" },
 			{ match = {"feh.*"                          }, tag = "img",          },
 			{ match = {"skype.*"                        }, tag = "skype",       },
+			{ match = {"arduino.*"                      }, tag = "arduino",       },
 			{ match = {".*Sun Virtualbox"               }, tag = "Vbox",        },
 			{ match = {""},
     				buttons = awful.util.table.join(

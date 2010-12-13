@@ -2,7 +2,7 @@
 [Midnight-Commander]
 show_backups=1
 show_dot_files=1
-verbose=1
+verbose=0
 mark_moves_down=1
 pause_after_run=1
 shell_patterns=1
@@ -118,7 +118,7 @@ ignore_ftp_chattr_errors=true
 
 [Layout]
 equal_split=1
-first_panel_size=159
+first_panel_size=93
 message_visible=1
 keybar_visible=1
 xterm_title=1
