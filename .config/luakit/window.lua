@@ -498,7 +498,7 @@ window.methods = {
         -- Make download dir
         os.execute(string.format("mkdir -p %q", globals.download_dir))
         local dl = globals.download_dir .. "/" .. filename
-        local wget = string.format("wget --cookies=/home/dunz0r/.local/share/luakit/cookies.txt -q %q -O %q", link, dl)
+        local wget = string.format("wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox -q %q -O %q", link, dl)
         info("Launching: %s", wget)
         luakit.spawn(wget)
     end,
