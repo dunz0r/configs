@@ -15,7 +15,7 @@ URxvt.underlineURLs: true
 URxvt.keysym.C-M-u: perl:matcher
 URxvt.perl-ext: default,matcher
 URxvt.urlLauncher: luakit
-URxvt.colorUL: #909000
+URxvt.colorUL: #009000
 
 URxvt*transparent:        true
 URxvt.cursorBlink:        true
@@ -26,7 +26,7 @@ URxvt*fading:             20
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
-URxvt*colorUL:            yellow
+URxvt*colorUL:            green
 URxvt.cursorColor: #999
 
 Xft.dpi:        96
@@ -60,5 +60,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-color/four"
+# include "/home/dunz0r/.xdefaults-color/eight"
 ! EOF

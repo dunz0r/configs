@@ -86,7 +86,7 @@ fi
 # This is the main function for the prompt
 function pprom2 {
 # Capture the exit status
-ESTATUS=$PIPESTATUS
+ESTATUS=$?
 
 local        BLUE="\[\033[0;34m\]"
 local  LIGHT_GREY="\[\033[0;37m\]"
@@ -112,9 +112,7 @@ fi
 # sets the titlebar if we are in an xterm
 case $TERM in
    xterm*|rxvt*)
-	#TITLEBAR="\[\033]0;::<span color='#d2bb4b'>$0</span>::\h:$PWD\007\]"
 	TITLEBAR="\[\033]0;::$0::\h:$PWD\007\]"
-#trap 'printf "\e]2;%s\a" "$(echo "::<span color=\"#e7db52\">$0</span>::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
 	trap 'printf "\e]2;%s\a" "$(echo "::$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
 	LINE=$(asciiecho q)
 	ULINE=$(asciiecho lq)

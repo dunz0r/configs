@@ -81,8 +81,8 @@ add_binds("normal", {
     -- Scrolling
     key({},          "j",           function (w) w:scroll_vert(more)  end),
     key({},          "k",           function (w) w:scroll_vert(less)  end),
-    key({},          "h",           function (w) w:scroll_horiz(less) end),
-    key({},          "l",           function (w) w:scroll_horiz(more) end),
+    key({},          "H",           function (w) w:scroll_horiz(less) end),
+    key({},          "L",           function (w) w:scroll_horiz(more) end),
     key({},          "^",           function (w) w:scroll_horiz("0%") end),
     key({},          "$",           function (w) w:scroll_horiz("100%") end),
     key({"Control"}, "e",           function (w) w:scroll_vert(more)  end),
@@ -145,10 +145,9 @@ add_binds("normal", {
     buf("^,g$",                     function (w, c) w:enter_cmd(":open google ") end),
 
 
-    -- History
-    key({},          "H",           function (w, m) w:back(m.count)    end, {count=1}),
-    key({},          "L",           function (w, m) w:forward(m.count) end, {count=1}),
-    key({},          "b",           function (w, m) w:back(m.count)    end, {count=1}),
+    -- history
+    key({},          "h",           function (w, m) w:back(m.count)    end, {count=1}),
+    key({},          "l",           function (w, m) w:forward(m.count) end, {count=1}),
     key({},          "XF86Back",    function (w, m) w:back(m.count)    end, {count=1}),
     key({},          "XF86Forward", function (w, m) w:forward(m.count) end, {count=1}),
     key({"Control"}, "o",           function (w)    w:back()           end),
