@@ -82,3 +82,6 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
+
+" For arduino syntax
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino

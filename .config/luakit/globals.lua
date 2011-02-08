@@ -34,16 +34,24 @@ globals.ssl_strict = false
 -- Search engines
 search_engines = {
     luakit      = "http://luakit.org/search/index/luakit?q={0}",
-    google      = "http://google.com/search?q={0}",
-    duckduckgo  = "http://duckduckgo.com/?q={0}",
-    wikipedia   = "http://en.wikipedia.org/wiki/Special:Search?search={0}",
-    debbugs     = "http://bugs.debian.org/{0}",
+    gg          = "http://google.com/search?q={0}",
+    gi          = "http://google.com/images/search?q={0}",
+    wp          = "http://en.wikipedia.org/wiki/Special:Search?search={0}",
     imdb        = "http://imdb.com/find?s=all&q={0}",
-    sourceforge = "http://sf.net/search/?words={0}",
+    sf          = "http://sf.net/search/?words={0}",
+    aw          = "http://wiki.archlinux.org/index.php/Special:Search?search={0}",
+    abs         = "http://www.archlinux.org/packages/?q={0}",
+    aur         = "http://aur.archlinux.org/packages.php?K={0}",
+    bbs         = "http://bbs.archlinux.org/search.php?action=search&keywords={0}&show_as=topics&sort_dir=DESC",
+    gl          = "http://google.com/search?q={0}&sourceid=navclient&gfns=1",
+    gm          = "http://maps.google.com/maps?q={0}",
+    yt          = "http://www.youtube.com/results?search_query={0}&search_sort=video_view_count",
+    gh          = "http://www.github.com/{0}"
 }
 
+
 -- Set google as fallback search engine
-search_engines.default = search_engines.google
+search_engines.default = search_engines.gg
 -- Use this instead to disable auto-searching
 --search_engines.default = "{0}"
 
@@ -57,7 +65,7 @@ domain_props = {
         ["enable-scripts"]          = true,
         ["enable-plugins"]          = true,
         ["enable-private-browsing"] = false,
-        ["user-stylesheet-uri"]     = "/home/dunz0r/dark.css",
+        ["user-stylesheet-uri"]     = luakit.data_dir .. "/styles/dark.css",
         ["accept-policy"]           = cookie_policy.no_third_party,
     },
     ["youtube.com"] = {

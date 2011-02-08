@@ -3,7 +3,8 @@
 -----------------
 
 -- Binding aliases
-local key, buf, but, cmd = lousy.bind.key, lousy.bind.buf, lousy.bind.but, lousy.bind.cmd
+local key, buf, but = lousy.bind.key, lousy.bind.buf, lousy.bind.but
+local cmd, any = lousy.bind.cmd, lousy.bind.any
 
 -- Util aliases
 local match, join = string.match, lousy.util.table.join
@@ -60,20 +61,45 @@ menu_binds = {
 add_binds("all", {
     key({},          "Escape",  function (w) w:set_mode() end),
     key({"Control"}, "[",       function (w) w:set_mode() end),
+
+    -- Mouse bindings
+    but({},     8,  function (w) w:back()     end),
+    but({},     9,  function (w) w:forward()  end),
+
+    -- Open link in new tab or navigate to selection
+    but({},     2,  function (w, m)
+                        -- Ignore button 2 clicks in form fields
+                        if not m.context.editable then
+                            -- Open hovered uri in new tab
+                            local uri = w:get_current().hovered_uri
+                            if uri then
+                                w:new_tab(w:search_open(uri), false)
+                            else -- Open selection in current tab
+                                uri = luakit.get_selection()
+                                if uri then w:navigate(w:search_open(uri)) end
+                            end
+                        end
+                    end),
 })
 
 add_binds("normal", {
-    -- Autoparse the "[count]" before a buffer binding and re-call the
-    -- hit function with the count removed and added to the metatable.
-    buf("^%d+[^%d]",                function (w, buf, meta)
-                                        local count, buf = match(buf, "^(%d+)([^%d].*)$")
-                                        meta = join(meta, {count = tonumber(count)})
-                                        if (#buf == 1 and lousy.bind.match_key(meta.binds, {}, buf, w, meta))
-                                          or lousy.bind.match_buf(meta.binds, buf, w, meta) then
-                                            return true
-                                        end
-                                        return false
-                                    end),
+    -- Autoparse the `[count]` before a binding and re-call the hit function
+    -- with the count removed and added to the opts table.
+    any(function (w, m)
+        local count, buf
+        if m.buffer then
+            count = string.match(m.buffer, "^(%d+)")
+        end
+        if count then
+            buf = string.sub(m.buffer, #count + 1, (m.updated_buf and -2) or -1)
+            local opts = join(m, {count = tonumber(count)})
+            opts.buffer = (#buf > 0 and buf) or nil
+            if lousy.bind.hit(w, m.binds, m.mods, m.key, opts) then
+                return true
+            end
+        end
+        return false
+    end),
 
     key({},          "i",           function (w) w:set_mode("insert")  end),
     key({},          ":",           function (w) w:set_mode("command") end),
@@ -144,14 +170,14 @@ add_binds("normal", {
     buf("^W$",                      function (w, c) w:enter_cmd(":winopen " .. ((w:get_current() or {}).uri or "")) end),
     buf("^,g$",                     function (w, c) w:enter_cmd(":open google ") end),
 
-
-    -- history
-    key({},          "h",           function (w, m) w:back(m.count)    end, {count=1}),
-    key({},          "l",           function (w, m) w:forward(m.count) end, {count=1}),
-    key({},          "XF86Back",    function (w, m) w:back(m.count)    end, {count=1}),
-    key({},          "XF86Forward", function (w, m) w:forward(m.count) end, {count=1}),
-    key({"Control"}, "o",           function (w)    w:back()           end),
-    key({"Control"}, "i",           function (w)    w:forward()        end),
+    -- History
+    key({},          "h",           function (w, m) w:back(m.count)    end),
+    key({},          "l",           function (w, m) w:forward(m.count) end),
+    key({},          "b",           function (w, m) w:back(m.count)    end),
+    key({},          "XF86Back",    function (w, m) w:back(m.count)    end),
+    key({},          "XF86Forward", function (w, m) w:forward(m.count) end),
+    key({"Control"}, "o",           function (w, m) w:back(m.count)    end),
+    key({"Control"}, "i",           function (w, m) w:forward(m.count) end),
 
     -- Tab
     key({"Control"}, "Page_Up",     function (w)       w:prev_tab() end),
@@ -191,21 +217,6 @@ add_binds("normal", {
     key({},          "B",           function (w)       w:enter_cmd(":bookmark " .. ((w:get_current() or {}).uri or "http://") .. " ") end),
     buf("^gb$",                     function (w)       w:navigate(bookmarks.dump_html()) end),
     buf("^gB$",                     function (w, b, m) local u = bookmarks.dump_html() for i=1,m.count do w:new_tab(u) end end, {count=1}),
-
-
-    -- Mouse bindings
-    but({},          8,             function (w) w:back()     end),
-    but({},          9,             function (w) w:forward()  end),
-    but({},          2,             function (w)
-                                        -- Open hovered uri in new tab
-                                        local uri = w:get_current().hovered_uri
-                                        if uri then
-                                            w:new_tab(w:search_open(uri), false)
-                                        else -- Open selection in current tab
-                                            uri = luakit.get_selection()
-                                            if uri then w:navigate(w:search_open(uri)) end
-                                        end
-                                    end),
 
     -- Enter passthrough mode
     key({"Control"}, "z",           function (w) w:set_mode("passthrough") end),
@@ -251,7 +262,7 @@ add_cmds({
     cmd({"writequit", "wq"},            function (w)    w:save_session() w:close_win() end),
     cmd("c[lose]",                      function (w)    w:close_tab() end),
     cmd("reload",                       function (w)    w:reload() end),
-    cmd("reloadconf",                   function (w)    w:reload_config() end),
+    cmd("restart",                      function (w)    w:restart() end),
     cmd("print",                        function (w)    w:eval_js("print()", "rc.lua") end),
     cmd({"viewsource",  "vs" },         function (w)    w:toggle_source(true) end),
     cmd({"viewsource!", "vs!"},         function (w)    w:toggle_source() end),

@@ -1,6 +1,7 @@
 ! URxvt
-URxvt.font:xft:Monaco:pixelsize=10:antialias=false
-URxvt.boldFont:xft:Monaco:bold:pixelsize=10:antialias=false
+URxvt.font:xft:Monaco:pixelsize=10:antialias=true
+URxvt.boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
+
 URxvt.loginShell: true
 URxvt.termName: rxvt-unicode
 
@@ -22,7 +23,7 @@ URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
 URxvt*shading:            40
-URxvt*fading:             20
+URxvt*fading:             50
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow

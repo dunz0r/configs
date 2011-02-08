@@ -86,17 +86,28 @@ webview.init_funcs = {
         end)
     end,
 
-    -- Clicking a form field automatically enters insert mode
+    -- Clicking a form field automatically enters insert mode.
     form_insert_mode = function (view, w)
+        view:add_signal("button-press", function (v, mods, button, context)
+            -- Clear start search marker
+            (w.search_state or {}).marker = nil
+
+            if button == 1 then
+                if context.editable then
+                    view:emit_signal("form-active")
+                else
+                    view:emit_signal("root-active")
+                end
+            end
+        end)
+
         view:add_signal("form-active", function ()
             if w:get_mode() ~= "passthrough" then
-                (w.search_state or {}).marker = nil
                 w:set_mode("insert")
             end
         end)
         view:add_signal("root-active", function ()
             if w:get_mode() ~= "passthrough" then
-                (w.search_state or {}).marker = nil
                 w:set_mode()
             end
         end)
@@ -113,10 +124,11 @@ webview.init_funcs = {
     -- Try to match a button event to a users button binding else let the
     -- press hit the webview.
     button_bind_match = function (view, w)
-        -- Match button press
-        view:add_signal("button-release", function (v, mods, button)
+        view:add_signal("button-release", function (v, mods, button, context)
             (w.search_state or {}).marker = nil
-            if w:hit(mods, button) then return true end
+            if w:hit(mods, button, { context = context }) then
+                return true
+            end
         end)
     end,
 
@@ -182,7 +194,9 @@ webview.init_funcs = {
     download_request = function (view, w)
         -- 'link' contains the download link
         -- 'filename' contains the suggested filename (from server or webkit)
-        view:add_signal("download-request", function (v, link, filename) w:download(link, filename) end)
+        view:add_signal("download-request", function (v, link, filename)
+            downloads.add(link)
+        end)
     end,
 
     -- Creates context menu popup from table (and nested tables).
@@ -310,12 +324,12 @@ webview.methods = {
 function webview.new(w)
     local view = widget{type = "webview"}
 
+    view.show_scrollbars = false
+
     -- Call webview init functions
     for k, func in pairs(webview.init_funcs) do
         func(view, w)
     end
-
-    view.show_scrollbars = false
     return view
 end
 
