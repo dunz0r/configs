@@ -2,14 +2,14 @@
 source /etc/profile
 source /etc/bash_completion.d/git
 # shows a fortune upon login
-#fortune
+fortune
 # sets the path
 PATH=/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
 export PATH
 
 # dobbs rulez!
-#echo " "
-#ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
+echo -e "\n$(uptime)\n"
+ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
 
 # Sets the Mail env
 MAIL=/var/spool/mail/dunz0r && export MAIL

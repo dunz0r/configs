@@ -35,6 +35,7 @@ fi
 
 # Rlwrap stuff
 socat='rlwrap socat'
+pftp='rlwrap pftp'
 
 # Some nice aliases
 alias rar=unrar
