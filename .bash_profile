@@ -55,31 +55,6 @@ LC_ALL=en_GB
 LOCALE=sv_SE.utf8
 export HISTSIZE HISTFILESIZE LC_ALL LANG LOCALE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_HOST MPD_PORT PROMTP_COMMAND EDITOR VISUAL LS_OPTIONS GREP_COLOR http_proxy HTTP_PROXY
 
-# Some nice aliases
-alias rar=unrar
-alias playing='mpc playlist | egrep -A 4 -B 4 ">[0-9]{1,5}.*"'
-alias mpg='mpc --format %number[[%artist% - ]%title%]|[%file%] playlist | egrep -i'
-alias mpa='mpc add'
-alias ls='ls $LS_OPTIONS'
-alias mpi='mpc --format "%album%, %artist% - %title%"'
-alias lock='vlock -n'
-alias aurbuild='sudo -E aurbuild'
-alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
-alias funfact='elinks -dump randomfunfacts.com | egrep "\|.*\||\+\-"'
-alias sshot='scrot -cd 5 screen-%y.%m.%d.%H.%m.png -e "mv \$f ~/gfx/pics/screenshots/ ; echo \" \$n: \$s\n \$wx\$h\n $s\""'
-if which git &> /dev/null ; then
-	alias gc='git commit -a' 
-	alias gb='git branch' 
-	alias go='git checkout' 
-	alias gp='git push'
-	alias gu='git pull' # git update...-ish. 
-	alias gs='git status' 
-	alias gl='git log' 
-	alias ga='git add' 
-	alias gC='gc && gp'
-fi
-
-
 #----------------------------------------
 # Functions
 
@@ -186,12 +161,10 @@ function mpsa()
 	mpc search $1 "$2" | shuf -n $3 | mpc add
 }
 
+function wiki
+{
+	dig +short txt $1.wp.dg.cx
+}
+
 # That's the end of functions
 #---------------------------------------------------------------
-function wiki {
-dig +short txt $1.wp.dg.cx
-}
-BROWSER=elinks
-export BROWSER
-alias dmget='wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox'
-

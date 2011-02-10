@@ -1,7 +1,7 @@
 #!/bin/bash
 urxvtd -o -f
-nvidia-settings -a InitialPixmapPlacement=2 
+nvidia-settings -a InitialPixmapPlacement=2
 xmodmap ~/.xmodmap
 xset -b
-nitrogen --restore
-fluxbox &> ~/.xsession-errors
+cairo-compmgr&
+wmaker &> ~/.xsession-errors
