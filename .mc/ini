@@ -190,7 +190,7 @@ linux=
 [Misc]
 ftpfs_password=anonymous@
 ftp_proxy_host=gate
-display_codepage=ISO-8859-1
+display_codepage=UTF-8
 
 find_ignore_dirs=
 source_codepage=Other_8_bit
