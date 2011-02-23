@@ -6,45 +6,55 @@ More information at http://hax0r.se
  */
 
 
+// Servo control
 #include <Servo.h>
+// Header file for musical lulz
 #include "pitches.h"
+// For the Pololu Qik motor controller
+#include <CompactQik2s9v1.h>
+#include <NewSoftSerial.h>
+// Setup pins for the motor controller
+#define rxPin 8
+#define txPin 9
+#define rstPin 10
+
+NewSoftSerial mySerial = NewSoftSerial(rxPin,txPin);
+CompactQik2s9v1 motor = CompactQik2s9v1(&mySerial,rstPin);
 
 Servo sensorServo;  // Create servo object to control the front servo with the sensor
 Servo gripperServo; // Create servo object to control the middle that controls the gripper
 
 // These constants won't change:
 const int sensorPin = A0;    // Pin that the sensor is attached to
-const int motorRight[] = {1, 2};
-const int enableRPin = 3;
-const int motorLeft[] = {4, 5};
-const int enableLPin = 6;
+const int bumpPin = 12;
 
 // variables
 int sensorValue = 0;         // the sensor value
 int sensorMin = 1024;        // minimum sensor value
 int sensorMax = 0;           // maximum sensor value
 int pos = 0;                 // Servo position
+int bumpState = 0;
 
 // A little song
 int melody[]= {
 	NOTE_A4, NOTE_G5, NOTE_G4, NOTE_A5, NOTE_G6, NOTE_A5, 0, NOTE_E6, NOTE_C4, NOTE_G4, NOTE_D5};
 int noteDurations[] = {
-	4, 8, 8, 4, 4, 4, 4, 4, 4, 8, 4 };
+	4, 8, 8, 4, 4, 4, 4, 1, 4, 1, 4 };
 
 
 void setup() {
-	analogWrite(enableLPin,0);
-	analogWrite(enableRPin,0);
-	motorStop();
-  // Turn on LED to signal the start of the calibration period:
+// Setup motors
+	mySerial.begin(9600);
+	motor.begin();
+	delay(200);
+// Turn on LED to signal the start of the calibration period:
 	pinMode(13, OUTPUT);
 	digitalWrite(13, HIGH);
-
-  // Sets pin 0 to output
-	pinMode(0, OUTPUT);
+// Set the bumpPin to INPUT
+	pinMode(bumpPin, INPUT);
 
 // Attaches the servo on pin 0 to the servo object
-	sensorServo.attach(0);
+	sensorServo.attach(2);
 	// Center servo
 	sensorServo.write(90);
   // Calibrate during the first four seconds
@@ -65,12 +75,8 @@ void setup() {
   // Signal the end of the calibration period
 	digitalWrite(13, LOW);
 
-// Setup motors
-int i;
-for(i = 0; i < 2; i++){
-	pinMode(motorLeft[i], OUTPUT);
-	pinMode(motorRight[i], OUTPUT);
-	}
+
+/*
 // Play a little melody
 	for (int thisNote = 0; thisNote < 11; thisNote++)
 	{
@@ -79,22 +85,35 @@ for(i = 0; i < 2; i++){
 		int pauseBetweenNotes = noteDuration * 1.30;
 		delay(pauseBetweenNotes);
 	}
+	*/
 }
 
 
 void loop() {
 // read the sensor:
 	sensorValue = analogRead(sensorPin);
+	bumpState = digitalRead(bumpPin);
+	if( bumpState == HIGH)
+	{ 
+		motorStop();
+		driveBackward();
+		delay(1000);
+		turnLeft();
+		delay(1000);
+		motorStop();
+	}
 
 	// apply the calibration to the sensor reading
   // sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 255);
 
 	// in case the sensor value is outside the range seen during calibration
 	// sensorValue = constrain(sensorValue, 0, 255);
-	analogWrite(enableLPin,255);
-	analogWrite(enableRPin,255);
 	if (sensorValue >= 350) {
 		motorStop();
+		// Read N
+		sensorServo.write(90);
+		delay(500);
+		int north = analogRead(sensorPin);
 		// Read NW
 		sensorServo.write(160);
 		delay(500);
@@ -108,47 +127,39 @@ void loop() {
 		// If NW is the lowest, turn left
 		if ( distance == northWest)
 		{
+			tone(11, NOTE_G4, 200);
 			motorStop();
-			turnLeft();
+			delay(3);
+			turnRight();
 			delay(1500);
 			motorStop();
 		}
 		// If NE is the highest, turn right
 		if ( distance == northEast )
 		{
+			tone(11, NOTE_C4, 200);
 			motorStop();
-			turnRight();
+			delay(3);
+			turnLeft();
 			delay(1500);
+			delay(3);
 			motorStop();
 		}
-		else
+		if ( distance == north )
 		{
+			tone(11, NOTE_A4, 200);
 			motorStop();
-			int dir = random(20);
-			if ( dir >= 10)
-			{
-				driveBackward();
-				delay(1000);
-				motorStop();
-				turnRight();
-				delay(1000);
-				motorStop();
-			}
-			else
-			{
-				driveBackward();
-				delay(1000);
-				motorStop();
-				turnLeft();
-				delay(1000);
-				motorStop();
-			}
+			delay(3);
+			driveBackward();
+			delay(1000);
+			turnLeft();
+			delay(1000);
 			motorStop();
 		}
 	}
-	sensorServo.write(90);
 	driveForward();
-	delay(20);
+	delay(10);
+	sensorServo.write(90);
 }
 
 void servoSweep()
@@ -168,44 +179,32 @@ void servoSweep()
 
 void driveForward()
 {
-	digitalWrite(motorLeft[0], HIGH);
-	digitalWrite(motorLeft[1], LOW);
-
-	digitalWrite(motorRight[0], HIGH);
-	digitalWrite(motorRight[1], LOW);
+	motor.motor0Forward(100);
+	motor.motor1Forward(100);
 }
 
-void driveBackward(){
-	digitalWrite(motorLeft[0], LOW);
-	digitalWrite(motorLeft[1], HIGH);
-
-	digitalWrite(motorRight[0], LOW);
-	digitalWrite(motorRight[1], HIGH);
+void driveBackward()
+{
+	motor.motor0Reverse(100);
+	motor.motor1Reverse(100);
 }
 
-void motorStop(){
-	digitalWrite(motorLeft[0], LOW);
-	digitalWrite(motorLeft[1], LOW);
-
-	digitalWrite(motorRight[0], LOW);
-	digitalWrite(motorRight[1], LOW);
+void motorStop()
+{
+	motor.stopBothMotors();
 }
 
 
 void turnLeft()
 {
-	digitalWrite(motorLeft[1], LOW);
-	digitalWrite(motorLeft[0], HIGH);
-
-	digitalWrite(motorRight[0], LOW);
-	digitalWrite(motorRight[1], HIGH);
+	motor.stopBothMotors();
+	motor.motor0Forward(100);
+	motor.motor1Reverse(100);
 }
 
 void turnRight()
 {
-	digitalWrite(motorLeft[1], HIGH);
-	digitalWrite(motorLeft[0], LOW);
-
-	digitalWrite(motorRight[0], HIGH);
-	digitalWrite(motorRight[1], LOW);
+	motor.stopBothMotors();
+	motor.motor1Forward(100);
+	motor.motor0Reverse(100);
 }
