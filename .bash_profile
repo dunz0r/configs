@@ -134,7 +134,7 @@ esac
 
 # change colour of hostname depending on host
 case $HOSTNAME in
-	kremlonzwei)
+	inger)
 	local HOSTCOLOUR=$WHITE
 	;;
 	gertrud)
