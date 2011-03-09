@@ -4,6 +4,8 @@ source /etc/bash_completion.d/git
 # shows a fortune upon login
 printf "\n"
 fortune
+printf "\n"
+todo
 # sets the path
 PATH=/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
 export PATH
