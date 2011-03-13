@@ -1,7 +1,14 @@
 ! URxvt
+<<<<<<< HEAD
 !URxvt.font:xft:Montecarlo:pixelsize=11:antialias=true
 !URxvt.boldFont:xft:Montecarlo:bold:pixelsize=11:antialias=true
+=======
+URxvt.font:xft:Monaco:pixelsize=10:antialias=true
+URxvt.boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
+
+>>>>>>> 2389de8a82e5b1947dd65fdede32e4a92cad84a5
 URxvt.loginShell: true
+URxvt.termName: rxvt-unicode
 
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -14,18 +21,20 @@ URxvt.underlineURLs: true
 URxvt.keysym.C-M-u: perl:matcher
 URxvt.perl-ext: default,matcher
 URxvt.urlLauncher: luakit
-URxvt.colorUL: #909000
+URxvt.colorUL: #009000
+URxvt*depth: 32
+URxvt*background: rgba:2000/2000/2000/cccc
 
 URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
 URxvt*shading:            40
-URxvt*fading:             20
+URxvt*fading:             40
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
-URxvt*colorUL:            yellow
+URxvt*colorUL:            green
 URxvt.cursorColor: #999
 
 Xft.dpi:        96

@@ -8,6 +8,7 @@ alias lock='vlock -n'
 alias bell='echo -en "\007"'
 alias grep='grep --color=auto'
 alias xm='setxkbmap se && xset r rate 330 45 && xmodmap ~/.Xmodmap'
+alias pacman='pacman-color'
 
 # Terminal settings
 alias sr='screen -r'
@@ -34,10 +35,20 @@ fi
 
 # Rlwrap stuff
 socat='rlwrap socat'
+pftp='rlwrap pftp'
 
+# Some nice aliases
+alias rar=unrar
+alias ls='ls $LS_OPTIONS'
+alias lock='vlock -n'
+alias aurbuild='sudo -E aurbuild'
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias funfact='elinks -dump randomfunfacts.com | egrep "\|.*\||\+\-"'
+alias sshot='scrot -cd 5 screen-%y.%m.%d.%H.%m.png -e "mv \$f ~/gfx/pics/screenshots/ ; echo \" \$n: \$s\n \$wx\$h\n $s\""'
+alias dmget='wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox'
 
-# MPD
-if which mpd &> /dev/null ; then
+# MPC
+if which mpc &> /dev/null ; then
 	export MPD_HOST=localhost
 	export MPD_PORT=6600
 	alias npc='mpc --format "%position%. %artist% #[%album%#] - %title%"' # Now playing
@@ -53,6 +64,9 @@ if which mpd &> /dev/null ; then
 	alias mpp='npc play'
 	alias mpq='mpcext -q' # Queue
 	alias mpr='npc random'
+	alias mpg='mpc --format %number[[%artist% - ]%title%]|[%file%] playlist | egrep -i'
+	alias mpi='mpc --format "%album%, %artist% - %title%"'
+	alias playing='mpc playlist | egrep -A 4 -B 4 ">[0-9]{1,5}.*"'
 fi
 
 # Failsafe! :D
@@ -64,3 +78,4 @@ alias xs='fail && cd'
 alias vf='fail && cd'
 alias vom='fail && vim'
 alias shitdown='fail && shutdown' # :D
+alias sprunge='curl -F sprunge=<- http://sprunge.us'
