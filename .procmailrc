@@ -1,5 +1,5 @@
 PATH=/bin:/usr/bin/:/usr/local/bin:/home/dunz0r/bin
-VERBOSE=on
+VERBOSE=off
 DEFAULT=/var/spool/mail/dunz0r
 MAILDIR=$HOME/mail
 LOGFILE=$MAILDIR/.procmaillog
