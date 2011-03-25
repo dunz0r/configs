@@ -86,7 +86,7 @@
 		
 		-- {{{ Tags
 		shifty.config.tags = {
-                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@62.109.46.153 tmux -u attach -t irc", position = 1, },
+                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux -u attach ", position = 1, },
 		www = { solitary = true, position = 2, max_clients = 5,
 				exclusive = false, layout = awful.layout.suit.max, nopopup = true, spawn = browser},
 		term = { persist = true, position = 3, },
@@ -99,7 +99,6 @@
 		news = { position = 10, spawn = terminal .. " -name Newsbeuter -title '::newsbeuter::' -e newsbeuter" },
 		video = { nopopup = false, position = 4, layout = awful.layout.suit.float, },
 		PDF = { layout = awful.layout.suit.max.fullscreen, position = 8, nopopup = false },
-		arduino = { layout = awful.layout.suit.float, position = 11, nopopup = false },
 		img = { position = 9, layout = awful.layout.suit.max.fullscreen, nopopup = false, },
 		-- No fixed positions
 		gimp = { spawn = "gimp", layout = awful.layout.suit.max, sweep_delay = 2, screen = 1,  },
@@ -133,7 +132,6 @@
 			{ match = {"gimp%-image-window",             }, master = true, tag = "gimp" },
 			{ match = {"feh.*"                          }, tag = "img",          },
 			{ match = {"skype.*"                        }, tag = "skype",       },
-			{ match = {"arduino.*"                      }, tag = "arduino",       },
 			{ match = {".*Sun Virtualbox"               }, tag = "Vbox",        },
 			{ match = {""},
     				buttons = awful.util.table.join(
@@ -488,16 +486,16 @@ end
 --{{{ Get loadaverage and temperature
 function get_load_temp(sensor)
 	local lf = io.open("/proc/loadavg")
-	local tf = io.open("/proc/acpi/thermal_zone/" .. sensor .. "/temperature")
+--	local tf = io.open("/proc/acpi/thermal_zone/" .. sensor .. "/temperature")
 	
 	local l = lf:read()
-	local t = tf:read()
+--	local t = tf:read()
 
-	local t = string.match(t, "%d+ C")
+--	local t = string.match(t, "%d+ C")
 	lf:close()
-	tf:close()
+--	tf:close()
 
-	return "<span color='" .. beautiful.wid_mh .. "'>" .. l .. "</span>".. sep .. "<span color='".. beautiful.wid_ml .. "'>" .. t .. "</span>" .. sep
+	return "<span color='" .. beautiful.wid_mh .. "'>" .. l .. "</span>".. sep
 end
 --}}}
 
