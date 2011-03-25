@@ -20,7 +20,7 @@ URxvt.colorUL: #009000
 URxvt*depth: 32
 URxvt*background: rgba:2000/2000/2000/cccc
 
-URxvt*transparent:        false
+URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
