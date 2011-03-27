@@ -125,6 +125,10 @@ add_binds("normal", {
     buf("^gg$",                     function (w, b, m) w:scroll_vert(m.count.."%") end, {count = 0}),
     buf("^G$",                      function (w, b, m) w:scroll_vert(m.count.."%") end, {count = 100}),
 
+    -- Browsing history
+    buf("^gl$", function (w) w:browse_hist() end),
+
+
     -- Traditional scrolling commands
     key({},          "Down",        function (w) w:scroll_vert(more)   end),
     key({},          "Up",          function (w) w:scroll_vert(less)   end),

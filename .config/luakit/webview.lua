@@ -22,6 +22,27 @@ webview.init_funcs = {
         end
     end,
 
+    --[[ History logging
+webview.init_funcs.save_hist = function (view)
+    view:add_signal("load-status", function (v, status)
+        if status == "first_visual" then
+            local fh = io.open(luakit.data_dir .. "history", "a")
+            fh:write(v.uri .. "\n"
+            fh:close()
+        end
+    end)
+end
+
+    -- Browse history
+webview.methods.browse_hist = function( view, w )
+    local scripts_dir = luakit.data_dir .. "/scripts" 
+    local hist_file = luakit.data_dir .. "/history" 
+    local fh = io.popen( scripts_dir .. "/dmenu -xs -l 10 < " .. hist_file , "r" )
+    local selection = fh:read( "*a" )
+    fh:close()
+    if selection ~= "" then w:navigate( selection ) end
+end,
+--]]
     -- Update window and tab titles
     title_update = function (view, w)
         view:add_signal("property::title", function (v)

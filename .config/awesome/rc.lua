@@ -495,7 +495,7 @@ function get_load_temp(sensor)
 	lf:close()
 --	tf:close()
 
-	return "<span color='" .. beautiful.wid_mh .. "'>" .. l .. "</span>".. sep
+	return l .. sep
 end
 --}}}
 
