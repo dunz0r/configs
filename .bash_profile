@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# {{{ Variables etc
 source /etc/profile
 source /etc/bash_completion.d/git
 # shows a fortune upon login
@@ -53,10 +55,12 @@ LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 
 export HISTSIZE HISTFILESIZE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_HOST MPD_PORT PROMTP_COMMAND EDITOR VISUAL LS_OPTIONS GREP_COLOR
 
-#----------------------------------------
+# }}}
+
+#{{{
 # Functions
 
-# This is the main function for the prompt
+# This is the main function for the prompt#{{{
 function pprom2 {
 # Capture the exit status
 ESTATUS=$?
@@ -77,92 +81,92 @@ local   NO_COLOUR="\[\033[0m\]"
 local       GREEN="\[\033[0;32m\]"
 
 if [ $UID != 0 ]; then
-	WARNCOL=$GREEN
+    WARNCOL=$GREEN
 else
-	WARNCOL=$RED
+    WARNCOL=$RED
 fi
 
 # sets the titlebar if we are in an xterm
 case $TERM in
-   xterm*|rxvt*)
-	TITLEBAR="\[\033]0;::$0::\h:$PWD\007\]"
-	trap 'printf "\e]2;%s\a" "$(echo "::$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
-	LINE=$(asciiecho q)
-	ULINE=$(asciiecho lq)
-	LLINE=$(asciiecho mq)
-	ARROW=$(asciiecho z)
+    xterm*|rxvt*)
+        TITLEBAR="\[\033]0;::$0::\h:$PWD\007\]"
+        trap 'printf "\e]2;%s\a" "$(echo "::$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
+        LINE=$(asciiecho q)
+        ULINE=$(asciiecho lq)
+        LLINE=$(asciiecho mq)
+        ARROW=$(asciiecho z)
         ;;
     *)
         TITLEBAR=""
         LINE="-"
         LLINE=""
         ULINE=""
-	ARROW=">"
+        ARROW=">"
         ;;
 esac
 
 # change colour of hostname depending on host
 case $HOSTNAME in
-	inger)
-	local HOSTCOLOUR=$WHITE
-	;;
-	gertrud)
-	local HOSTCOLOUR=$BRIGHT_RED
-	;;
-	ninjaloot.se)
-	local HOSTCOLOUR=$GREEN
-	;;
-	*)
-	local HOSTCOLOUR=$CYAN
-	;;
+    inger)
+        local HOSTCOLOUR=$WHITE
+        ;;
+    gertrud)
+        local HOSTCOLOUR=$BRIGHT_RED
+        ;;
+    ninjaloot.se)
+        local HOSTCOLOUR=$GREEN
+        ;;
+    *)
+        local HOSTCOLOUR=$CYAN
+        ;;
 esac
 # sets the color to red if exitstatuts is anything but 0
 case $ESTATUS in
-	0)
-local	ECOLOR="\[\033[1;32m\]"
-	;;
-	*)
-	ECOLOR="\[\033[1;31m\]"
-	;;
+    0)
+        local	ECOLOR="\[\033[1;32m\]"
+        ;;
+    *)
+        ECOLOR="\[\033[1;31m\]"
+        ;;
 esac
 # the prompt starts here
 #PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
-#$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
+    #$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
 #PS2="-]$GREEN#$WHITE>$NO_COLOUR "
 #PS4='+ '
 PS1="$TITLEBAR\
-$GREY$ULINE(:$ECOLOR$ESTATUS\
-$GREY)$GREY$LINE(\
-$WHITE\w\
-$GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
-$LLINE($WHITE\j\
-$GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
+    $GREY$ULINE(:$ECOLOR$ESTATUS\
+    $GREY)$GREY$LINE(\
+    $WHITE\w\
+    $GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
+    $LLINE($WHITE\j\
+    $GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
 
 PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
 }
-
-
-
-# checks the current tty
+#}}}
+# checks the current tty#{{{
 function ttycheck
 {
-	temp=$(tty) ; echo ${temp:5}
+    temp=$(tty) ; echo ${temp:5}
 }
-
+#}}}
+# asciiecho#{{{
 function asciiecho
 {
-echo -e "\033(0$1\033(B"
+    echo -e "\033(0$1\033(B"
 }
-
+#}}}
+# mpc shuffle thingie#{{{
 function mpsa()
 {
-	mpc search $1 "$2" | shuf -n $3 | mpc add
+    mpc search $1 "$2" | shuf -n $3 | mpc add
 }
-
+#}}}
+# Wiki lookup function#{{{
 function wiki
 {
-	dig +short txt $1.wp.dg.cx
+    dig +short txt $1.wp.dg.cx
 }
-
-# That's the end of functions
-#---------------------------------------------------------------
+#}}}
+# }}}

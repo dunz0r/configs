@@ -4,39 +4,40 @@
 
 theme = {}
 
-theme.font          = "Montecarlo 7"
+-- {{{ Styles
+theme.font      = "Envy Code R 8"
 
-theme.bg_normal     = "#1a1a1a"
-theme.bg_focus      = "#3e3e3e"
-theme.bg_urgent     = "#303030"
-theme.bg_minimize   = "#444444"
+-- {{{ Colors
+theme.fg_normal = "#DCDCCC"
+theme.fg_focus  = "#F0DFAF"
+theme.fg_urgent = "#CC9393"
+theme.bg_focus = "#3F3F3F"
+theme.bg_normal  = "#1E2320"
+theme.bg_urgent = "#3F3F3F"
+-- }}}
 
-theme.fg_normal     = "#898989"
-theme.fg_focus      = "#55aaaa"
+-- {{{ Borders
+theme.border_width  = "2"
+theme.border_normal = "#3F3F3F"
+theme.border_focus  = "#6F6F6F"
+theme.border_marked = "#CC9393"
+-- }}}
+
+-- {{{ Titlebars
+theme.titlebar_bg_focus  = "#3F3F3F"
+theme.titlebar_bg_normal = "#3F3F3F"
+-- }}}
+
+-- There are other variable sets
+-- overriding the default one when
+-- defined, the sets are:
+-- [taglist|tasklist]_[bg|fg]_[focus|urgent]
+-- titlebar_[normal|focus]
+-- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
+-- Example:
+--theme.taglist_bg_focus = "#CC9393"
+-- }}}
 theme.fg_unfocus    = "#606060"
-theme.fg_urgent     = "#98565e"
-theme.fg_highlight  = "#98565e"
-theme.fg_minimize   = "#98565e"
-
-theme.border_width  = "1"
-theme.border_normal = "#000000"
-theme.border_focus  = "#55aaaa"
-theme.border_marked = "#91231c"
-
--- widget colours
-theme.wid_rl = "#98565e"
-theme.wid_rh = "#cfa3a9"
-theme.wid_gl = "#66825d"
-theme.wid_gh = "#caf7bb"
-theme.wid_yl = "#969176"
-theme.wid_yh = "#fff8bc"
-theme.wid_bl = "#4d6585"
-theme.wid_bh = "#83aebe"
-theme.wid_ml = "#967395"
-theme.wid_mh = "#bba9cf"
-theme.wid_cl = "#5f7f7b"
-theme.wid_ch = "#96cccc"
-
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -56,6 +57,20 @@ theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#FF5656"
 theme.bg_widget        = "#494B4F"
 theme.border_widget    = "#3F3F3F"
+-- widget colours
+theme.wid_rl = "#98565e"
+theme.wid_rh = "#cfa3a9"
+theme.wid_gl = "#66825d"
+theme.wid_gh = "#caf7bb"
+theme.wid_yl = "#969176"
+theme.wid_yh = "#fff8bc"
+theme.wid_bl = "#4d6585"
+theme.wid_bh = "#83aebe"
+theme.wid_ml = "#967395"
+theme.wid_mh = "#bba9cf"
+theme.wid_cl = "#5f7f7b"
+theme.wid_ch = "#96cccc"
+
 -- }}}
 
 -- {{{ Mouse finder

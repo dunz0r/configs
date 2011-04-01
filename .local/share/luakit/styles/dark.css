@@ -8,8 +8,7 @@
     font-family:"DejaVu Sans", sans-serif  ;
     font-family:"DejaVu Sans", serif  ;
     font-family:"DejaVu Sans", monospace  ;
-    font-size:13px;
-
+    font-size:11px;
 }
 
 
@@ -23,14 +22,14 @@ body {
     font-family:"DejaVu Sans", sans-serif  ;
     font-family:"DejaVu Sans", serif  ;
     font-family:"DejaVu Sans", monospace  ;
-    font-size:13px;
+    font-size:11px;
 
 }
 
 pre
 {
    font-family:"DejaVu Sans Mono", monospace  ;
-   font-size:13px;
+   font-size:9px;
 }
 
 p {

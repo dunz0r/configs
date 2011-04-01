@@ -29,6 +29,10 @@ uzbl-dev/
 * ^(Cc|From|Cc): luakit-dev@lists.luakit.org
 luakit-dev/
 
+:0
+* ^(From|Cc|To): pacman-dev@archlinux.org
+luakit-dev/
+
 
 #:0
 #* ^Subject: S(V|v):

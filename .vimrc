@@ -24,7 +24,7 @@ set numberwidth=3	" I usually only edit small files so therefore 3 digits should
 set nolazyredraw		" redraw!
 set showcmd		" display incomplete commands
 set smartcase		" searching
-set cmdheight=1
+set cmdheight=2
 set scrolloff=2		" I like to know what's next
 set wildmenu
 set wildmode=list:longest " wildmode works great this way
@@ -32,13 +32,16 @@ set fillchars=stl:-,stlnc:-,vert:\|,fold:-,diff:-
 set smarttab
 set list
 set listchars=trail:-,tab:\>\ 
-set autoindent		" indentation for the win!
+
+" Indentation stuff
+set cindent
+set autoindent
 set smartindent   
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set copyindent
-set noexpandtab
+set expandtab
 set completeopt=menu,longest,preview
 filetype plugin indent on
 syntax on		" syntax

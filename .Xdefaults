@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Monaco:pixelsize=10:antialias=true
-URxvt.boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
+URxvt.font:xft:Envy Code R:pixelsize=11:antialias=true
+URxvt.boldFont:xft:Envy Code R:bold:pixelsize=11:antialias=true
 
 URxvt.loginShell: true
 URxvt.termName: rxvt-unicode
@@ -32,11 +32,11 @@ URxvt*colorBD:            lightyellow
 URxvt*colorUL:            green
 URxvt.cursorColor: #999
 
-Xft.dpi:        96
+Xft.dpi:		96	
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
-Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintsfull
 
 ! this line makes so that only the SSH-sessions become "Urgent" on bell
 SSH*urgentOnBell: true

@@ -260,7 +260,7 @@ show-read-feeds yes
 ## configuration option: show-read-articles
 ## description: If yes, then all articles of a feed are listed in the article list. If no, then only unread articles are listed.
 ## parameter syntax: [yes/no]
-show-read-articles no
+show-read-articles yes
 
 ## configuration option: suppress-first-reload
 ## description: If yes, then the first automatic reload will be suppressed if auto-reload is set to yes.

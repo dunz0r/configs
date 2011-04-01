@@ -65,7 +65,7 @@ domain_props = {
         ["enable-scripts"]          = true,
         ["enable-plugins"]          = true,
         ["enable-private-browsing"] = false,
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/dark.css",
+        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
         ["accept-policy"]           = cookie_policy.no_third_party,
     },
     ["youtube.com"] = {
