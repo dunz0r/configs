@@ -15,7 +15,7 @@ theme.error_bg = "#F00"
 
 -- Notification colours
 theme.notif_fg = "#d6d6d6"
-theme.notif_bg = "#3e3e3e"
+theme.notif_bg = "#121212"
 
 -- Menu colours
 theme.menu_fg                   = "#000"
@@ -34,12 +34,12 @@ theme.proxy_inactive_menu_bg    = '#FFF'
 
 -- Statusbar specific
 theme.sbar_fg           = "#d6d6d6"
-theme.sbar_bg           = "#3e3e3e"
+theme.sbar_bg           = "#121212"
 theme.loaded_sbar_fg    = "#33AADD"
 
 -- Input bar specific
-theme.ibar_fg           = "#898989"
-theme.ibar_bg           = "#1a1a1a"
+theme.ibar_fg           = "#121212"
+theme.ibar_bg           = "#898989"
 
 -- Tab label
 theme.tab_fg            = "#888"
