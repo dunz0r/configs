@@ -8,11 +8,11 @@ theme = {}
 theme.font      = "Envy Code R 8"
 
 -- {{{ Colors
-theme.fg_normal = "#DCDCCC"
-theme.fg_focus  = "#F0DFAF"
+theme.fg_normal = "#898989"
+theme.fg_focus  = "#d7af5f"
 theme.fg_urgent = "#CC9393"
-theme.bg_focus = "#3F3F3F"
-theme.bg_normal  = "#1E2320"
+theme.bg_focus = "#1a1a1a"
+theme.bg_normal  = "#121212"
 theme.bg_urgent = "#3F3F3F"
 -- }}}
 
@@ -47,7 +47,7 @@ theme.fg_unfocus    = "#606060"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "nitrogen --restore" }
+theme.wallpaper_cmd = { "xsetroot -solid #121212" }
 -- {{{ Widgets
 -- You can add as many variables as
 -- you wish and access them by using

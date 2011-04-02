@@ -7,7 +7,7 @@ local theme = {}
 -- Default settings
 theme.font = "Monaco 9"
 theme.fg   = "#898989"
-theme.bg   = "#1a1a1a"
+theme.bg   = "#121212"
 
 -- Error colours
 theme.error_fg = "#FFF"

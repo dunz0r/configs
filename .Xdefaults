@@ -19,7 +19,7 @@ URxvt.urlLauncher: luakit
 URxvt.colorUL: #009000
 URxvt*depth: 32
 URxvt*background: #121212
-URxvt*foreground: #a9a9a9
+URxvt*foreground: #898989
 
 URxvt*transparent:        false
 URxvt.cursorBlink:        true
