@@ -9,7 +9,7 @@ fortune
 printf "\n"
 todo
 # sets the path
-PATH=/usr/lib/cw:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
+PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
 export PATH
 
 # dobbs rulez!
@@ -135,12 +135,12 @@ esac
 #PS2="-]$GREEN#$WHITE>$NO_COLOUR "
 #PS4='+ '
 PS1="$TITLEBAR\
-    $GREY$ULINE(:$ECOLOR$ESTATUS\
-    $GREY)$GREY$LINE(\
-    $WHITE\w\
-    $GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
-    $LLINE($WHITE\j\
-    $GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
+$GREY$ULINE(:$ECOLOR$ESTATUS\
+$GREY)$GREY$LINE(\
+$WHITE\w\
+$GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
+$LLINE($WHITE\j\
+$GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
 
 PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
 }
