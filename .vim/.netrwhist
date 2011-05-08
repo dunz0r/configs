@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/dunz0r/.local/share/luakit'
 let g:netrw_dirhist_2='/home/dunz0r/.rtorrent'
 let g:netrw_dirhist_3='/home/dunz0r/.pftp'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home/dunz0r/devel/arduino/sketchbook/LineFollowing'
 let g:netrw_dirhist_6='/home/dunz0r/.surf'
 let g:netrw_dirhist_7='/home/dunz0r/.config/wmfs'
 let g:netrw_dirhist_8='/home/dunz0r/.newsbeuter'
+let g:netrw_dirhist_9='/home/dunz0r/.fluxbox'

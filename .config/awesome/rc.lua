@@ -25,7 +25,7 @@
 	terminal = "urxvtc"
 	editor = os.getenv("EDITOR") or "vim"
 	editor_cmd = terminal .. " -e " .. editor
-	locker = "vlock -n"
+	locker = "xscreensaver-command -lock"
 	browser = "luakit"
 	musicdir = "/home/dunz0r/warez/music/"
 	weatherurl = "http://www.accuweather.com/m/en-us/SE/Uppsala/Enkoping/Forecast.aspx"
@@ -86,7 +86,7 @@
 		
 		-- {{{ Tags
 		shifty.config.tags = {
-                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux -u attach ", position = 1, },
+                irc = { name = "1:irc", spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux -u attach -t irc", position = 1, },
 		www = { solitary = true, position = 2, max_clients = 5,
 				exclusive = false, layout = awful.layout.suit.max, nopopup = true, spawn = browser},
 		term = { persist = true, position = 3, },
@@ -303,13 +303,12 @@ vicious.register(nettext, vicious.widgets.net, "<span color='" .. beautiful.wid_
 
 		                   }
 
-	--[[	myawibox = awful.wibox({ position = "bottom", screen = 1})
+	myawibox = awful.wibox({ position = "bottom", screen = 2})
 		myawibox.widgets = {
                         		mytextclock,
                         		pacmanbox,
 					layout = awful.widget.layout.horizontal.leftright
                 }
-                --]]
 -- }}}
 
 --{{{ Functions

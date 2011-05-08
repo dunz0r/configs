@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Envy Code R:pixelsize=11:antialias=true
-URxvt.boldFont:xft:Envy Code R:bold:pixelsize=11:antialias=true
+URxvt.font:xft:Montecarlo:pixelsize=11:antialias=true
+URxvt.boldFont:xft:Montecarlo:bold:pixelsize=11:antialias=true
 
 URxvt.loginShell: true
 URxvt.termName: rxvt-unicode
@@ -18,10 +18,10 @@ URxvt.perl-ext: default,matcher
 URxvt.urlLauncher: luakit
 URxvt.colorUL: #009000
 URxvt*depth: 32
-URxvt*background: #121212
-URxvt*foreground: #898989
+!URxvt*background: #121212
+!URxvt*foreground: #cccccc
 
-URxvt*transparent:        false
+URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
@@ -64,5 +64,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-color/shiva"
+# include "/home/dunz0r/.xdefaults-color/tango"
 ! EOF

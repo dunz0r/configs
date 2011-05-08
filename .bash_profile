@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # {{{ Variables etc
+# Init stuff
 source /etc/profile
 source /etc/bash_completion.d/git
 # shows a fortune upon login
@@ -9,7 +10,7 @@ fortune
 printf "\n"
 todo
 # sets the path
-PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
+PATH=`cope_path`:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
 export PATH
 
 # dobbs rulez!
@@ -30,7 +31,7 @@ source ~/.aliasrc
 # Set some variables
 export WINEARCH=win32
 PROMPT_COMMAND=pprom2
-export LESS="-P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
+export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
 MPD_PORT=6600
 MPD_HOST=localhost
@@ -57,9 +58,7 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_H
 
 # }}}
 
-#{{{
-# Functions
-
+#{{{ Functions
 # This is the main function for the prompt#{{{
 function pprom2 {
 # Capture the exit status
@@ -89,8 +88,8 @@ fi
 # sets the titlebar if we are in an xterm
 case $TERM in
     xterm*|rxvt*)
-        TITLEBAR="\[\033]0;::$0::\h:$PWD\007\]"
-        trap 'printf "\e]2;%s\a" "$(echo "::$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
+        TITLEBAR="\[\033]0;term:$0::\h:$PWD\007\]"
+        trap 'printf "\e]2;%s\a" "$(echo "term:$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
         LINE=$(asciiecho q)
         ULINE=$(asciiecho lq)
         LLINE=$(asciiecho mq)
@@ -131,16 +130,16 @@ case $ESTATUS in
 esac
 # the prompt starts here
 #PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
-    #$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
+##$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
 #PS2="-]$GREEN#$WHITE>$NO_COLOUR "
 #PS4='+ '
 PS1="$TITLEBAR\
-$GREY$ULINE(:$ECOLOR$ESTATUS\
-$GREY)$GREY$LINE(\
+$GREY<:$ECOLOR$ESTATUS\
+$GREY>-<\
 $WHITE\w\
-$GREY)$LINE($LIGHT_GREY\t$GREY)$LINE$(__git_ps1 " %s"$LINE)($HOSTCOLOUR\h$GREY)$LINE\n\
-$LLINE($WHITE\j\
-$GREY)$LINE$LIGHT_GREY\$$NO_COLOUR "
+$GREY>-<$LIGHT_GREY\t$GREY>-<$HOSTCOLOUR\h$GREY>\n\
+[$WHITE\j\
+$GREY]-$LIGHT_GREY$(__git_ps1 " %s")-\$$NO_COLOUR:> "
 
 PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
 }

@@ -14,7 +14,7 @@ awesome-mailinglist/
 abbenay/
 
 :0
-* ^(To|Cc): list@ulug.org
+* ^(To|Cc|From): list@ulug.org
 ulug/
 
 :0
@@ -31,7 +31,7 @@ luakit-dev/
 
 :0
 * ^(From|Cc|To): pacman-dev@archlinux.org
-luakit-dev/
+pacman-dev/
 
 
 #:0

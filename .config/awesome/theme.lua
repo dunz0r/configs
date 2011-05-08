@@ -5,13 +5,13 @@
 theme = {}
 
 -- {{{ Styles
-theme.font      = "Envy Code R 8"
+theme.font      = "Montecarlo 8"
 
 -- {{{ Colors
 theme.fg_normal = "#898989"
-theme.fg_focus  = "#d7af5f"
+theme.fg_focus  = "#cccccc"
 theme.fg_urgent = "#CC9393"
-theme.bg_focus = "#1a1a1a"
+theme.bg_focus = "#3e3e3e"
 theme.bg_normal  = "#121212"
 theme.bg_urgent = "#3F3F3F"
 -- }}}
@@ -58,10 +58,10 @@ theme.fg_end_widget    = "#FF5656"
 theme.bg_widget        = "#494B4F"
 theme.border_widget    = "#3F3F3F"
 -- widget colours
-theme.wid_rl = "#98565e"
-theme.wid_rh = "#cfa3a9"
-theme.wid_gl = "#66825d"
-theme.wid_gh = "#caf7bb"
+theme.wid_rl = "#89005a"
+theme.wid_rh = "#ff3500"
+theme.wid_gl = "#b03b31"
+theme.wid_gh = "#ff6767"
 theme.wid_yl = "#969176"
 theme.wid_yh = "#fff8bc"
 theme.wid_bl = "#4d6585"
