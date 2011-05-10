@@ -51,20 +51,20 @@ soup.set_property("accept-policy", cookie_policy.always)
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 
 search_engines = {
-    luakit      = "http://luakit.org/search/index/luakit?q={0}",
-    gg          = "http://google.com/search?q={0}",
-    gi          = "http://google.com/images/search?q={0}",
-    wp          = "http://en.wikipedia.org/wiki/Special:Search?search={0}",
-    imdb        = "http://imdb.com/find?s=all&q={0}",
-    sf          = "http://sf.net/search/?words={0}",
-    aw          = "http://wiki.archlinux.org/index.php/Special:Search?search={0}",
-    abs         = "http://www.archlinux.org/packages/?q={0}",
-    aur         = "http://aur.archlinux.org/packages.php?K={0}",
-    bbs         = "http://bbs.archlinux.org/search.php?action=search&keywords={0}&show_as=topics&sort_dir=DESC",
-    gl          = "http://google.com/search?q={0}&sourceid=navclient&gfns=1",
-    gm          = "http://maps.google.com/maps?q={0}",
-    yt          = "http://www.youtube.com/results?search_query={0}&search_sort=video_view_count",
-    gh          = "http://www.github.com/{0}"
+    luakit      = "http://luakit.org/search/index/luakit?q=%s",
+    gg          = "http://google.com/search?q=%s",
+    gi          = "http://google.com/images/search?q=%s",
+    wp          = "http://en.wikipedia.org/wiki/Special:Search?search=%s",
+    imdb        = "http://imdb.com/find?s=all&q=%s",
+    sf          = "http://sf.net/search/?words=%s",
+    aw          = "http://wiki.archlinux.org/index.php/Special:Search?search=%s",
+    abs         = "http://www.archlinux.org/packages/?q=%s",
+    aur         = "http://aur.archlinux.org/packages.php?K=%s",
+    bbs         = "http://bbs.archlinux.org/search.php?action=search&keywords=%s&show_as=topics&sort_dir=DESC",
+    gl          = "http://google.com/search?q=%s&sourceid=navclient&gfns=1",
+    gm          = "http://maps.google.com/maps?q=%s",
+    yt          = "http://www.youtube.com/results?search_query=%s&search_sort=video_view_count",
+    gh          = "http://www.github.com/%s"
 }
 
 
@@ -75,21 +75,14 @@ search_engines.default = search_engines.google
 
 -- Per-domain webview properties
 -- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
-domain_props = { --[[
+domain_props = {
     ["all"] = {
-        ["enable-scripts"]          = false,
-        ["enable-plugins"]          = false,
-        ["enable-private-browsing"] = false,
-        ["user-stylesheet-uri"]     = "",
-    },
-    ["youtube.com"] = {
-        ["enable-scripts"] = true,
-        ["enable-plugins"] = true,
-    },
-    ["bbs.archlinux.org"] = {
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/dark.css",
+        ["enable-scripts"]          = true,
+        ["enable-plugins"]          = true,
         ["enable-private-browsing"] = true,
-    }, ]]
-}
+        ["user-stylesheet-uri"]     = "",
+--        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+    },
+    }
 
 -- vim: et:sw=4:ts=8:sts=4:tw=80
