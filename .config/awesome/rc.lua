@@ -98,8 +98,7 @@
 				spawn = terminal .. " -name mutt -title '::mutt::' -e sh -c 'sleep 0.1s;mutt'", nopopup = false, },
 		news = { position = 10, spawn = terminal .. " -name Newsbeuter -title '::newsbeuter::' -e newsbeuter" },
 		kicad = { position = 8, spawn = "kicad", layou = awful.layout.suit.float, nopopup = false },
-		video = { nopopup = false, position = 4, layout = awful.layout.suit.float, },
-		PDF = { layout = awful.layout.suit.max.fullscreen, position = 8, nopopup = false },
+		PDF = { layout = awful.layout.suit.max.fullscreen, position = 4, nopopup = false },
 		img = { position = 9, layout = awful.layout.suit.max.fullscreen, nopopup = false, },
 		-- No fixed positions
 		gimp = { spawn = "gimp", layout = awful.layout.suit.max, sweep_delay = 2, screen = 1,  },
