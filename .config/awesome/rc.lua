@@ -305,12 +305,12 @@ vicious.register(nettext, vicious.widgets.net, "<span color='" .. beautiful.wid_
 
 		                   }
 
-	myawibox = awful.wibox({ position = "bottom", screen = 2})
-		myawibox.widgets = {
-                        		mytextclock,
-                        		pacmanbox,
-					layout = awful.widget.layout.horizontal.leftright
-                }
+--	myawibox = awful.wibox({ position = "bottom", screen = 2})
+--		myawibox.widgets = {
+ --                       		mytextclock,
+  --                      		pacmanbox,
+--					layout = awful.widget.layout.horizontal.leftright
+ --               }
 -- }}}
 
 --{{{ Functions

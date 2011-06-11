@@ -3,6 +3,5 @@ urxvtd -o -f
 #nvidia-settings -a InitialPixmapPlacement=2
 xmodmap ~/.xmodmap
 xset -b
-nitrogen --restore&
-xscreensaver -no-splash&
-awesome &> ~/.xsession-errors
+nitrogen --restore
+fluxbox &> ~/.xsession-errors
