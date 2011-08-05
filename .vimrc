@@ -6,37 +6,37 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme inte_fult
+colorscheme miromiro
 " use all the wonderful 256 colors that urxvt supply
-"set t_Co=256
+"set t_Co=84
 
 set fdm=marker
-set incsearch		" do incremental searching
+set incsearch" do incremental searching
 set nobackup
 "set backupdir=./.backup,.,/tmp
 "set directory=.,./.backup,/tmp
 set fileformat=unix
-set history=50		" keep 50 lines of command line history
+set history=50 " keep 50 lines of command line history
 " Display
-set number		" I like line numbers
-set numberwidth=3	" I usually only edit small files so therefore 3 digits should be enough
-set nolazyredraw		" redraw!
-set showcmd		" display incomplete commands
-set smartcase		" searching
-set scrolloff=2		" I like to know what's next
+set number  " I like line numbers
+set numberwidth=3   " I usually only edit small files so therefore 3 digits should be enough
+set nolazyredraw      " redraw!
+set showcmd      " display incomplete commands
+set smartcase      " searching
+set scrolloff=2      " I like to know what's next
 set wildmenu
 set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:-,diff:-
 set smarttab
 set list
 set listchars=trail:-,tab:\>\ 
-set hlsearch		" hilight searches
+set hlsearch      " hilight searches
 set showmode
 
 " Indentation stuff
 set cindent
 set autoindent
-set smartindent   
+set smartindent
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
@@ -44,7 +44,7 @@ set copyindent
 set expandtab
 set completeopt=menu,longest,preview
 filetype plugin indent on
-syntax on		" syntax
+syntax on      " syntax
 
 " mappings
 " rot13 haxorize

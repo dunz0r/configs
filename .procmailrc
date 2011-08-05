@@ -15,7 +15,14 @@ abbenay/
 
 :0
 * ^(To|Cc|From): list@ulug.org
+* ^(To|Cc|From): "list@ulug.org" <list@ulug.org>
+* ^(To|Cc|From): ULUG <list@ulug.org>
 ulug/
+
+:0
+* ^(To|Cc|From): styrelse@ulug.org
+ulug-styrelse/
+
 
 :0
 * ^(Cc|To): [a-z]+@securityfocus.com

@@ -80,6 +80,14 @@ add_binds("all", {
             w:new_tab(uri, false)
         end
     end),
+
+    -- Zoom binds
+    but({"Control"}, 4, function (w, m) w:zoom_in()  end),
+    but({"Control"}, 5, function (w, m) w:zoom_out() end),
+
+    -- Horizontal mouse scroll binds
+    but({"Shift"},   4, function (w, m) w:scroll_horiz(less) end),
+    but({"Shift"},   5, function (w, m) w:scroll_horiz(more) end),
 })
 
 add_binds("normal", {
@@ -107,8 +115,8 @@ add_binds("normal", {
     -- Scrolling
     key({},          "j",           function (w) w:scroll_vert(more)  end),
     key({},          "k",           function (w) w:scroll_vert(less)  end),
-    key({},          "h",           function (w) w:scroll_horiz(less) end),
-    key({},          "l",           function (w) w:scroll_horiz(more) end),
+    key({},          "H",           function (w) w:scroll_horiz(less) end),
+    key({},          "L",           function (w) w:scroll_horiz(more) end),
     key({},          "^",           function (w) w:scroll_horiz("0%") end),
     key({},          "$",           function (w) w:scroll_horiz("100%") end),
     key({"Control"}, "e",           function (w) w:scroll_vert(more)  end),
@@ -141,12 +149,17 @@ add_binds("normal", {
     key({},          "+",           function (w, m)    w:zoom_in(zoom_step  * m.count)       end, {count=1}),
     key({},          "-",           function (w, m)    w:zoom_out(zoom_step * m.count)       end, {count=1}),
     key({},          "=",           function (w, m)    w:zoom_set() end),
-    buf("^zz$",                     function (w, b, m) w:zoom_set() end),
     buf("^z[iI]$",                  function (w, b, m) w:zoom_in(zoom_step  * m.count, b == "zI") end, {count=1}),
     buf("^z[oO]$",                  function (w, b, m) w:zoom_out(zoom_step * m.count, b == "zO") end, {count=1}),
+    -- Zoom reset or specific zoom ([count]zZ for full content zoom)
+    buf("^z[zZ]$",                  function (w, b, m) w:zoom_set(m.count/100, b == "zZ") end, {count=100}),
 
-    -- Specific zoom
-    buf("^zZ$",                     function (w, b, m) w:zoom_set(m.count/100, true) end, {count=100}),
+    -- Fullscreen
+    key({},          "F11",         function (w)
+                                        w.fullscreen = not w.fullscreen
+                                        if w.fullscreen then w.win:fullscreen()
+                                        else w.win:unfullscreen() end
+                                    end),
 
     -- Clipboard
     key({},          "p",           function (w)
@@ -167,8 +180,9 @@ add_binds("normal", {
                                     end),
 
     buf("^yt$",                     function (w)
-                                        luakit.set_selection(w.win.title)
-                                        w:notify("Yanked title: " .. w.win.title)
+                                        local title = w:get_current():get_property("title")
+                                        luakit.set_selection(title)
+                                        w:notify("Yanked title: " .. title)
                                     end),
 
     -- Commands
@@ -183,8 +197,8 @@ add_binds("normal", {
     buf("^,g$",                     function (w, c) w:enter_cmd(":open google ") end),
 
     -- History
-    key({},          "H",           function (w, m) w:back(m.count)    end),
-    key({},          "L",           function (w, m) w:forward(m.count) end),
+    key({},          "h",           function (w, m) w:back(m.count)    end),
+    key({},          "l",           function (w, m) w:forward(m.count) end),
     key({},          "b",           function (w, m) w:back(m.count)    end),
     key({},          "XF86Back",    function (w, m) w:back(m.count)    end),
     key({},          "XF86Forward", function (w, m) w:forward(m.count) end),
@@ -238,6 +252,8 @@ add_binds({"command", "search"}, {
     key({"Shift"},   "Insert",  function (w) w:insert_cmd(luakit.get_selection()) end),
     key({"Control"}, "w",       function (w) w:del_word() end),
     key({"Control"}, "u",       function (w) w:del_line() end),
+    key({"Control"}, "h",       function (w) w:del_backward_char() end),
+    key({"Control"}, "d",       function (w) w:del_forward_char() end),
     key({"Control"}, "a",       function (w) w:beg_line() end),
     key({"Control"}, "e",       function (w) w:end_line() end),
     key({"Control"}, "f",       function (w) w:forward_char() end),
