@@ -66,16 +66,6 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_H
 # {{{ Alternative prompt
 prompt_command () {
     local rts=$?
-    local ref="$(git symbolic-ref HEAD 2>/dev/null)"
-
-    (($st)) && stclr="$fgred" st="\[$fgwht\][\[$stclr\]$st\[$fgwht\]]" || st=""
-    if [ -n "$ref" ]
-    then
-        git status -sb|grep "not updated" &>/dev/null && ref="$ref\[$fggrn\]!"
-        git status -sb|grep "Untracked" &>/dev/null && ref="$ref\[$fggrn\]?"
-        gpr="\[$fgwht\]:\[$fgpur\]${ref#refs/heads/}"
-    fi
-
     local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
     # pwd max length L, prefix shortened pwd with m
     local L=45 m='<'
@@ -86,7 +76,7 @@ prompt_command () {
     [ $rts -eq 0 ] && \
         local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
         local p="\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
-    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;34m\]\h\[\033[m\] in \[\033[1;35m\]${w} $gpr\n ${p} "
+    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;34m\]\h\[\033[m\] in \[\033[1;35m\]${w} $(git_prompt_info)\n ${p} "
     case "$TERM" in
         xterm*|rxvt*)
             echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
@@ -205,4 +195,35 @@ function wiki
     dig +short txt $1.wp.dg.cx
 }
 #}}}
+# {{{ Git functions!
+function git_prompt_info() {
+ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+echo "[${ref#refs/heads/}$(parse_git_dirty)]"
+    }
+
+    parse_git_dirty () {
+        gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
+
+        if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
+            echo -n "\!"
+        fi
+
+        if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
+            echo -n "\?"
+        fi
+
+        if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
+            echo -n "."
+        fi
+    }
+
+    #
+    # Will return the current branch name
+    # Usage example: git pull origin $(current_branch)
+    #
+    function current_branch() {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo ${ref#refs/heads/}
+}
+# }}}
 # }}}
