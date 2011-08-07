@@ -4,10 +4,10 @@
 # Init stuff
 source /etc/profile
 source /etc/bash_completion.d/git
+source $HOME/.clw
 # shows a fortune upon login
 printf "\n"
 fortune
-printf "\n"
 todo
 # sets the path
 PATH=`cope_path`:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin
@@ -26,11 +26,10 @@ set show-all-if-ambiguos on
 export LANG=en_GB.UTF-8
 source ~/.aliasrc
 # source completion for git
-#source $HOME/.git-completion.sh
 #set TERM rxvt-256color; export TERM
 # Set some variables
 export WINEARCH=win32
-PROMPT_COMMAND=pprom2
+PROMPT_COMMAND=prompt_command
 export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
 MPD_PORT=6600
@@ -42,6 +41,8 @@ GREP_OPTIONS='--colour=auto'
 PYTHONSTARTUP="$HOME/.pythonrc"
 # Set the options for the historyfile
 shopt -s histappend
+# for column width and such
+shopt -s checkwinsize
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=10000
@@ -62,6 +63,39 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_H
 # }}}
 
 #{{{ Functions
+# {{{ Alternative prompt
+prompt_command () {
+    local rts=$?
+    local ref="$(git symbolic-ref HEAD 2>/dev/null)"
+
+    (($st)) && stclr="$fgred" st="\[$fgwht\][\[$stclr\]$st\[$fgwht\]]" || st=""
+    if [ -n "$ref" ]
+    then
+        git status -sb|grep "not updated" &>/dev/null && ref="$ref\[$fggrn\]!"
+        git status -sb|grep "Untracked" &>/dev/null && ref="$ref\[$fggrn\]?"
+        gpr="\[$fgwht\]:\[$fgpur\]${ref#refs/heads/}"
+    fi
+
+    local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
+    # pwd max length L, prefix shortened pwd with m
+    local L=45 m='<'
+    [ ${#w} -gt $L ] && { local n=$((${#w} - $L + ${#m}))
+    local w="\[\033[0;32m\]${m}\[\033[0;33m\]${w:$n}\[\033[0m\]" ; } \
+        ||   local w="\[\033[0;33m\]${w}\[\033[0m\]"
+    # different colors for different return status
+    [ $rts -eq 0 ] && \
+        local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
+        local p="\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
+    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;34m\]\h\[\033[m\] in \[\033[1;35m\]${w} $gpr\n ${p} "
+    case "$TERM" in
+        xterm*|rxvt*)
+            echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
+            ;;
+        *)
+            ;;
+    esac
+}
+# }}}
 # This is the main function for the prompt#{{{
 function pprom2 {
 # Capture the exit status
@@ -115,7 +149,7 @@ case $HOSTNAME in
     gertrud)
         local HOSTCOLOUR=$BRIGHT_RED
         ;;
-    ninjaloot.se)
+    ulug)
         local HOSTCOLOUR=$GREEN
         ;;
     *)
@@ -133,16 +167,16 @@ case $ESTATUS in
 esac
 # the prompt starts here
 #PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
-##$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
+    #PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
+    ##$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
 #PS2="-]$GREEN#$WHITE>$NO_COLOUR "
 #PS4='+ '
 PS1="$TITLEBAR\
-$GREY<:$ECOLOR$ESTATUS\
-$GREY>-<\
-$WHITE\w\
-$GREY>-<$LIGHT_GREY\t$GREY>-<$HOSTCOLOUR\h$GREY>\n\
-[$WHITE\j\
-$GREY]-$LIGHT_GREY$(__git_ps1 " %s")-\$$NO_COLOUR:> "
+    $GREY$ULINE[$ECOLOR$ESTATUS\
+    $GREY]$GREY$LINE[\
+    $WHITE\W$GREY]\
+    $(__git_ps1 " %s"$LINE)[$HOSTCOLOUR\h$GREY]\n\
+    $LLINE$LINE$LIGHT_GREY\$$GREY»$NO_COLOUR "
 
 PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
 }
