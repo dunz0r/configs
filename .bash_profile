@@ -76,7 +76,7 @@ prompt_command () {
     [ $rts -eq 0 ] && \
         local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
         local p="\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
-    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;34m\]\h\[\033[m\] in \[\033[1;35m\]${w} $(git_prompt_info)\n ${p} "
+    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;31m\]\h\[\033[m\] in \[\033[1;35m\]${w} $(git_prompt_info)\n ${p} "
     case "$TERM" in
         xterm*|rxvt*)
             echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
@@ -205,11 +205,11 @@ echo "[${ref#refs/heads/}$(parse_git_dirty)]"
         gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
 
         if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
-            echo -n "\!"
+            echo -n "!"
         fi
 
         if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-            echo -n "\?"
+            echo -n "?"
         fi
 
         if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
