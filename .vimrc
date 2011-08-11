@@ -34,6 +34,7 @@ set hlsearch      " hilight searches
 set showmode
 
 " Indentation stuff
+set fdm=indent
 set cindent
 set autoindent
 set smartindent
