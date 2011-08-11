@@ -39,3 +39,7 @@ luakit-dev/
 :0
 * ^(From|Cc|To): pacman-dev@archlinux.org
 pacman-dev/
+
+:0
+* ^(From|Cc|To): aur-general@archlinux.org
+aur-general/
