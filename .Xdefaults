@@ -25,7 +25,7 @@ URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
-URxvt*shading:            40
+URxvt*shading:            30
 URxvt*fading:             40
 URxvt*scrollBar:          False
 
@@ -64,5 +64,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-color/tango"
+# include "/home/dunz0r/.xdefaults-colour/tango"
 ! EOF

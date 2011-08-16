@@ -5,9 +5,9 @@
 local theme = {}
 
 -- Default settings
-theme.font = "monospace normal 9"
-theme.fg   = "#fff"
-theme.bg   = "#000"
+theme.font = "Montecarlo 9"
+theme.fg   = "#aaa"
+theme.bg   = "#333"
 
 -- Genaral colours
 theme.success_fg = "#0f0"
@@ -24,8 +24,8 @@ theme.notif_fg = "#444"
 theme.notif_bg = "#FFF"
 
 -- Menu colours
-theme.menu_fg                   = "#000"
-theme.menu_bg                   = "#fff"
+theme.menu_fg                   = "#aaa"
+theme.menu_bg                   = "#121212"
 theme.menu_selected_fg          = "#000"
 theme.menu_selected_bg          = "#FF0"
 theme.menu_title_bg             = "#fff"
@@ -39,8 +39,8 @@ theme.proxy_inactive_menu_fg    = '#888'
 theme.proxy_inactive_menu_bg    = '#FFF'
 
 -- Statusbar specific
-theme.sbar_fg         = "#fff"
-theme.sbar_bg         = "#000"
+theme.sbar_fg         = "#aaa"
+theme.sbar_bg         = "#444"
 
 -- Downloadbar specific
 theme.dbar_fg         = "#fff"

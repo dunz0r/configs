@@ -14,13 +14,14 @@ awesome-mailinglist/
 abbenay/
 
 :0
-* ^(To|Cc|From): list@ulug.org
+* ^(To|Cc|From): .*list@ulug.org
 * ^(To|Cc|From): "list@ulug.org" <list@ulug.org>
 * ^(To|Cc|From): ULUG <list@ulug.org>
 ulug/
 
 :0
 * ^(To|Cc|From): styrelse@ulug.org
+* ^Subject:.*[ulug-styrelse].*
 ulug-styrelse/
 
 
@@ -42,4 +43,7 @@ pacman-dev/
 
 :0
 * ^(From|Cc|To): aur-general@archlinux.org
+* ^Subject:.*[aur-general].*
 aur-general/
+
+
