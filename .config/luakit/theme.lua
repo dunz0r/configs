@@ -48,8 +48,8 @@ theme.dbar_bg         = "#000"
 theme.dbar_error_fg   = "#F00"
 
 -- Input bar specific
-theme.ibar_fg           = "#000"
-theme.ibar_bg           = "#fff"
+theme.ibar_fg           = "#aaa"
+theme.ibar_bg           = "#444"
 
 -- Tab label
 theme.tab_fg            = "#888"

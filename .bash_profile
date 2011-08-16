@@ -76,12 +76,14 @@ prompt_command () {
         local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
         local p="\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
     PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;31m\]\h\[\033[m\] in \[\033[1;35m\]${w} $(git_prompt_info)\n ${p} "
+   
+    case $TERM in
      xterm*|rxvt*)
-        echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
-        trap 'printf "\e]2;%s\a" "$(echo "${USER}@${HOSTNAME}:${PWD/$HOME/~}:$BASH_COMMAND")" > /dev/tty' DEBUG
-        ;;
-    *)
-        ;;
+         echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
+         trap 'printf "\e]2;%s\a" "$(echo "${USER}@${HOSTNAME}:${PWD/$HOME/~}:$BASH_COMMAND")" > /dev/tty' DEBUG
+         ;;
+        *)
+          ;;
 esac
 
 
