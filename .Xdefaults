@@ -18,10 +18,10 @@ URxvt.perl-ext: default,matcher
 URxvt.urlLauncher: luakit
 URxvt.colorUL: #009000
 URxvt*depth: 32
-!URxvt*background: #121212
-!URxvt*foreground: #cccccc
+URxvt*background: #121212
+URxvt*foreground: #cccccc
 
-URxvt*transparent:        true
+URxvt*transparent:        false
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
@@ -64,5 +64,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-colour/tango"
+# include "/home/dunz0r/.xdefaults-colour/splurge.Xresources"
 ! EOF

@@ -38,6 +38,9 @@ theme.titlebar_bg_normal = "#3F3F3F"
 --theme.taglist_bg_focus = "#CC9393"
 -- }}}
 theme.fg_unfocus    = "#606060"
+theme.fg_focus      = "#aaa"
+
+theme.confdir = "/home/dunz0r/.config/awesome"
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -47,7 +50,7 @@ theme.fg_unfocus    = "#606060"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "xsetroot -solid #121212" }
+--theme.wallpaper_cmd = { "nitrogen --restore" }
 -- {{{ Widgets
 -- You can add as many variables as
 -- you wish and access them by using
@@ -71,6 +74,9 @@ theme.wid_mh = "#bba9cf"
 theme.wid_cl = "#5f7f7b"
 theme.wid_ch = "#96cccc"
 
+theme.fg_off_widget    = "#494B4F"
+theme.fg_netup_widget  = "#7F9F7F"
+theme.fg_netdn_widget  = theme.fg_urgent
 -- }}}
 
 -- {{{ Mouse finder
@@ -139,6 +145,23 @@ theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zen
 theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
 
 -- }}}
+
+-- {{{ Widget icons
+theme.widget_cpu    = theme.confdir .. "/icons/cpu.png"
+theme.widget_bat    = theme.confdir .. "/icons/bat.png"
+theme.widget_mem    = theme.confdir .. "/icons/mem.png"
+theme.widget_fs     = theme.confdir .. "/icons/disk.png"
+theme.widget_net    = theme.confdir .. "/icons/down.png"
+theme.widget_netup  = theme.confdir .. "/icons/up.png"
+theme.widget_wifi   = theme.confdir .. "/icons/wifi.png"
+theme.widget_mail   = theme.confdir .. "/icons/mail.png"
+theme.widget_vol    = theme.confdir .. "/icons/vol.png"
+theme.widget_org    = theme.confdir .. "/icons/cal.png"
+theme.widget_date   = theme.confdir .. "/icons/time.png"
+theme.widget_crypto = theme.confdir .. "/icons/crypto.png"
+theme.widget_sep    = theme.confdir .. "/icons/separator.png"
+-- }}}
+
 -- }}}
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 

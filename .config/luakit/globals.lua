@@ -81,7 +81,7 @@ domain_props = {
         ["enable-plugins"]          = true,
         ["enable-private-browsing"] = true,
         ["user-stylesheet-uri"]     = "",
---        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
     },
     }
 
