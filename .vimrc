@@ -92,5 +92,5 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 if has("gui_running")
   " GUI is running or is about to start.
   " Maximize gvim window.
-  set lines=150 columns=190
+  set lines=40 columns=100
 endif

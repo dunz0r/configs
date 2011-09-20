@@ -1,6 +1,6 @@
-PATH=/bin:/usr/bin/:/usr/local/bin:/home/dunz0r/bin
+PATH=/bin:/usr/bin/:/usr/local/bin:/home/gabriel/bin
 VERBOSE=off
-DEFAULT=/var/spool/mail/dunz0r
+DEFAULT=/var/spool/mail/gabriel
 MAILDIR=$HOME/mail
 LOGFILE=$MAILDIR/.procmaillog
 
@@ -21,7 +21,6 @@ ulug/
 
 :0
 * ^(To|Cc|From): styrelse@ulug.org
-* ^Subject:.*[ulug-styrelse].*
 ulug-styrelse/
 
 
@@ -42,8 +41,7 @@ luakit-dev/
 pacman-dev/
 
 :0
-* ^(From|Cc|To): aur-general@archlinux.org
-* ^Subject:.*[aur-general].*
+* ^(From|Cc|To): .*aur-general@archlinux.org.*
 aur-general/
 
 

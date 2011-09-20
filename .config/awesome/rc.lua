@@ -29,13 +29,13 @@ locker = "xscreensaver-command -lock"
 browser = "luakit"
 musicdir = "/mnt/music/"
 weatherurl = "http://www.accuweather.com/m/en-us/SE/Uppsala/Enkoping/Forecast.aspx"
--- where to paste
+-- Where to paste
 pastebin = os.getenv("HOME") .. "/.pastebin"
--- menu bindings
+-- Menu bindings
 awful.menu.menu_keys.up = { "k"}
 awful.menu.menu_keys.down = { "j"}
 awful.menu.menu_keys.exec = { "g"}
--- what to use as a separator
+-- Modkey
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -219,7 +219,7 @@ nopopup = true
     -- Initialize widget
     datewidget = widget({ type = "textbox" })
     -- Register widget
-    vicious.register(datewidget, vicious.widgets.date, "%R", 61)
+    vicious.register(datewidget, vicious.widgets.date, "%c", 61)
     -- Register buttons
     datewidget:buttons(awful.util.table.join(
     awful.button({ }, 1, function () exec("pylendar.py") end)
@@ -241,7 +241,9 @@ nopopup = true
     -- }}}
 
     --}}}
-
+    -- MPD icon
+    mpdicon = widget({ type = "imagebox" })
+    mpdicon.image = image(beautiful.widget_music)
     -- {{{ Wibox
     -- Create a textclock widget
     mytextclock = awful.widget.textclock({ layout = awful.widget.layout.horizontal.leftright}, "%y.%m.%d.%H.%M:%W" , 20 )
@@ -257,7 +259,6 @@ nopopup = true
     mpdbox = {}
     mcbox = {}
     infobox = {}
-    separator = {}
     mytaglist = {}
     mytaglist.buttons = awful.util.table.join(
     awful.button({ }, 1, awful.tag.viewonly),
@@ -318,9 +319,11 @@ nopopup = true
         end, mytasklist.buttons)
 
         -- Create the wibox
-        mywibox[s] = awful.wibox({ position = "top", screen = s, height = 36})
+        mywibox[s] = awful.wibox({ position = "top", screen = s})
         -- Add widgets to the wibox - order matters
+        --[[
         mywibox[s].widgets = {
+        {
         mylayoutbox[s],
         mytaglist[s],
         promptbox[s],
@@ -328,48 +331,32 @@ nopopup = true
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.leftright
-        }
-            mywibox[s].widgets = {
-        {
-        {
-        mytaglist[s],
-        layout = awful.widget.layout.horizontal.leftright
-        },
-        mytextclock,
-        promptbox[s],
-        mpdbox,
-        separator,
-        separator,
-        infobox,
-        separator,
-        nettext,
-        s == 1 and mysystray or nil,
-        layout = awful.widget.layout.horizontal.rightleft
-        },
-        {
-        mylayoutbox[s],
-        mytasklist[s],
-        layout = awful.widget.layout.horizontal.leftright
         },
         layout = awful.widget.layout.vertical.flex
         }
-        
-       --[[ wibox[s].widgets = {
+        --]]
+        mywibox[s].widgets = {
             {   mytaglist[s], mylayoutbox[s], separator, promptbox[s],
             layout = awful.widget.layout.horizontal.leftright,
         },
         s == 1 and systray or nil,
-        separator, datewidget, dateicon,
-        separator, upicon,     netwidget, dnicon,
-        separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-        separator, membar.widget, memicon,
-        separator, cpugraph.widget, cpuicon,
-        separator, layout = awful.widget.layout.horizontal.rightleft,
-    }--]]
+        datewidget, dateicon,
+        separator,
+        upicon,     netwidget, dnicon,
+        separator,
+        fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+        separator,
+        membar.widget, memicon,
+        separator,
+        cpugraph.widget, cpuicon,
+        separator,
+        mpdbox, mpdicon,
+        layout = awful.widget.layout.horizontal.rightleft,
+        }
 
 end
 
-mybwibox = awful.wibox({ position = "bottom", screen = 1})
+--[[mybwibox = awful.wibox({ position = "bottom", screen = 1})
 
 mybwibox.widgets = {
 
@@ -391,6 +378,7 @@ myawibox.widgets = {
     pacmanbox,
     layout = awful.widget.layout.horizontal.leftright
 }
+--]]
 -- }}}
 
 --{{{ Functions
@@ -434,17 +422,16 @@ function get_mpd()
             now_playing = awful.util.escape("<stop>")
         else
             local zstats = mpc:send("playlistid " .. stats.songid)
-            now_playing =  (awful.util.escape( zstats.album  or "NA" )) .. "<b>:</b> " .. (awful.util.escape( zstats.artist or "NA" )) .. " <b>-</b> " .. (awful.util.escape(zstats.title or string.gsub(zstats.file, ".*/", "" ) ))
+            now_playing =  "<i>" .. (awful.util.escape( zstats.album or "" )) .. "</i>:" .. (awful.util.escape( zstats.artist or "NA" )) .. " <b>-</b> " .. (awful.util.escape(zstats.title or string.gsub(zstats.file, ".*/", "" ) ))
         end
 
         if stats.state == "pause" or stats.state == "stop" then
             now_playing = "<span color='".. beautiful.fg_unfocus .."'>" .. now_playing .. "</span>"
         end
 
-        mpd_text = "<span color='" .. beautiful.wid_gh .. "'>" .. now_playing .. "</span>"
     end
 
-    return mpd_text
+    return now_playing
 end
 --}}}
 

@@ -40,7 +40,7 @@ theme.titlebar_bg_normal = "#3F3F3F"
 theme.fg_unfocus    = "#606060"
 theme.fg_focus      = "#aaa"
 
-theme.confdir = "/home/dunz0r/.config/awesome"
+theme.confdir = "/home/gabriel/.config/awesome"
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -50,7 +50,7 @@ theme.confdir = "/home/dunz0r/.config/awesome"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- You can use your own command to set your wallpaper
---theme.wallpaper_cmd = { "nitrogen --restore" }
+theme.wallpaper_cmd = { "nitrogen --restore" }
 -- {{{ Widgets
 -- You can add as many variables as
 -- you wish and access them by using
@@ -58,7 +58,7 @@ theme.confdir = "/home/dunz0r/.config/awesome"
 theme.fg_widget        = "#AECF96"
 theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#FF5656"
-theme.bg_widget        = "#494B4F"
+theme.bg_widget        = "#121212"
 theme.border_widget    = "#3F3F3F"
 -- widget colours
 theme.wid_rl = "#89005a"
@@ -74,7 +74,7 @@ theme.wid_mh = "#bba9cf"
 theme.wid_cl = "#5f7f7b"
 theme.wid_ch = "#96cccc"
 
-theme.fg_off_widget    = "#494B4F"
+theme.fg_off_widget    = "#121212"
 theme.fg_netup_widget  = "#7F9F7F"
 theme.fg_netdn_widget  = theme.fg_urgent
 -- }}}
@@ -160,6 +160,7 @@ theme.widget_org    = theme.confdir .. "/icons/cal.png"
 theme.widget_date   = theme.confdir .. "/icons/time.png"
 theme.widget_crypto = theme.confdir .. "/icons/crypto.png"
 theme.widget_sep    = theme.confdir .. "/icons/separator.png"
+theme.widget_music  = theme.confdir .. "/icons/music.png"
 -- }}}
 
 -- }}}

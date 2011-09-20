@@ -3,14 +3,12 @@
 	background-image: none !important;
 	color: #ccc !important;
 	border-color: #1E2320 !important;
-	font-family:"Envy Code R": sans-serif !important;
-	font-family:"Envy Code R": serif !important;
-	font-family:"Envy Code R": monospace !important;
+	font-family:"Montecarlo": sans-serif !important;
+	font-family:"Montecarlo": serif !important;
+	font-family:"Montecarlo": monospace !important;
 	}
 a:link, a:active, a:visited {
     color: #99e438 !important;}
 
 a:hover {
     color: lightgrey !important;}
-
-}

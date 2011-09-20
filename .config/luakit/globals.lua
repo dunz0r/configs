@@ -64,7 +64,9 @@ search_engines = {
     gl          = "http://google.com/search?q=%s&sourceid=navclient&gfns=1",
     gm          = "http://maps.google.com/maps?q=%s",
     yt          = "http://www.youtube.com/results?search_query=%s&search_sort=video_view_count",
-    gh          = "http://www.github.com/%s"
+    gh          = "http://www.github.com/%s",
+    aur         = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go"
+
 }
 
 
@@ -80,8 +82,10 @@ domain_props = {
         ["enable-scripts"]          = true,
         ["enable-plugins"]          = true,
         ["enable-private-browsing"] = true,
-        ["user-stylesheet-uri"]     = "",
         ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+    },
+    ["beta.xn--likstrm-f1a.se"] = {
+        ["user-stylesheet-uri"]     = "none",
     },
     }
 

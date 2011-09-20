@@ -13,7 +13,7 @@ set signature="~/.signature"
 set sendmail="/usr/bin/msmtp"
 
 # If not set in ~/.bashrc:
-set spoolfile = /var/spool/mail/dunz0r
+set spoolfile = /var/spool/mail/gabriel
 
 # don't highlight the whole shebang
 set arrow_cursor=yes
@@ -29,7 +29,7 @@ set move=no                  # Don't move mail from spool
 # Watch these mailboxes for new mail, useful only if 
 # Procmail or Maildrop is used to sort mail.
 #mailboxes 
-mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/dunz0r
+mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
 #mailboxes ! +slrn +fetchmail +mutt
 set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 
@@ -42,9 +42,9 @@ hdr_order Date: From: User-Agent: X-Mailer X-Operating-System To: \
         Cc: Reply-To: Subject: Mail-Followup-To:
 
 #======================================================#
-# which editor do you want to use? 
+# which editor do you want to use?
 # vim of course!
-set editor="vim -c 'set tw=70 et' '+/^$' " 
+set editor="vim -c 'set tw=70 et' '+/^$' "
 set edit_headers=yes      # See the headers when editing
 
 #======================================================#
@@ -65,7 +65,7 @@ source ~/.mutt/colors-blackback            # In their own file
 source ~/.mutt/gpg.mutt
 set pgp_autosign=yes
 #======================================================#
-# Lists: 
+# Lists:
 
 lists awesome abbenay ulug luakit-dev uzbl-dev ulug-styrelse
 subscribe awesome abbenay
@@ -73,6 +73,8 @@ set followup_to=yes        # Sets 'Mail-Followup-To' header
 set honor_followup_to=yes  
 fcc-hook awesome +awesome # See your own posts using fcc
 fcc-hook abbenay +abbenay # See your own posts using fcc
+fcc-hook ulug +ulug
+fcc-hook ulug-styrelse +ulug-styrelse
 
 #======================================================#
 # Atachments
@@ -81,19 +83,17 @@ fcc-hook abbenay +abbenay # See your own posts using fcc
 auto_view text/html
 ## This helps with multipart messages
 alternative_order text/plain text/html
-
 #======================================================#
-# Sidebar
-set sidebar_visible=yes
-set sidebar_width=30
-# Some useful binds for the sidebar
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open
-
+# Sidebar
+set sidebar_visible=yes
+set sidebar_width=30
+# Some useful binds for the sidebar
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
 #======================================================#
 # Odds and ends
 

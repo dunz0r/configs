@@ -21,7 +21,7 @@ URxvt*depth: 32
 URxvt*background: #121212
 URxvt*foreground: #cccccc
 
-URxvt*transparent:        false
+URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
@@ -64,5 +64,5 @@ XLock.mono: true
 XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
-# include "/home/dunz0r/.xdefaults-colour/splurge.Xresources"
+#include "/home/gabriel/.xdefaults-colour/splurge.Xresources"
 ! EOF

@@ -1,3 +1,4 @@
+ 
 body {
     background-color: #3f3f3f !important;
     bgcolor: #3f3f3f !important;
@@ -11,34 +12,8 @@ body {
     font-size:13px;
  
 }
- * {
-    background-color: #3f3f3f !important;
-    bgcolor: #3f3f3f !important;
-    background: #3f3f3f !important;
-    border: solid #3f3f3f !important;
-    color: #bbbbbb !important;
-    font:"DejaVu Sans" !important ;
-    font-family:"DejaVu Sans", sans-serif !important ;
-    font-family:"DejaVu Sans", serif !important ;
-    font-family:"DejaVu Sans", monospace !important ;
-    font-size:13px;
  
-}
- 
-content {
-    background-color: #3f3f3f;
-    bgcolor: #3f3f3f !important;
-    background: #3f3f3f !important;
-    border: solid #3f3f3f !important;
-    color: #bbbbbb !important;
-    font:"DejaVu Sans" !important ;
-    font-family:"DejaVu Sans", sans-serif !important ;
-    font-family:"DejaVu Sans", serif !important ;
-    font-family:"DejaVu Sans", monospace !important ;
-    font-size:13px;
- 
-}
- pre
+pre
 {
    font-family:"DejaVu Sans Mono", monospace !important ;
    font-size:13px;
