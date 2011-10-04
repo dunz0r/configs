@@ -28,10 +28,9 @@ set move=no                  # Don't move mail from spool
 #======================================================#
 # Watch these mailboxes for new mail, useful only if 
 # Procmail or Maildrop is used to sort mail.
-#mailboxes 
 mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
-#mailboxes ! +slrn +fetchmail +mutt
-set sort_browser=alpha    # Sort mailboxes by alpha(bet)
+mailboxes ! +slrn +fetchmail +mutt
+#set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 
 #======================================================#
 # What to show and order of headers
@@ -88,12 +87,12 @@ alternative_order text/plain text/html
 set sidebar_visible=yes
 set sidebar_width=30
 # Some useful binds for the sidebar
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
 #======================================================#
 # Odds and ends
 

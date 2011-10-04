@@ -85,12 +85,6 @@
 [:unselect_cmd: Unselect ]
 0=
 
-[inpmc.fm.panel-filter]
-0=*torrent
-1=*.
-2=.*
-3=*
-
 [inpmc.fm.menu.exec.parameter]
 0=feh
 
@@ -225,92 +219,17 @@
 58=/mnt/music/other/
 59=/home/gabriel/Bilder/gfx/bg/
 
-[Dir Hist New Right Panel]
-0=/home/dunz0r/warez/music/synth/Noise_Unit
-1=/home/dunz0r/warez/music/synth/Ordnance
-2=/home/dunz0r/warez/music/synth/ProTech
-3=/home/dunz0r/warez/music/synth/SEMI
-4=/home/dunz0r/warez/music/synth/Sergeant_Sawtooth
-5=/home/dunz0r/warez/music/synth/The_Retrosic
-6=/home/dunz0r/warez/music/synth/Toxic_Coma
-7=/home/dunz0r/warez/music/synth/Tumor
-8=/home/dunz0r/warez/music/synth/XP8
-9=/home/dunz0r/warez/music/synth/Haujobb
-10=/home/dunz0r/warez/music/synth/In-Fused
-11=/home/dunz0r/warez/music/synth/Wumpscut
-12=/home/dunz0r/warez/music/synth
-13=/home/dunz0r/warez
-14=/home/dunz0r/warez/video
-15=/home/dunz0r/warez/video/tv
-16=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother
-17=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother/S06/The.Big.Knights.1999.720p.BluRay.x264-TiTANS
-18=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother/S06
-19=/mnt/anime
-20=/mnt/anime/Infinite_Stratos
-21=/home/dunz0r/incoming
-22=/home/dunz0r/incoming/fin
-23=/mnt/samples
-24=/#sh:xbmc@xbmc.hax0r.lan
-25=/#sh:xbmc@xbmc.hax0r.lan/mnt
-26=/#sh:xbmc@xbmc.hax0r.lan/mnt/video
-27=/#sh:xbmc@xbmc.hax0r.lan/mnt/video/movies
-28=/#sh:xbmc@xbmc.hax0r.lan/mnt/video/movies/fantasy
-29=/mnt/unfinished
-30=/mnt/video
-31=/mnt/video/tv
-32=/home/dunz0r/docs
-33=/home/dunz0r/devel
-34=/home/dunz0r/cogs
-35=/home/dunz0r
-36=/home
-37=/
-38=/mnt
-39=/mnt/music/jazz/Miles_Davis
-40=/mnt/music/jazz/Chick_Corea
-41=/mnt/music/jazz/Joshua_Redman
-42=/mnt/music/jazz/Thelonious_Monk
-43=/mnt/music/jazz
-44=/mnt/music
-45=/mnt/music/other/Svullet_Frenulum
-46=/mnt/music/other
-47=/home/gabriel/.FontForge
-48=/home/gabriel/.config
-49=/home/gabriel/.local
-50=/home/gabriel/.local/share/Cogs
-51=/home/gabriel/.local/share/Trash
-52=/home/gabriel/.local/share/applications
-53=/home/gabriel/.local/share/data
-54=/home/gabriel/.local/share/desktop-directories
-55=/home/gabriel/.local/share
-56=/home/gabriel
-57=/home/gabriel/Bilder
-58=/home/gabriel/Bilder/gfx
-59=/home/gabriel/Bilder/gfx/bg
+[inpmc.fm.panel-filter]
+0=*torrent
+1=*.
+2=.*
+3=*
 
-[cmdline]
-0=mv deth fluff
-1=OD
-2=[A
-3=cd mnt
-4=d
-5=clear
-6=cd /mnt/usb
-7=mv Mythbusters.* Mythbusters
-8=`
-9=&
-10=[20~21~21~exit
-11=exit
-12=.. 
-13=cd ~/incoming/fin
-14=jj
-15=q
-16=6
-17=cd -
-18=[
-19=cd /mnt
-20=cd /mnt/anime
-21=cd
-22=
+[user-fmt-input]
+0=half type name | size | perm
+
+[mini-input]
+0=half name type | group owner | perm
 
 [Dir Hist New Left Panel]
 0=/home/dunz0r/incoming/fin/Industrial/ProTech - Orbiting Cathedrals
@@ -371,5 +290,92 @@
 55=/mnt/music
 56=/mnt/games
 57=/mnt
-58=/home/gabriel
-59=/home/gabriel/Hämtningar
+58=/home/gabriel/Hämtningar
+59=/home/gabriel
+
+[cmdline]
+0=mv deth fluff
+1=OD
+2=[A
+3=cd mnt
+4=d
+5=clear
+6=cd /mnt/usb
+7=mv Mythbusters.* Mythbusters
+8=`
+9=&
+10=[20~21~21~exit
+11=exit
+12=.. 
+13=cd ~/incoming/fin
+14=jj
+15=q
+16=6
+17=cd -
+18=[
+19=cd /mnt
+20=cd /mnt/anime
+21=cd
+22=
+
+[Dir Hist New Right Panel]
+0=/home/dunz0r/warez/music/synth/In-Fused
+1=/home/dunz0r/warez/music/synth/Wumpscut
+2=/home/dunz0r/warez/music/synth
+3=/home/dunz0r/warez
+4=/home/dunz0r/warez/video
+5=/home/dunz0r/warez/video/tv
+6=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother
+7=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother/S06/The.Big.Knights.1999.720p.BluRay.x264-TiTANS
+8=/home/dunz0r/warez/video/tv/How_I_Met_Your_Mother/S06
+9=/mnt/anime
+10=/mnt/anime/Infinite_Stratos
+11=/home/dunz0r/incoming
+12=/home/dunz0r/incoming/fin
+13=/mnt/samples
+14=/#sh:xbmc@xbmc.hax0r.lan
+15=/#sh:xbmc@xbmc.hax0r.lan/mnt
+16=/#sh:xbmc@xbmc.hax0r.lan/mnt/video
+17=/#sh:xbmc@xbmc.hax0r.lan/mnt/video/movies
+18=/#sh:xbmc@xbmc.hax0r.lan/mnt/video/movies/fantasy
+19=/mnt/unfinished
+20=/mnt/video
+21=/mnt/video/tv
+22=/home/dunz0r/docs
+23=/home/dunz0r/devel
+24=/home/dunz0r/cogs
+25=/home/dunz0r
+26=/home
+27=/
+28=/mnt
+29=/mnt/music/jazz/Miles_Davis
+30=/mnt/music/jazz/Chick_Corea
+31=/mnt/music/jazz/Joshua_Redman
+32=/mnt/music/jazz/Thelonious_Monk
+33=/mnt/music/jazz
+34=/mnt/music
+35=/mnt/music/other/Svullet_Frenulum
+36=/mnt/music/other
+37=/home/gabriel/.FontForge
+38=/home/gabriel/.config
+39=/home/gabriel/.local
+40=/home/gabriel/.local/share/Cogs
+41=/home/gabriel/.local/share/Trash
+42=/home/gabriel/.local/share/applications
+43=/home/gabriel/.local/share/data
+44=/home/gabriel/.local/share/desktop-directories
+45=/home/gabriel/.local/share
+46=/home/gabriel/Bilder/gfx/bg
+47=/home/gabriel/Bilder/gfx
+48=/home/gabriel/Bilder
+49=/home/gabriel/Eclipse/.metadata
+50=/home/gabriel/Eclipse
+51=/home/gabriel/awesome
+52=/home/gabriel/sketchbook
+53=/home/gabriel/VirtualBox VMs/vm
+54=/home/gabriel/VirtualBox VMs
+55=/home/gabriel/bin
+56=/home/gabriel/abgx360gui
+57=/home/gabriel/downloads
+58=/home/gabriel/Hämtningar
+59=/home/gabriel

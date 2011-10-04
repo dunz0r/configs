@@ -82,11 +82,15 @@ domain_props = {
         ["enable-scripts"]          = true,
         ["enable-plugins"]          = true,
         ["enable-private-browsing"] = true,
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+        --["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
     },
     ["beta.xn--likstrm-f1a.se"] = {
         ["user-stylesheet-uri"]     = "none",
     },
+    ["wallbase.cc"] = {
+        ["user-stylesheet-uri"]     = "none",
+    },
+
     }
 
 -- vim: et:sw=4:ts=8:sts=4:tw=80

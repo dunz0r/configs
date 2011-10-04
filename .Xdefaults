@@ -26,7 +26,7 @@ URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
 URxvt*shading:            30
-URxvt*fading:             40
+!URxvt*fading:             40
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
