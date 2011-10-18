@@ -69,7 +69,7 @@ mpd_crossfade_time = "20"
 ## Note: colors can be nested.
 ##
 #
-song_list_format = "{$5%a$9} {$3[%l]$9} {$6%t$9} %y %n {$5%b$9}"
+song_list_format = "{$3%a$9} {$6[%l]$9} {$6%t$9} %y %n {$5%b$9}"
 #
 #song_library_format = "{%n - }{%t}|{%f}"
 #
@@ -87,7 +87,7 @@ selected_item_suffix = "->"
 #
 #song_status_format = "{(%l) }{%a - }{%t}|{%f}"
 #
-song_window_title_format = "::ncmpcpp:: {%a - }{%t}|{%f}"
+song_window_title_format = "ncmpcpp; {%a - }{%t}|{%f}"
 #
 ##### columns settings #####
 ##
@@ -100,7 +100,7 @@ song_window_title_format = "::ncmpcpp:: {%a - }{%t}|{%f}"
 ## - color is optional (if you want the default one, type [])
 ##
 #
-song_columns_list_format = "(7)[yellow]{l} (18)[cyan]{a} (28)[]{b} (50)[red]{t}"
+#song_columns_list_format = "(7)[]{l} (18)[cyan]{a} (28)[magenta]{b} (50)[green]{t}"
 #
 ##### various settings #####
 #
