@@ -69,7 +69,7 @@ irc = {
     spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux -u attach -t irc",
 },
 web = {
-    layout    = awful.layout.suit.tile.bottom,
+    layout    = awful.layout.suit.max,
     mwfact    = 0.65,
     exclusive = false,
     solitary  = true,
@@ -99,11 +99,12 @@ media = {
     persist = false,
     nopopup = false,
     position  = 5,
-    spawn = terminal .. "-name ncmpcpp -title ncmpcpp -e ncmpcpp",
+    spawn = terminal .. " -name ncmpcpp -title ncmpcpp -e ncmpcpp",
 },
 code = {
     layout = awful.layout.suit.max.fullscreen,
     position = 6,
+    spawn = terminal .. " -title '- VIM' -e sh -c 'sleep 0.2s;" .. editor .. "'",
     nopopup = false,
 },
 
@@ -511,7 +512,6 @@ globalkeys = awful.util.table.join(
     awful.key({modkey, "Control"}, "k", function() awful.screen.focus(-1) end),
     awful.key({modkey,}, "u", awful.client.urgent.jumpto),
     awful.key({modkey,}, "<", function () awful.screen.focus_relative( 1) end),
-    awful.key({modkey, "Shift"}, "<", function () awful.screen.focus_relative(-1) end),
     -- Standard program
     awful.key({modkey,}, "Return", function() awful.util.spawn(terminal) end),
     awful.key({modkey, }, "F11", awesome.restart),
@@ -528,14 +528,14 @@ globalkeys = awful.util.table.join(
         function() awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({modkey}, "F2", function()
+    awful.key({modkey}, "r", function()
     awful.prompt.run({prompt = "Run: "},
     mypromptbox[mouse.screen],
         awful.util.spawn, awful.completion.shell,
         awful.util.getdir("cache") .. "/history")
         end),
 
-    awful.key({modkey}, "F4", function()
+    awful.key({modkey}, "x", function()
         awful.prompt.run({prompt = "Run Lua code: "},
         mypromptbox[mouse.screen],
         awful.util.eval, nil,
