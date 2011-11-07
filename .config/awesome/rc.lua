@@ -60,8 +60,9 @@ shifty.config.tags = {
 irc = {
     layout    = awful.layout.suit.max,
     mwfact    = 0.60,
-    exclusive = false,
-    solitary  = false,
+    exclusive = true,
+    name      = "1:irc",
+    solitary  = true,
     position  = 1,
     init      = true,
     screen    = 1,
@@ -69,6 +70,7 @@ irc = {
     spawn = terminal .. " -name SSH -title '::irssi::' -e ssh -t dunz0r@hax0r.se tmux -u attach -t irc",
 },
 web = {
+    name      = "2:www",
     layout    = awful.layout.suit.max,
     mwfact    = 0.65,
     exclusive = false,
@@ -79,11 +81,13 @@ web = {
     spawn     = browser,
 },
 term = {
-    layout = awful.layout.suit.tile.left,
-    persist = true,
+    name     = "3:term",
+    layout   = awful.layout.suit.tile.left,
+    persist  = true,
     position = 3,
 },
 mail = {
+    name     = "4:mail",
     layout    = awful.layout.suit.tile,
     mwfact    = 0.55,
     exclusive = false,
@@ -93,24 +97,27 @@ mail = {
     slave     = true,
 },
 media = {
+    name      = "5:media",
     layout    = awful.layout.suit.float,
     exclusive = true,
     solitary  = true,
-    persist = false,
-    nopopup = false,
+    persist   = false,
+    nopopup   = false,
     position  = 5,
-    spawn = terminal .. " -name ncmpcpp -title ncmpcpp -e ncmpcpp",
+    spawn     = terminal .. " -name ncmpcpp -title ncmpcpp -e ncmpcpp",
 },
 code = {
-    layout = awful.layout.suit.max.fullscreen,
-    position = 6,
-    spawn = terminal .. " -title '- VIM' -e sh -c 'sleep 0.2s;" .. editor .. "'",
-    nopopup = false,
+    name      = "6:code",
+    layout    = awful.layout.suit.max.fullscreen,
+    position  = 6,
+    spawn     = terminal .. " -title '- VIM' -e sh -c 'sleep 0.2s;" .. editor .. "'",
+    nopopup   = false,
 },
 
 office = {
-    layout   = awful.layout.suit.tile,
-    position = 9,
+    name      = "9:office",
+    layout    = awful.layout.suit.tile,
+    position  = 9,
 },
 }
 --}}}
@@ -121,6 +128,7 @@ shifty.config.apps = {
     match = {
         "luakit",
         "Vimperator",
+        "Chromium",
         "Gran Paradiso",
     },
     tag = "web",
@@ -155,6 +163,7 @@ shifty.config.apps = {
         "gtkpod",
         "Ufraw",
         "easytag",
+        "ncmpcpp",
     },
     tag = "media",
     nopopup = true,
@@ -169,9 +178,10 @@ shifty.config.apps = {
 },
 {
     match = {
-        "irc:.*",
+        "SSH",
     },
     tag = "irc",
+    honorsizehints = false,
 },
 {
     match = {
@@ -210,8 +220,9 @@ mwfact = 0.60,
 floatBars = true,
 guess_name = true,
 guess_position = true,
-persist = true,
-leave_kills = false,
+persist = false,
+solitary = false,
+leave_kills = true,
 remember_index = true,
 ncol = 1,
 nopopup = true
@@ -219,24 +230,6 @@ nopopup = true
 -- }}}
 
 --}}}
-
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
--- }}}
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -314,7 +307,6 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            mylauncher,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
@@ -333,6 +325,302 @@ end
 -- initialized with awful.widget.taglist.new()
 shifty.taglist = mytaglist
 shifty.init()
+
+--{{{ Functions
+
+--{{{ Get the Xdefault colours
+function get_xdef(file)
+    local fr = io.open(file)
+
+    local f = fr:read("*all")
+
+    local i=0
+    while i <= 15 do
+        local exp = tostring("%*color" .. i .. ": rgb:%w+/%w+/%w%w")
+        m = string.match(f, exp)
+
+        mz = string.gsub(m, "^.*:","")
+        m = string.gsub(m, "/","")
+        xdef_col = {}
+        xdef_col[i] = "#" .. m
+        --xdef_col[i] = "theme.xdef_col" .. i .. "=\"#" .. (tostring(m)) .. "\""
+        i= i + 1
+        --xdef_col[i] = tostring(xdef_col[i])
+        --print(xdef_col[i])
+        xdef_col[i] = tostring(m)
+        print(xdef_col[i])
+    end
+    fr:close()
+    return xdef_col{}
+end
+
+--}}}
+
+--{{{ Get MPD info
+function get_mpd()
+    local stats = mpc:send("status")
+
+    if stats.errormsg then
+        mpd_text = "MPD error."
+    else
+        if stats.state == "stop" then
+            now_playing = awful.util.escape("<stop>")
+        else
+            local zstats = mpc:send("playlistid " .. stats.songid)
+            now_playing =  "<i>" .. (awful.util.escape( zstats.album or "" )) .. "</i>:" .. (awful.util.escape( zstats.artist or "NA" )) .. " <b>-</b> " .. (awful.util.escape(zstats.title or string.gsub(zstats.file, ".*/", "" ) ))
+        end
+
+        if stats.state == "pause" or stats.state == "stop" then
+            now_playing = "<span color='".. beautiful.fg_unfocus .."'>" .. now_playing .. "</span>"
+        end
+
+    end
+
+    return now_playing
+end
+--}}}
+
+--{{{ Get the album image
+function album_art()
+    local stats = mpc:send("status")
+    local zstats = mpc:send("playlistid " .. stats.songid)
+    art = awful.util.pread('find "' .. musicdir .. awful.util.unescape(string.match(zstats.file, ".*/")) .. '" -regextype posix-egrep -iregex ".*(cover|front|albumart|outside|folder).*(png|jpg|gif|bmp)" | head -1')
+
+    return string.gsub(art,"\n","")
+end
+--}}}
+
+--{{{ Get playlist
+function get_playlist ()
+    local stats = mpc:send("status")
+    local cur = stats.song
+    local list = ""
+    if tonumber(stats.song) < 10 then
+        min = tonumber(stats.song)
+    else
+        min = 10
+    end
+    for i = stats.song - min,stats.song + 6
+        do
+            zstats = mpc:send("playlistinfo " .. i)
+            if zstats.pos == nil then
+                list = list .. "<span color=" .. beautiful.wid_rh .. "><b>::end::</b></span>"
+                break
+            end
+            if zstats.pos == stats.song then
+                list = list .. "<span color='" .. beautiful.wid_bh .. "'><b>" .. zstats.pos .. ". " .. awful.util.escape((zstats.artist or "NA") .. " - " .. (zstats.title or zstats.file)) .. "</b></span>\n"
+            else
+                list = list .. zstats.pos .. ". " .. awful.util.escape((zstats.artist or "NA") .. " - " .. (zstats.title or zstats.file) ) .. "\n"
+            end
+        end
+        return list
+    end
+    --}}}
+
+    --{{{ Find song in playlist and play it.
+    function grep(c,q,l)
+        s = ""
+        x = 0 
+        f = assert(io.popen(c .." " ..  q, 'r'))
+        if not l then
+            l = 30
+        end 
+
+        for line in f:lines() do
+            if x > l then
+                s = s .. "\n\nMore than "..l.." results"
+                break
+            end 
+
+            s = s .. "\n" .. string.gsub(awful.util.escape(line),"^%d-%)","<span color='"..beautiful.fg_unfocus.."'>%0</span>")
+            x = x + 1 
+        end 
+
+        if x == 1 then
+            os.execute("mpc play " .. string.gsub(string.gsub(s,"%).*",""),".*>","") .. " &> /dev/null")
+            mpdbox.text = get_mpd()
+
+            return "One match autostart.\n" .. get_mpd()
+        elseif x ~= 0 then
+            s = string.gsub(s,nocase(q),"<span color='"..beautiful.fg_highlight.."'>%0</span>")
+            return s
+        else
+            return "No matches"
+        end 
+    end 
+
+    --}}}
+
+    --{{{ Add a todo note
+
+    function add_todo (todo)
+        naughty.notify({
+            text = "<b><u>devtodo: </u></b> " .. "<span color='" .. beautiful.fg_focus .. "'>" .. awful.util.pread("todo --add --priority " .. todo) .. "</span>",
+            timeout = 10
+        })
+    end
+    --}}}
+
+    --{{{ Show todos
+    function show_todo(graft)
+        local todo = awful.util.escape(awful.util.pread("todo --mono"))
+        todo = naughty.notify({
+            text = "<b><u>devtodo</u></b>\n" .. "<span color='" .. beautiful.wid_cl .. "'>".. string.format(os.date("%a, %d %B %Y") .. "</span>" .. "\n" .. todo),
+            timeout = 10
+        })
+    end
+    --}}}
+
+    --{{{ Shows batteryinfo for (adapter)
+    function batteryinfo(adapter)
+
+        local fcap = io.open("/sys/class/power_supply/" .. adapter .. "/energy_full")
+        local fcur = io.open("/sys/class/power_supply/" .. adapter .. "/energy_now")
+        local fsta = io.open("/sys/class/power_supply/" .. adapter .. "/status")
+        local cur = fcur:read()
+        local cap = fcap:read()
+        local sta = fsta:read()
+        local battery = math.floor(cur / cap * 100)
+        if sta:match("Charging") then
+            dir = "+ "
+        elseif sta:match("Discharging") then
+            dir = "- "
+        else
+            dir = "= "
+        end
+        batterybox.text = " | " .. dir
+        batbar:bar_data_add("bat",tonumber(battery) )
+        fcur:close()
+        fcap:close()
+        fsta:close()
+    end
+    --}}}
+
+    --{{{ Get loadaverage and temperature
+    function get_load_temp(sensor)
+        local lf = io.open("/proc/loadavg")
+        --	local tf = io.open("/proc/acpi/thermal_zone/" .. sensor .. "/temperature")
+
+        local l = lf:read()
+        --	local t = tf:read()
+
+        --	local t = string.match(t, "%d+ C")
+        lf:close()
+        --	tf:close()
+
+        return l
+    end
+    --}}}
+
+    --{{{ Show paste
+    function show_paste()
+        local paste = selection()
+        paste = naughty.notify({
+            text = paste,
+            timeout = 6,
+            width = 300,
+        })
+    end
+    --}}}
+
+    --{{{ Get the weather
+    function get_weather(ret)
+
+        if ret == 1 then	
+            local fp = io.open("/tmp/.weather")
+            local forecast = fp:read("*a")
+            fp:close()
+            return "<span color='" .. beautiful.wid_rh .. "'>weather for enköping</span>\n"  .. forecast
+        else
+            os.execute("wget -q -O - " .. weatherurl .. " | sed -n '/Now/,/More Forecasts/p' | sed 's/<[^>]*>//g; s/^ [ ]*//g; s/&copy;/(c) /g; s/&amp;/and/;s/&deg;//g;s/&nbsp;//g;s/Details//g;s/|//g;s/Hourly//g;s/More Forecasts//'|uniq -u > /tmp/.weather &")
+            return ""
+        end
+    end
+    --}}}
+
+    --{{{ Paste to (pastefile) or pastebin
+    function paste (pastefile)
+        local bufcon = selection()
+        local pastefile = pastefile or pastebin
+        local file = io.open(pastefile, "a")
+        file:write(bufcon)
+        file:close()
+        infobox.text = "wrote X buffer content to " .. pastefile
+    end
+    --}}}
+
+    --{{{ Open stuff with uzbl
+    function uzbl_prompt(prompt, text, socket, command)
+        if command then
+            -- if a command prefix is provided
+            command = command .. ' '
+        end
+        --  awful.prompt.run({prompt=prompt, text=text},
+        --     promptbox[mouse.screen],
+        --     function(input)
+        -- send through unix socket
+        c = assert(socket.unix())
+        assert(c:connect("/tmp/" .. socket))
+        --while 1 do
+        --   local l = io.read()
+        assert(c:send("uri google.com\n"))
+        -- end
+        --end)
+    end
+    --}}}
+
+    --{{{ Finds string in command
+    function commandfind (command, string)
+        local cmd = awful.util.pread(command)
+        local result = string.match(cmd,string)
+        return result
+    end
+    --}}}
+
+    --{{{ Find client
+    function clientfind (properties)
+        local clients = client.get()
+        local rv = nil
+        for i, c in pairs(clients) do
+            if match(properties, c) then
+                rv = c
+            end
+        end
+        return rv
+    end
+
+    --}}}
+
+    --{{{ Get ncol and nmaster
+    function getnmc()
+        local t = awful.tag.selected()
+
+        local m = awful.tag.getnmaster(t)
+        local c = awful.tag.getncol()
+
+        return m .. "m " .. c "c"
+    end
+    --}}}
+
+    --{{{ Returns true if all pairs in table1 are present in table2
+    function match (table1, table2)
+        for k, v in pairs(table1) do
+            if table2[k] ~= v then
+                return false
+            end
+        end
+        return true
+    end
+    --}}}
+
+    --{{{ Get pacman updates
+    function get_pmupdates()
+        local p = awful.util.pread("pacman -Qu|wc -l")
+        return "<span color='" .. beautiful.wid_yh .. "'>pacman: </span>" .. p
+    end
+    --}}}
+
+    --}}}
 
 --{{{ Mouse bindings
 root.buttons({
@@ -528,19 +816,14 @@ globalkeys = awful.util.table.join(
         function() awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({modkey}, "r", function()
-    awful.prompt.run({prompt = "Run: "},
-    mypromptbox[mouse.screen],
-        awful.util.spawn, awful.completion.shell,
-        awful.util.getdir("cache") .. "/history")
-        end),
-
-    awful.key({modkey}, "x", function()
-        awful.prompt.run({prompt = "Run Lua code: "},
-        mypromptbox[mouse.screen],
-        awful.util.eval, nil,
-        awful.util.getdir("cache") .. "/history_eval")
-        end)
+    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey }, "x",
+              function ()
+                  awful.prompt.run({ prompt = "Run Lua code: " },
+                  mypromptbox[mouse.screen].widget,
+                  awful.util.eval, nil,
+                  awful.util.getdir("cache") .. "/history_eval")
+              end)
     )
 -- Client awful tagging: this is useful to tag some clients and then do stuff
 -- like move to tag on them

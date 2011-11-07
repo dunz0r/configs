@@ -6,8 +6,8 @@ local theme = {}
 
 -- Default settings
 theme.font = "Montecarlo 9"
-theme.fg   = "#aaa"
-theme.bg   = "#333"
+theme.fg   = "#ccc"
+theme.bg   = "#3e3e3e"
 
 -- Genaral colours
 theme.success_fg = "#0f0"
@@ -24,7 +24,7 @@ theme.notif_fg = "#444"
 theme.notif_bg = "#FFF"
 
 -- Menu colours
-theme.menu_fg                   = "#aaa"
+theme.menu_fg                   = "#ccc"
 theme.menu_bg                   = "#121212"
 theme.menu_selected_fg          = "#000"
 theme.menu_selected_bg          = "#FF0"

@@ -81,16 +81,19 @@ search_engines.default = search_engines.gg
 -- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
 domain_props = {
     ["all"] = {
-        ["enable-scripts"]          = true,
-        ["enable-plugins"]          = true,
-        ["enable-private-browsing"] = true,
-        --["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+        enable_scripts          = true,
+        enable_plugins          = true,
+        enable_private_browsing = true,
+        user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
     },
     ["beta.xn--likstrm-f1a.se"] = {
-        ["user-stylesheet-uri"]     = "none",
+        user_stylesheet_uri     = "none",
     },
     ["wallbase.cc"] = {
-        ["user-stylesheet-uri"]     = "none",
+        user_stylesheet_uri     = "none",
+    },
+    ["xbmc"] = {
+        user_stylesheet_uri     = "none",
     },
 
     }

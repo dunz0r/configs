@@ -197,6 +197,53 @@ add_binds("normal", {
     buf("^W$",                      function (w, c) w:enter_cmd(":winopen " .. (w.view.uri or "")) end),
     buf("^,g$",                     function (w, c) w:enter_cmd(":open google ") end),
 
+    -- Open field in external text editor
+   key({"Control"},  "e",       function (w)
+        local editor = "urxvt -e vi -c 'set spell'" 
+        local dir = "/tmp/"
+        local time = os.time()
+        local file = dir .. time
+        local marker = "luakit_extedit_" .. time
+        local function editor_callback(exit_reason, exit_status)
+            f = io.open(file, "r")
+            s = f:read("*all")
+            f:close()
+            -- Strip the string
+            s = s:gsub("^%s*(.-)%s*$", "%1")
+            -- Escape it but remove the quotes
+            s = string.format("%q", s):sub(2, -2)
+            -- lua escaped newlines (slash+newline) into js newlines (slash+n)
+            s = s:gsub("\\\n", "\\n")
+            w:eval_js(string.format([=[
+                var e = document.getElementsByClassName('%s');
+                if(1 == e.length && e[0].disabled){
+                    e[0].focus();
+                    e[0].value = "%s";
+                    e[0].disabled = false;
+                    e[0].className = e[0].className.replace(/\b %s\b/,'');
+                }
+            ]=], marker, s, marker))
+        end
+
+        local s = w:eval_js(string.format([=[
+            var e = document.activeElement;
+            if(e && (e.tagName && 'TEXTAREA' == e.tagName || e.type && 'text' == e.type)){
+                var s = e.value;
+                e.className += " %s";
+                e.disabled = true;
+                e.value = '%s';
+                s;
+            }else 'false';
+        ]=], marker, file))
+        if "false" ~= s then
+            local f = io.open(file, "w")
+            f:write(s)
+            f:flush()
+            f:close()
+            luakit.spawn(string.format("%s %q", editor, file), editor_callback)
+        end
+    end),
+
     -- History
     key({},          "H",           function (w, m) w:back(m.count)    end),
     key({},          "L",           function (w, m) w:forward(m.count) end),

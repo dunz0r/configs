@@ -84,15 +84,12 @@ auto_view text/html
 alternative_order text/plain text/html
 #======================================================#
 # Sidebar
-set sidebar_visible=yes
-set sidebar_width=30
+set sidebar_visible=yes
+set sidebar_width=30
 # Some useful binds for the sidebar
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
 #======================================================#
 # Odds and ends
 

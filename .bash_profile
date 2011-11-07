@@ -4,6 +4,7 @@
 # Init stuff
 source /etc/profile
 source /etc/bash_completion.d/git
+export MPD_USER=gabriel
 # shows a fortune upon login
 printf "\n"
 fortune
