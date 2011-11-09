@@ -222,9 +222,8 @@ guess_name = true,
 guess_position = true,
 persist = false,
 solitary = false,
-leave_kills = true,
+--leave_kills = true,
 remember_index = true,
-ncol = 1,
 nopopup = true
 }
 -- }}}

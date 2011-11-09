@@ -11,7 +11,7 @@
 #
 #mpd_port = "6600"
 #
-mpd_music_dir = "/var/lib/mpd/music"
+mpd_music_dir = "/mnt/music"
 #
 #mpd_connection_timeout = "5"
 #
@@ -100,7 +100,7 @@ song_window_title_format = "ncmpcpp; {%a - }{%t}|{%f}"
 ## - color is optional (if you want the default one, type [])
 ##
 #
-#song_columns_list_format = "(7)[]{l} (18)[cyan]{a} (28)[magenta]{b} (50)[green]{t}"
+song_columns_list_format = "(7)[]{l} | (18)[cyan]{a} (28)[magenta]{b} (50)[green]{t}"
 #
 ##### various settings #####
 #

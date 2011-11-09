@@ -6,9 +6,9 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme miromiro
+colorscheme neverland
 " use all the wonderful 256 colors that urxvt supply
-"set t_Co=84
+set t_Co=256
 
 set fdm=marker
 set incsearch" do incremental searching

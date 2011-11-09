@@ -92,8 +92,12 @@ domain_props = {
     ["wallbase.cc"] = {
         user_stylesheet_uri     = "none",
     },
-    ["xbmc"] = {
+    ["xbmc*"] = {
         user_stylesheet_uri     = "none",
+    },
+
+    ["aur.archlinux.org"] = {
+        enable_private_browsing = true,
     },
 
     }

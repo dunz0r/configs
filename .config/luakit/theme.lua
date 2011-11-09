@@ -65,5 +65,24 @@ theme.loading_bg        = "#000"
 theme.trust_fg          = "#0F0"
 theme.notrust_fg        = "#F00"
 
+-- Hint styling
+
+follow_theme = {
+    focus_bg     = "#ff0000";
+    normal_bg    = "#FCE70D";
+    opacity      = 0.3;
+    border       = "1px solid #000000";
+    tick_fg      = "#141414";
+    tick_bg      = "#9FBC00";
+    tick_border  = "1px solid #000000";
+    tick_opacity = 0.8;
+    tick_font    = "11px monospace bold";
+    vert_offset  = 0;
+    horiz_offset = -10;
+}
+
+theme.follow = follow_theme
+
+
 return theme
 -- vim: et:sw=4:ts=8:sts=4:tw=80

@@ -29,7 +29,7 @@ set move=no                  # Don't move mail from spool
 # Watch these mailboxes for new mail, useful only if 
 # Procmail or Maildrop is used to sort mail.
 mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
-mailboxes ! +slrn +fetchmail +mutt
+#mailboxes ! +slrn +fetchmail +mutt
 #set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 
 #======================================================#
@@ -57,8 +57,8 @@ set sort_alias=alias                 # Sort alphabetically
 # Macros
 source ~/.mutt/macros
 #======================================================#
-# Colours: 
-source ~/.mutt/colors-blackback            # In their own file 
+# Colours:
+source ~/.mutt/colors-blackback            # In their own file
 #======================================================#
 # GPG: encryption-party!
 source ~/.mutt/gpg.mutt
@@ -67,13 +67,14 @@ set pgp_autosign=yes
 # Lists:
 
 lists awesome abbenay ulug luakit-dev uzbl-dev ulug-styrelse
-subscribe awesome abbenay
+subscribe awesome abbenay ulug ulug-styrelse uzbl-dev luakit-dev aur-general
 set followup_to=yes        # Sets 'Mail-Followup-To' header
-set honor_followup_to=yes  
+set honor_followup_to=yes
 fcc-hook awesome +awesome # See your own posts using fcc
 fcc-hook abbenay +abbenay # See your own posts using fcc
 fcc-hook ulug +ulug
 fcc-hook ulug-styrelse +ulug-styrelse
+fcc-hook luakit-dev +luakit-dev
 
 #======================================================#
 # Atachments

@@ -110,6 +110,7 @@ add_binds("normal", {
 
     key({},          "i",           function (w) w:set_mode("insert")  end),
     key({},          ":",           function (w) w:set_mode("command") end),
+    key({},          "X",           function (w) w:set_mode("tabhistory") end),
 
     -- Scrolling
     key({},          "j",           function (w) w:scroll{ y = more    } end),
