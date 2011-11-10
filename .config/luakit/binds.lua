@@ -115,8 +115,8 @@ add_binds("normal", {
     -- Scrolling
     key({},          "j",           function (w) w:scroll{ y = more    } end),
     key({},          "k",           function (w) w:scroll{ y = less    } end),
-    key({},          "h",           function (w) w:scroll{ x = less    } end),
-    key({},          "l",           function (w) w:scroll{ x = more    } end),
+    key({},          "H",           function (w) w:scroll{ x = less    } end),
+    key({},          "L",           function (w) w:scroll{ x = more    } end),
     key({},          "^",           function (w) w:scroll{ x = "0%"    } end),
     key({},          "$",           function (w) w:scroll{ x = "100%"  } end),
     key({"Control"}, "e",           function (w) w:scroll{ y = more    } end),
@@ -246,8 +246,8 @@ add_binds("normal", {
     end),
 
     -- History
-    key({},          "H",           function (w, m) w:back(m.count)    end),
-    key({},          "L",           function (w, m) w:forward(m.count) end),
+    key({},          "h",           function (w, m) w:back(m.count)    end),
+    key({},          "l",           function (w, m) w:forward(m.count) end),
     key({},          "b",           function (w, m) w:back(m.count)    end),
     key({},          "XF86Back",    function (w, m) w:back(m.count)    end),
     key({},          "XF86Forward", function (w, m) w:forward(m.count) end),

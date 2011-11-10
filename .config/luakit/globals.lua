@@ -92,7 +92,11 @@ domain_props = {
     ["wallbase.cc"] = {
         user_stylesheet_uri     = "none",
     },
-    ["xbmc*"] = {
+    ["xbmc"] = {
+        user_stylesheet_uri     = "none",
+    },
+
+    ["xbmc.hax0r.lan"] = {
         user_stylesheet_uri     = "none",
     },
 

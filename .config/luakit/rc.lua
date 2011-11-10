@@ -97,7 +97,6 @@ require "downloads_chrome"
 -- Add vimperator-like link hinting & following
 -- (depends on downloads)
 require "follow"
-require "follow.styles"
 
 -- To use a custom character set for the follow hint labels un-comment and
 -- modify the following:

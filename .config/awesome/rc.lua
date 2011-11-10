@@ -86,13 +86,13 @@ term = {
     persist  = true,
     position = 3,
 },
-mail = {
-    name     = "4:mail",
+mutt = {
+    name     = "7:mutt",
     layout    = awful.layout.suit.tile,
     mwfact    = 0.55,
     exclusive = false,
     solitary  = false,
-    position  = 4,
+    position  = 7,
     spawn     = mail,
     slave     = true,
 },
@@ -114,11 +114,27 @@ code = {
     nopopup   = false,
 },
 
-office = {
-    name      = "9:office",
-    layout    = awful.layout.suit.tile,
+img = {
+    name      = "9:img",
+    nopopup   = false,
+    layout    = awful.layout.suit.max.fullscreen,
     position  = 9,
 },
+-- No fixed positions
+gimp = { 
+    spawn = "gimp", 
+    layout = awful.layout.suit.max, 
+    sweep_delay = 2, screen = 1, 
+},
+gimptool = { 
+    layout = awful.layout.suit.tile, 
+    sweep_delay = 2, 
+    screen = 2,
+},
+wine = { 
+    layout = awful.layout.suit.float 
+},
+
 }
 --}}}
 
@@ -139,7 +155,7 @@ shifty.config.apps = {
         "Thunderbird",
         "mutt",
     },
-    tag = "mail",
+    tag = "mutt",
 },
 {
     match = {
@@ -222,7 +238,6 @@ guess_name = true,
 guess_position = true,
 persist = false,
 solitary = false,
---leave_kills = true,
 remember_index = true,
 nopopup = true
 }
@@ -644,7 +659,7 @@ globalkeys = awful.util.table.join(
     awful.key({modkey, "Control"}, "n", function()
         shifty.tagtoscr(awful.util.cycle(screen.count(), mouse.screen + 1))
     end), -- move client to next tag
-    awful.key({modkey}, "a", shifty.add), -- creat a new tag
+    awful.key({modkey, "Shift"}, "n", shifty.add), -- creat a new tag
     awful.key({modkey, "Shift"}, "r", shifty.rename), -- rename a tag
     awful.key({modkey, "Shift"}, "a", -- nopopup new tag
     function()
@@ -661,7 +676,7 @@ globalkeys = awful.util.table.join(
         awful.client.focus.byidx(-1)
         if client.focus then client.focus:raise() end
     end),
-    awful.key({modkey,}, "w", function() mymainmenu:show(true) end),
+        awful.key({modkey,}, "w", function() mymainmenu:show(true) end),
 
     -- {{{ Modal bindings
     --{{{ devtodo, modal bindings
@@ -804,8 +819,8 @@ globalkeys = awful.util.table.join(
     awful.key({modkey, }, "F11", awesome.restart),
     awful.key({modkey, }, "F12", awesome.quit),
 
-    awful.key({modkey,}, "l", function() awful.tag.incmwfact(0.05) end),
-    awful.key({modkey,}, "h", function() awful.tag.incmwfact(-0.05) end),
+    --awful.key({modkey, "Mod2" }, "l", function() awful.tag.incmwfact(0.05) end),
+   -- awful.key({modkey, "Mod2" }, "h", function() awful.tag.incmwfact(-0.05) end),
     awful.key({modkey, "Shift"}, "h", function() awful.tag.incnmaster(1) end),
     awful.key({modkey, "Shift"}, "l", function() awful.tag.incnmaster(-1) end),
     awful.key({modkey, "Control"}, "h", function() awful.tag.incncol(1) end),

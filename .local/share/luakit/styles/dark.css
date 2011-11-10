@@ -1,13 +1,14 @@
 * {
-    background-color: #3f3f3f ;
-    bgcolor: #3f3f3f ;
-    background: #3f3f3f ;
-    border: solid #3f3f3f ;
-    color: #bbbbbb ;
-    font:"DejaVu Sans"  ;
-    font-family:"DejaVu Sans", sans-serif  ;
-    font-family:"DejaVu Sans", serif  ;
-    font-family:"DejaVu Sans", monospace  ;
+    background-color: #3f3f3f !important;
+    background-image: none !important;
+    bgcolor: #3f3f3f !important;
+    background: #3f3f3f !important;
+    border: solid #3f3f3f !important;
+    color: #bbbbbb !important;
+    font:"DejaVu Sans"  !important;
+    font-family:"DejaVu Sans", sans-serif !important ;
+    font-family:"DejaVu Sans", serif  !important;
+    font-family:"DejaVu Sans", monospace  !important;
     font-size:11px;
 }
 
@@ -40,7 +41,7 @@ p {
 
 h1,h2,h3,h4,h5,h6 {
     color: #B8DDEA ;
-    background-color: #3f3f3f ;
+    background-color: #121212 ;
 }
 
 a:link {
