@@ -6,7 +6,7 @@ LOGFILE=$MAILDIR/.procmaillog
 
 # Recipes
 :0:
-* ^(To|Cc): *awesome@naquadah.org
+* ^(To|From|Cc):.*awesome@naquadah.org
 awesome-mailinglist/
 
 :0
@@ -23,15 +23,11 @@ ulug-styrelse/
 
 
 :0
-* ^(Cc|To): [a-z]+@securityfocus.com
+* ^(Cc|From|To): [a-z]+@securityfocus.com
 focus-ids/
 
 :0
-* ^(To|Cc):.*uzbl-dev@lists.uzbl.org
-uzbl-dev/
-
-:0
-* ^(Cc|From|Cc):.*luakit-dev@lists.luakit.org
+* ^(Cc|From|To):.*luakit-dev@lists.luakit.org
 luakit-dev/
 
 :0

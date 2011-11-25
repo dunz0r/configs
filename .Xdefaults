@@ -61,7 +61,6 @@ XLock.username:
 XLock.password:
 XLock.erasetime: 3
 XLock.mono: true
-XLock.font: -*-monaco-r-*-*-12-*-*-*-*-*-*-*
 
 ! Which theme to use
 #include "/home/gabriel/.xdefaults-colour/splurge.Xresources"
