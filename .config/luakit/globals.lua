@@ -14,14 +14,13 @@ globals = {
  -- Disables checking if a filepath exists in search_open function
  -- check_filepath      = false,
 }
--- Make useragent
-local _, arch = luakit.spawn_sync("uname -sm")
--- Only use the luakit version if in date format (reduces identifiability)
-local lkv = string.match(luakit.version, "^(%d+.%d+.%d+)")
-globals.useragent = string.format("Mozilla/5.0 (%s) AppleWebKit/%s+ (KHTML, like Gecko) WebKitGTK+/%s luakit%s",
-    string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
-    luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
+-- Make useragent
+local arch = string.match(({luakit.spawn_sync("uname -sm")})[2], "([^\n]*)")
+local lkv  = string.format("luakit/%s", luakit.version)
+local wkv  = string.format("WebKitGTK+/%d.%d.%d", luakit.webkit_major_version, luakit.webkit_minor_version, luakit.webkit_micro_version)
+local awkv = string.format("AppleWebKit/%s.%s+", luakit.webkit_user_agent_major_version, luakit.webkit_user_agent_minor_version)
+globals.useragent = string.format("Mozilla/5.0 (%s) %s %s %s", arch, awkv, wkv, lkv)
 
 -- Search common locations for a ca file which is used for ssl connection validation.
 local ca_files = {
@@ -33,29 +32,28 @@ local ca_files = {
 -- Use the first ca-file found
 for _, ca_file in ipairs(ca_files) do
     if os.exists(ca_file) then
-        soup.ssl_ca_file = ca_file
+        soup.set_property("ssl-ca-file", ca_file)
         break
     end
 end
 
 -- Change to stop navigation sites with invalid or expired ssl certificates
-soup.ssl_strict = false
+soup.set_property("ssl-strict", false)
 
 -- Set cookie acceptance policy
 cookie_policy = { always = 0, never = 1, no_third_party = 2 }
-soup.accept_policy = cookie_policy.always
-
+soup.set_property("accept-policy", cookie_policy.always)
 
 -- List of search engines. Each item must contain a single %s which is
 -- replaced by URI encoded search terms. All other occurances of the percent
 -- character (%) may need to be escaped by placing another % before or after
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
-
+-- Set google as fallback search engine
 search_engines = {
     luakit      = "http://luakit.org/search/index/luakit?q=%s",
     gg          = "http://google.com/search?q=%s",
-    gi          = "http://google.com/images/search?q=%s",
+    gi          = "http://images.google.com/search?q=%s",
     wp          = "http://en.wikipedia.org/wiki/Special:Search?search=%s",
     imdb        = "http://imdb.com/find?s=all&q=%s",
     sf          = "http://sf.net/search/?words=%s",
@@ -67,43 +65,33 @@ search_engines = {
     gm          = "http://maps.google.com/maps?q=%s",
     yt          = "http://www.youtube.com/results?search_query=%s&search_sort=video_view_count",
     gh          = "http://www.github.com/%s",
-    aur         = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go"
+    aur         = "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
+    wf          = "http://www.wolframalpha.com/input/?i=%s"
 
 }
 
 
--- Set google as fallback search engine
 search_engines.default = search_engines.gg
 -- Use this instead to disable auto-searching
 --search_engines.default = "%s"
 
 -- Per-domain webview properties
 -- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
-domain_props = {
+domain_props = { --[[
     ["all"] = {
-        enable_scripts          = true,
-        enable_plugins          = true,
-        enable_private_browsing = true,
-        --user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
+        ["enable-scripts"]          = false,
+        ["enable-plugins"]          = false,
+        ["enable-private-browsing"] = false,
+        ["user-stylesheet-uri"]     = "",
     },
-    ["beta.xn--likstrm-f1a.se"] = {
-        user_stylesheet_uri     = "none",
+    ["youtube.com"] = {
+        ["enable-scripts"] = true,
+        ["enable-plugins"] = true,
     },
-    ["wallbase.cc"] = {
-        user_stylesheet_uri     = "none",
-    },
-    ["xbmc"] = {
-        user_stylesheet_uri     = "none",
-    },
-
-    ["xbmc.hax0r.lan"] = {
-        user_stylesheet_uri     = "none",
-    },
-
-    ["aur.archlinux.org"] = {
-        enable_private_browsing = true,
-    },
-
-    }
+    ["bbs.archlinux.org"] = {
+        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/dark.css",
+        ["enable-private-browsing"] = true,
+    }, ]]
+}
 
 -- vim: et:sw=4:ts=8:sts=4:tw=80

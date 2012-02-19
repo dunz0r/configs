@@ -22,7 +22,7 @@ require "lousy"
 
 -- Small util functions to print output (info prints only when luakit.verbose is true)
 function warn(...) io.stderr:write(string.format(...) .. "\n") end
-function info(...) if luakit.verbose then io.stdout:write(string.format(...) .. "\n") end end
+function info(...) if luakit.verbose then io.stderr:write(string.format(...) .. "\n") end end
 
 -- Load users global config
 -- ("$XDG_CONFIG_HOME/luakit/globals.lua" or "/etc/xdg/luakit/globals.lua")
@@ -100,8 +100,8 @@ require "follow"
 
 -- To use a custom character set for the follow hint labels un-comment and
 -- modify the following:
-local s = follow.styles
-follow.style = s.sort(s.reverse(s.charset("asdfqwerzxcv"))) -- I'm a lefty
+--local s = follow.styles
+--follow.style = s.sort(s.reverse(s.charset("asdfqwerzxcv"))) -- I'm a lefty
 
 -- Add command history
 require "cmdhist"
@@ -121,7 +121,7 @@ require "completion"
 
 -- NoScript plugin, toggle scripts and or plugins on a per-domain basis.
 -- `,ts` to toggle scripts, `,tp` to toggle plugins, `,tr` to reset.
--- Remove all "enable_scripts" & "enable_plugins" lines from your
+-- Remove all "enable-scripts" & "enable-plugins" lines from your
 -- domain_props table (in config/globals.lua) as this module will conflict.
 --require "noscript"
 
@@ -158,8 +158,7 @@ if unique then
         elseif cmd == "winopen" then
             w = window.new((arg ~= "") and { arg } or {})
         end
-        w.win.screen = screen
-        w.win.urgency_hint = true
+        w.win:set_screen(screen)
     end)
 end
 

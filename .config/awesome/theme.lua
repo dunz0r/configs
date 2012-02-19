@@ -5,27 +5,27 @@
 theme = {}
 
 -- {{{ Styles
-theme.font      = "Montecarlo 8"
+theme.font      = "Fontin Sans 9"
 
 -- {{{ Colors
-theme.fg_normal = "#898989"
-theme.fg_focus  = "#cccccc"
-theme.fg_urgent = "#CC9393"
-theme.bg_focus = "#3e3e3e"
-theme.bg_normal  = "#121212"
-theme.bg_urgent = "#3F3F3F"
+theme.fg_normal = "#333333"
+theme.fg_focus  = "#000000"
+theme.fg_urgent = "#87005f"
+theme.bg_focus = "#aeb2c3"
+theme.bg_normal  = "#aeb2c3"
+theme.bg_urgent = "#121212"
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "1"
-theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#a0a0a0"
+theme.border_width  = "2"
+theme.border_normal = "#3f3f3f"
+theme.border_focus  = "#afaf5f"
 theme.border_marked = "#CC9393"
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.titlebar_bg_focus  = "#aeb2c3"
+theme.titlebar_bg_normal = "#aeb2c3"
 -- }}}
 
 -- There are other variable sets
@@ -37,8 +37,8 @@ theme.titlebar_bg_normal = "#3F3F3F"
 -- Example:
 --theme.taglist_bg_focus = "#CC9393"
 -- }}}
+theme.bg_unfocus    = "#606060"
 theme.fg_unfocus    = "#606060"
-theme.fg_focus      = "#aaa"
 
 theme.confdir = "/home/gabriel/.config/awesome"
 -- There are other variable sets
@@ -94,59 +94,60 @@ theme.menu_width  = "100"
 
 -- {{{ Icons
 -- {{{ Taglist
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/zenburn/taglist/squarefz.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez.png"
+theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefz.png"
+theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarez.png"
 --theme.taglist_squares_resize = "false"
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon           = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
+theme.awesome_icon           = "/usr/share/awesome/themes/default/awesome-icon.png"
 theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
 theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile       = "/usr/share/awesome/themes/zenburn/layouts/tile.png"
-theme.layout_tileleft   = "/usr/share/awesome/themes/zenburn/layouts/tileleft.png"
-theme.layout_tilebottom = "/usr/share/awesome/themes/zenburn/layouts/tilebottom.png"
-theme.layout_tiletop    = "/usr/share/awesome/themes/zenburn/layouts/tiletop.png"
-theme.layout_fairv      = "/usr/share/awesome/themes/zenburn/layouts/fairv.png"
-theme.layout_fairh      = "/usr/share/awesome/themes/zenburn/layouts/fairh.png"
-theme.layout_spiral     = "/usr/share/awesome/themes/zenburn/layouts/spiral.png"
-theme.layout_dwindle    = "/usr/share/awesome/themes/zenburn/layouts/dwindle.png"
-theme.layout_max        = "/usr/share/awesome/themes/zenburn/layouts/max.png"
-theme.layout_fullscreen = "/usr/share/awesome/themes/zenburn/layouts/fullscreen.png"
-theme.layout_magnifier  = "/usr/share/awesome/themes/zenburn/layouts/magnifier.png"
-theme.layout_floating   = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
+theme.layout_tile       = "/usr/share/awesome/themes/default/layouts/tile.png"
+theme.layout_tileleft   = "/usr/share/awesome/themes/default/layouts/tileleft.png"
+theme.layout_tilebottom = "/usr/share/awesome/themes/default/layouts/tilebottom.png"
+theme.layout_tiletop    = "/usr/share/awesome/themes/default/layouts/tiletop.png"
+theme.layout_fairv      = "/usr/share/awesome/themes/default/layouts/fairv.png"
+theme.layout_fairh      = "/usr/share/awesome/themes/default/layouts/fairh.png"
+theme.layout_spiral     = "/usr/share/awesome/themes/default/layouts/spiral.png"
+theme.layout_dwindle    = "/usr/share/awesome/themes/default/layouts/dwindle.png"
+theme.layout_max        = "/usr/share/awesome/themes/default/layouts/max.png"
+theme.layout_fullscreen = "/usr/share/awesome/themes/default/layouts/fullscreen.png"
+theme.layout_magnifier  = "/usr/share/awesome/themes/default/layouts/magnifier.png"
+theme.layout_floating   = "/usr/share/awesome/themes/default/layouts/floating.png"
 -- }}}
 
 -- {{{ Titlebar
-theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/zenburn/titlebar/close_normal.png"
+theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/default/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
 
-theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/default/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/ontop_normal_inactive.png"
 
-theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/default/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/sticky_normal_inactive.png"
 
-theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_active.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/default/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/floating_normal_inactive.png"
 
-theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/maximized_normal_inactive.png"
 
 -- }}}
 
 -- {{{ Widget icons
+theme.widget_cal    = theme.confdir .. "/icons/cal.png"
 theme.widget_cpu    = theme.confdir .. "/icons/cpu.png"
 theme.widget_bat    = theme.confdir .. "/icons/bat.png"
 theme.widget_mem    = theme.confdir .. "/icons/mem.png"
@@ -161,10 +162,16 @@ theme.widget_date   = theme.confdir .. "/icons/time.png"
 theme.widget_crypto = theme.confdir .. "/icons/crypto.png"
 theme.widget_sep    = theme.confdir .. "/icons/separator.png"
 theme.widget_music  = theme.confdir .. "/icons/music.png"
+theme.widget_mpd    = theme.confdir .. "/icons/mpd.png"
+theme.widget_task   = theme.confdir .. "/icons/task.png"
+theme.widget_tasks  = theme.confdir .. "/icons/tasks.png"
+theme.widget_taskdone = theme.confdir .. "/icons/taskdone.png"
+theme.widget_project = theme.confdir .. "/icons/project.png"
+theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+
 -- }}}
 
 -- }}}
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

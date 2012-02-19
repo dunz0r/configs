@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Montecarlo:pixelsize=11:antialias=true
-URxvt.boldFont:xft:Montecarlo:bold:pixelsize=11:antialias=true
+URxvt.font:xft:Monaco:pixelsize=9:antialias=true
+URxvt.boldFont:xft:Monaco:bold:pixelsize=9:antialias=true
 
 URxvt.loginShell: true
 URxvt.termName: rxvt-unicode
@@ -11,21 +11,20 @@ URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
 URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
-URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+URxvt.perl-ext:      default,url-select
+URxvt.keysym.C-M-u:    perl:url-select:select_next
+URxvt.urlLauncher:   luakit
 URxvt.underlineURLs: true
-URxvt.keysym.C-M-u: perl:matcher
-URxvt.perl-ext: default,matcher
-URxvt.urlLauncher: luakit
-URxvt.colorUL: #009000
+
 URxvt*depth: 32
-URxvt*background: #121212
+URxvt*background: rgba:1111/1111/1111/dddd
 URxvt*foreground: #cccccc
 
-URxvt*transparent:        false
+!URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
-URxvt*shading:            30
+!URxvt*shading:            30
 !URxvt*fading:             40
 URxvt*scrollBar:          False
 

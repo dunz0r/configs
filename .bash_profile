@@ -8,7 +8,6 @@ export MPD_USER=gabriel
 # shows a fortune upon login
 printf "\n"
 fortune
-todo
 # sets the path
 PATH=`cope_path`:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
 export PATH
@@ -37,7 +36,7 @@ PAGER=`which less`
 GREP_OPTIONS='--colour=auto'
 
 LOCALE="sv_SE.UTF-8"
-LC_ALL="sv_SE.UTF-8"
+LC_ALL="en_GB.UTF-8"
 LANGUAGE="en_GB.UTF-8"
 
 # Make python perdy
