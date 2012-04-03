@@ -87,6 +87,7 @@ autocmd BufReadPost *.doc %!antiword "%"
 
 " For arduino syntax
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 " I want a big window when I'm using gvim
 if has("gui_running")

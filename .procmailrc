@@ -1,6 +1,6 @@
 PATH=/bin:/usr/bin/:/usr/local/bin:/home/gabriel/bin
-VERBOSE=on
 DEFAULT=/var/spool/mail/gabriel
+VERBOSE=on
 MAILDIR=$HOME/mail
 LOGFILE=$MAILDIR/.procmaillog
 

@@ -1,170 +1,23 @@
 * {
-    background-color: #3f3f3f !important;
-    background-image: none !important;
-    bgcolor: #3f3f3f !important;
-    background: #3f3f3f !important;
-    border: solid #3f3f3f !important;
-    color: #bbbbbb !important;
-    font:"DejaVu Sans"  !important;
-    font-family:"DejaVu Sans", sans-serif !important ;
-    font-family:"DejaVu Sans", serif  !important;
-    font-family:"DejaVu Sans", monospace  !important;
-    font-size:11px;
+    font:"Fontin Sans"  !important;
+    font-family:"Fontin Sans", sans-serif !important ;
+    font-family:"Fontin", serif  !important;
+    font-family:"Delicious", monospace  !important;
 }
 
 
 body {
-    background-color: #3f3f3f ;
-    bgcolor: #3f3f3f ;
-    background: #3f3f3f ;
-    border: solid #3f3f3f ;
-    color: #bbbbbb ;
-    font:"DejaVu Sans"  ;
-    font-family:"DejaVu Sans", sans-serif  ;
-    font-family:"DejaVu Sans", serif  ;
-    font-family:"DejaVu Sans", monospace  ;
+    font:"Fontin Sans"  ;
+    font-family:"Fontin Sans", sans-serif  ;
+    font-family:"Fontin", serif  ;
+    font-family:"Delicious", monospace  ;
     font-size:11px;
 
 }
 
 pre
 {
-   font-family:"DejaVu Sans Mono", monospace  ;
+   font-family:"Delicious", monospace  ;
    font-size:9px;
 }
 
-p {
-    color: #bbbbbb ;
-    background-color: #3f3f3f ;
-    border: 0px;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    color: #B8DDEA ;
-    background-color: #121212 ;
-}
-
-a:link {
-    color: #B8DDEA ;
-    background-color: #3f3f3f ;
-    text-decoration: none ;
-    outline: none;
-}
-
-a:active {
-    color: #CC896D ;
-    background-color: #3f3f3f ;
-    text-decoration: none ;
-    outline: none;
-}
-
-a:hover {
-    color: #CC896D ;
-    background-color: #3f3f3f ;
-    text-decoration: none ;
-    outline: none;
-}
-
-a:visited {
-    color: #CC896D ;
-    background-color: #3f3f3f ;
-    text-decoration: none ;
-    outline: none;
-}
-
-input {
-    background-color: #3f3f3f ;
-    border: 1px solid #bbbbbb ;
-    outline: none ;
-    color: #bbbbbb ;
-}
-
-input:hover {
-    background-color: #353535 ;
-    border: 1px solid #bbbbbb ;
-    outline: none;
-    color: #bbbbbb;
-} 
-
-img {
-    border-color: 0px solid #3f3f3f ;
-}
-
-textarea {
-    background-color: #3f3f3f;
-    border: 1px solid #bbbbbb;
-    outline: none;
-    color: #bbbbbb;
-}
-
-td {
-    background-color: #3f3f3f ;
-    border: 0px solid #bbbbbb ;
-    color: #bbbbbb ;
-}
-
-tr {
-    background-color: #3f3f3f ;
-    border: 0px solid #bbbbbb ;
-    color: #bbbbbb ;
-}
-
-dl {
-    background-color: #3f3f3f ;
-    border: 0px;
-    color: #bbbbbb ;
-}
-dd {
-    background-color: #3f3f3f ;
-    border: 0px #bbbbbb ;
-    color: #bbbbbb ;
-}
-
-th {
-    background-color: #3f3f3f ;
-    border: 0px solid #bbbbbb ;
-    color: #bbbbbb ;
-}
-
-li {
-    background-color: #3f3f3f ;
-    border: 0px;
-    color: #bbbbbb ;
-}
-
-ul {
-    background-color: #3f3f3f ;
-    border: 0px;
-    color: #bbbbbb ;
-}
-
-ol {
-    background-color: #3f3f3f ;
-    border: 0px;
-    color: #bbbbbb ;
-}
-
-blockquote {
-    background-color: #505050 ;
-    color: #bbbbbb;
-    border: 0px ;
-}
-
-.box {
-    border: 0px ;
-}
-
-div.postright, div.postfootright, div.box {
-    border-left-color: #3f3f3f ;
-}
-
-div {
-    background-color: #3f3f3f ;
-    color: #bbbbbb ;
-    border: 1px solid #3f3f3f; 
-}
-
-div.incqbox, div.codebox,div.scrollbox {
-    background-color: #505050 ;
-    border: 0px ;
-}
