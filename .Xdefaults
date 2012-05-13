@@ -3,7 +3,6 @@ URxvt.font:xft:Monaco:pixelsize=9:antialias=true
 URxvt.boldFont:xft:Monaco:bold:pixelsize=9:antialias=true
 
 URxvt.loginShell: true
-URxvt.termName: rxvt-unicode
 
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
