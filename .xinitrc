@@ -1,6 +1,24 @@
 #!/bin/bash
+#
+
+xset -b # disable bell
+eval `/usr/bin/ssh-agent`
 urxvtd -o -f
-nvidia-settings -a InitialPixmapPlacement=2
+
+if test -f /usr/lib/openssh/x11-ssh-askpass # Archlinux
+then
+	SSH_ASKPASS=/usr/lib/openssh/x11-ssh-askpass ssh-add < /dev/null
+fi
+
+xrdb -merge $HOME/.Xresources
 xmodmap ~/.xmodmap
-xset -b
-exec ck-launch-session dbus-launch openbox-session &> ~/.xsession-errors
+
+while true
+do
+	LOCALTIME=$(date +%Z\=%Y-%m-%dT%H:%M)
+	xsetroot -name "$LOCALTIME"
+	sleep 20s
+done &
+
+exec dwm
+nvidia-settings -a InitialPixmapPlacement=2

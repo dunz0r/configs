@@ -5,8 +5,8 @@
 local theme = {}
 
 -- Default settings
-theme.font = "Fontin Sans normal 9"
-theme.fg   = "#fff"
+theme.font = "Monaco 9"
+theme.fg   = "#ccc"
 theme.bg   = "#444"
 
 -- Genaral colours
@@ -24,8 +24,8 @@ theme.notif_fg = "#444"
 theme.notif_bg = "#FFF"
 
 -- Menu colours
-theme.menu_fg                   = "#000"
-theme.menu_bg                   = "#fff"
+theme.menu_fg                   = "#ccc"
+theme.menu_bg                   = "#333"
 theme.menu_selected_fg          = "#000"
 theme.menu_selected_bg          = "#FF0"
 theme.menu_title_bg             = "#fff"
@@ -39,8 +39,8 @@ theme.proxy_inactive_menu_fg    = '#888'
 theme.proxy_inactive_menu_bg    = '#FFF'
 
 -- Statusbar specific
-theme.sbar_fg         = "#111"
-theme.sbar_bg         = "#ecedeb"
+theme.sbar_fg         = "#ccc"
+theme.sbar_bg         = "#333"
 
 -- Downloadbar specific
 theme.dbar_fg         = "#fff"
@@ -52,14 +52,14 @@ theme.ibar_fg           = "#111"
 theme.ibar_bg           = "#eee"
 
 -- Tab label
-theme.tab_fg            = "#111"
-theme.tab_bg            = "#edeceb"
+theme.tab_fg            = "#ccc"
+theme.tab_bg            = "#333"
 theme.tab_ntheme        = "#000"
 theme.selected_fg       = "#fff"
-theme.selected_bg       = "#D9cd86"
+theme.selected_bg       = "#444"
 theme.selected_ntheme   = "#001"
-theme.loading_fg        = "#33AADD"
-theme.loading_bg        = "#000"
+theme.loading_fg        = "#333"
+theme.loading_bg        = "#ccc"
 
 -- Trusted/untrusted ssl colours
 theme.trust_fg          = "#0F0"

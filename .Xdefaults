@@ -20,12 +20,12 @@ URxvt*depth: 32
 URxvt*background: rgba:1111/1111/1111/dddd
 URxvt*foreground: #cccccc
 
-!URxvt*transparent:        true
+URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
-!URxvt*shading:            30
-!URxvt*fading:             40
+URxvt*shading:            30
+URxvt*fading:             40
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow

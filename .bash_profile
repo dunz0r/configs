@@ -5,6 +5,7 @@
 source /etc/profile
 source /etc/bash_completion.d/git
 export MPD_USER=gabriel
+export CDPATH=.:~:~/Utveckling
 # shows a fortune upon login
 printf "\n"
 fortune

@@ -79,13 +79,32 @@ end
 -- {{{ Wibox
 
 -- Create a wibox for each screen and add it
-mywibox = {}
-mylayoutbox = {}
+wibox = {}
+layoutbox = {}
+promptbox = {}
+taglist = {}
+taglist.buttons = awful.util.table.join(
+                    awful.button({ }, 1, awful.tag.viewonly),
+                    awful.button({ modkey }, 1, awful.client.movetotag),
+                    awful.button({ }, 3, awful.tag.viewtoggle),
+                    awful.button({ modkey }, 3, awful.client.toggletag),
+                    awful.button({ }, 4, awful.tag.viewnext),
+                    awful.button({ }, 5, awful.tag.viewprev)
+                    )
+
+
 -- Mpdbox
 mpdbox = widget({ type = "textbox", align = "right", width = "120"})
 -- Icon for mpd
 mpdicon = widget({ type = "imagebox" })
 mpdicon.image = image(beautiful.widget_mpd)
+
+-- Clock
+textclock = awful.widget.textclock({ format = " %A, %B %d %H:%M", align = "right" })
+
+-- Systray
+systray = widget({ type = "systray" })
+
 --{{{ Taskwarrior widget
  task_warrior=blingbling.task_warrior.new(beautiful.widget_tasks)
  task_warrior:set_task_done_icon(beautiful.widget_taskdone)
@@ -96,28 +115,34 @@ mpdicon.image = image(beautiful.widget_mpd)
 separator = widget({ type = "imagebox"})
 separator.image = image(beautiful.widget_sep)
 
+
 for s = 1, screen.count() do
-    -- Create an imagebox widget which will contains an icon indicating which layout we're using.
+    -- Create a promptbox for each screen
+    promptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
+    -- Create a taglist widget
+    taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, taglist.buttons)
     -- We need one layoutbox per screen.
-    mylayoutbox[s] = awful.widget.layoutbox(s)
-    mylayoutbox[s]:buttons(awful.util.table.join(
+    layoutbox[s] = awful.widget.layoutbox(s)
+    layoutbox[s]:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
     awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
     awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
     awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, mytaglist.buttons)
+    --mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, mytaglist.buttons)
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "bottom", screen = s, width = "350" })
+    wibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox - order matters
-    mywibox[s].widgets = {
-        mylayoutbox[s],
-        mytaglist[s],
-        separator,
+    wibox[s].widgets = {
+        s == 1 and systray or nil,
+        layoutbox[s],
+        taglist[s],
         task_warrior,
+        promptbox[s],
         separator,
         mpdicon,
         mpdbox,
-        tagbox,
+        separator,
+        textclock,
         layout = awful.widget.layout.horizontal.leftright
     }
 end
@@ -170,7 +195,17 @@ awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)     
 awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
 awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-awful.key({ modkey, "Control" }, "n", awful.client.restore)
+awful.key({ modkey, "Control" }, "n", awful.client.restore),
+    -- Prompt
+    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end),
+
+    awful.key({ modkey }, "x",
+              function ()
+                  awful.prompt.run({ prompt = "Run Lua code: " },
+                  promptbox[mouse.screen].widget,
+                  awful.util.eval, nil,
+                  awful.util.getdir("cache") .. "/history_eval")
+              end)
 
 )
 
@@ -257,11 +292,11 @@ else
             now_playing = awful.util.escape(" Stopped")
         else
             local zstats = mpc:send("playlistid " .. stats.songid)
-            now_playing =  "<i>" .. (awful.util.escape( zstats.album or "" )) .. "</i>: " .. (awful.util.escape( zstats.artist or "NA" )) .. " <b>-</b> " .. (awful.util.escape(zstats.title or string.gsub(zstats.file, ".*/", "" ) ))
+            now_playing =  " <i>" .. (awful.util.escape( zstats.album or "" )) .. "</i>: " .. (awful.util.escape( zstats.artist or "NA" )) .. " <b>-</b> " .. (awful.util.escape(zstats.title or string.gsub(zstats.file, ".*/", "" ) ))
         end
 
-        if stats.state == "pause" or stats.state == "stop" then
-            now_playing = "<span color='".. beautiful.fg_unfocus .."'>" .. now_playing .. "</span>"
+        if stats.state == " pause" or stats.state == "stop" then
+            now_playing = " <span color='".. beautiful.fg_unfocus .."'>" .. now_playing .. "</span>"
         end
 
     end
@@ -300,7 +335,7 @@ awful.rules.rules = {
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
-    awful.titlebar.add(c, { modkey = modkey })
+    -- awful.titlebar.add(c, { modkey = modkey })
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)

@@ -1,6 +1,6 @@
 -- Global variables for luakit
 globals = {
-    homepage            = "http://luakit.org/",
+    homepage            = "http://en.wikipedia.org/wiki/Special:Random",
  -- homepage            = "http://github.com/mason-larobina/luakit",
     scroll_step         = 40,
     zoom_step           = 0.1,
@@ -82,22 +82,17 @@ search_engines.default = search_engines.gg
 
 -- Per-domain webview properties
 -- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
-domain_props = { --[[
+domain_props = {
     ["all"] = {
         ["enable-scripts"]          = false,
         ["enable-plugins"]          = false,
         ["enable-private-browsing"] = true,
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/fancy.css",
+        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
     },
     ["youtube.com"] = {
         ["enable-scripts"] = true,
         ["enable-plugins"] = true,
     },
-    ["bbs.archlinux.org"] = {
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/dark.css",
-        ["enable-private-browsing"] = true,
-    }, 
-    --]]
 }
 
 -- vim: et:sw=4:ts=8:sts=4:tw=80
