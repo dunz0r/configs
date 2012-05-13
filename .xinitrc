@@ -20,5 +20,5 @@ do
 	sleep 20s
 done &
 
-exec dwm
-nvidia-settings -a InitialPixmapPlacement=2
+nvidia-settings -a InitialPixmapPlacement=2&
+exec startdwm

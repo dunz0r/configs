@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+while true; do
+    dwm 1>&2> $HOME/.xsession-errors
+done
