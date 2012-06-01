@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/gabriel/Dokument'
 let g:netrw_dirhist_2='/home/gabriel/.ncmpcpp'
 let g:netrw_dirhist_3='/home/gabriel/Utveckling/arduino'
 let g:netrw_dirhist_4='/home/gabriel/Utveckling/arduino/sketchbook/sketch_dec12a/sketch'
 let g:netrw_dirhist_5='/home/gabriel/.config/lf-bash'
 let g:netrw_dirhist_6='/home/gabriel/.minecraft/resources'
+let g:netrw_dirhist_7='/home/gabriel/Utveckling/allegro/almake/almake-0.6.0/prj_tree/erc'

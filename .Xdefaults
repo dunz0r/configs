@@ -45,9 +45,6 @@ XTerm*Background: black
 XTerm*Foreground: grey90
 XTerm*LoginShell: true
 XTerm*CursorColor: rgb:99/99/00
-XTerm*faceName: xft:Monaco:medium:pixelsize=9:antialias=false
-XTerm*boldFont: xft:Monaco:bold:pixelsize=9:antialias=false
-XTerm*faceSize: 7
 XTerm*printerAutoClose: true
 
 ! XLock

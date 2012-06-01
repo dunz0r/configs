@@ -13,12 +13,5 @@ fi
 xrdb -merge $HOME/.Xresources
 xmodmap ~/.xmodmap
 
-while true
-do
-	LOCALTIME=$(date +%Z\=%Y-%m-%dT%H:%M)
-	xsetroot -name "$LOCALTIME"
-	sleep 20s
-done &
-
 nvidia-settings -a InitialPixmapPlacement=2&
-exec startdwm
+exec awesome
