@@ -47,7 +47,7 @@ shopt -s histappend
 # for column width and such
 shopt -s checkwinsize
 HISTCONTROL=ignoreboth
-HISTSIZE=1000
+HISTSIZE=50000
 HISTFILESIZE=10000
 # Colours in ma term
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")

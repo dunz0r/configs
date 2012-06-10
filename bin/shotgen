@@ -41,8 +41,10 @@ if [ $? -eq 0 ] ; then
     notify-send -i /usr/share/awesome/icons/awesome48.png "::shotgen::" "Links Created!"
     xclip $LINKFILE
     rm $LINKFILE
+    rm $FILE $THUMB
+    exit 0
 else
     echo "File upload Failed!"
+    rm $FILE $THUMB
+    exit 1
 fi
-rm $FILE $THUMB
-exit 0
