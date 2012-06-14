@@ -235,7 +235,7 @@ echo "[${ref#refs/heads/}$(parse_git_dirty)]"
 # }}}
 # {{{ Stream a file with cvlc
 function hstream() {
-    cvlc -vv $1 --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{access=http,mux=ogg,dst=10.0.0.2:8000}'
+    cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{access=http,mux=ogg,dst=10.0.0.2:8000}'
 }
 # }}}
 
