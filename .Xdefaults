@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Monaco:pixelsize=9:antialias=true
-URxvt.boldFont:xft:Monaco:bold:pixelsize=9:antialias=true
+URxvt.font:xft:Monte Carlo:pixelsize=9:antialias=true
+URxvt.boldFont:xft:Monte Carlo:bold:pixelsize=9:antialias=true
 
 URxvt.loginShell: true
 
