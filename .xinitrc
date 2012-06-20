@@ -14,4 +14,4 @@ xrdb -merge $HOME/.Xresources
 xmodmap ~/.xmodmap
 
 nvidia-settings -a InitialPixmapPlacement=2&
-exec awesome
+exec ck-launch-session startkde

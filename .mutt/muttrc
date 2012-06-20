@@ -66,8 +66,8 @@ set pgp_autosign=yes
 #======================================================#
 # Lists:
 
-lists awesome abbenay ulug luakit-dev uzbl-dev ulug-styrelse
-subscribe awesome abbenay ulug ulug-styrelse uzbl-dev luakit-dev aur-general
+lists awesome abbenay ulug luakit-dev uzbl-dev ulug-styrelse aur-general arch-general
+subscribe awesome abbenay ulug ulug-styrelse uzbl-dev luakit-dev aur-general arch-general
 set followup_to=yes        # Sets 'Mail-Followup-To' header
 set honor_followup_to=yes
 fcc-hook awesome +awesome # See your own posts using fcc
@@ -75,6 +75,8 @@ fcc-hook abbenay +abbenay # See your own posts using fcc
 fcc-hook ulug +ulug
 fcc-hook ulug-styrelse +ulug-styrelse
 fcc-hook luakit-dev +luakit-dev
+fcc-hook aur-general +aur-general
+fcc-hook arch-general +arch-general
 
 #======================================================#
 # Atachments

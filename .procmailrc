@@ -38,4 +38,6 @@ pacman-dev/
 * ^(From|Cc|To):.*aur-general@archlinux.org
 aur-general/
 
-
+:0
+* ^(From|Cc|To):.*arch-general@archlinux.org
+arch-general/
