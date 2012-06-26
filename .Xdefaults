@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Monte Carlo:pixelsize=9:antialias=true
-URxvt.boldFont:xft:Monte Carlo:bold:pixelsize=9:antialias=true
+URxvt.font:xft:Monaco:pixelsize=9:antialias=true
+URxvt.boldFont:xft:Monaco:bold:pixelsize=9:antialias=true
 
 URxvt.loginShell: true
 
@@ -24,7 +24,7 @@ URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
 URxvt*shading:            30
-URxvt*fading:             40
+!URxvt*fading:             40
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow

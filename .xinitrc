@@ -10,8 +10,7 @@ then
 	SSH_ASKPASS=/usr/lib/openssh/x11-ssh-askpass ssh-add < /dev/null
 fi
 
-xrdb -merge $HOME/.Xresources
 xmodmap ~/.xmodmap
 
 nvidia-settings -a InitialPixmapPlacement=2&
-exec ck-launch-session startkde
+exec dbus-launch stumpwm
