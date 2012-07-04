@@ -53,7 +53,7 @@ map <F12> ggVGg?
 " open tha nurdtread
 map <F11> :NERDTreeToggle<Return>
 " input current time and date
-map <F5> :r !date<Return><Esc>$<Esc>a **<Esc>i
+map <F5> :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
 " Use hjkl you tit!
 map <Up> <NOP>
 map <Down> <NOP>

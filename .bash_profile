@@ -10,7 +10,7 @@ export CDPATH=.:~:~/Utveckling
 printf "\n"
 fortune
 # sets the path
-PATH=`cope_path`:$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
+PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
 export PATH
 
 # dobbs rulez!

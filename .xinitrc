@@ -13,4 +13,4 @@ fi
 xmodmap ~/.xmodmap
 
 nvidia-settings -a InitialPixmapPlacement=2&
-exec dbus-launch stumpwm
+exec dbus-launch awesome &> ~/.xsession-errors
