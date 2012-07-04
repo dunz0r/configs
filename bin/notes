@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+NOTEFOLDER="$HOME/Dokument/notes"
+YEAR="$(date +'%Y')"
+MONTH="$(date +'%m')"
+DAY="$(date +'%d')"
+DATE="${YEAR}/${MONTH}"
+NOTESFILE="${NOTEFOLDER}/${DATE}/${DAY}.notes"
+mkdir -p "${NOTEFOLDER}/${DATE}"
+if [ ! -f ${NOTESFILE} ]; then
+     echo -e "$(date '+%Y-%m-%d')\nvim: filetype=notes:expandtab:shiftwidth=5:tabstop=8:encoding=utf-8:textwidth=80" > $NOTESFILE
+fi
+vim $NOTESFILE
