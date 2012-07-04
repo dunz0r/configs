@@ -8,12 +8,7 @@ alias lock='vlock -n'
 alias bell='echo -en "\007"'
 alias grep='grep --color=auto'
 alias xm='setxkbmap se && xset r rate 330 45 && xmodmap ~/.Xmodmap'
-alias dmesg='colored_dmesg'
 alias incognito='chromium --incognito'
-
-# Terminal settings
-alias sr='screen -r'
-alias sw='screen -wipe'
 
 # Revision handling
 if which svn &> /dev/null ; then
