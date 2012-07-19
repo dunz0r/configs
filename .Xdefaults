@@ -1,6 +1,6 @@
 ! URxvt
-URxvt.font:xft:Monaco:pixelsize=9:antialias=true
-URxvt.boldFont:xft:Monaco:bold:pixelsize=9:antialias=true
+!URxvt*font:xft:MonteCarlo Fixed 12:pixelsize=12:antialias=true
+!URxvt*boldFont:xft:MonteCarlo Fixed 12:bold:pixelsize=12:antialias=true
 
 URxvt.loginShell: true
 
@@ -10,9 +10,10 @@ URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
 URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
+URxvt.perl-lib: /home/gabriel/.urxvt/
 URxvt.perl-ext:      default,url-select
 URxvt.keysym.C-M-u:    perl:url-select:select_next
-URxvt.urlLauncher:   luakit
+URxvt.urlLauncher:   iceweasel
 URxvt.underlineURLs: true
 
 URxvt*depth: 32
@@ -36,6 +37,7 @@ Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintsfull
+Xft.lcdfilter:  lcddefault
 
 ! this line makes so that only the SSH-sessions become "Urgent" on bell
 SSH*urgentOnBell: true

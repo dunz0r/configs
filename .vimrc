@@ -11,7 +11,7 @@ colorscheme neverland
 "set t_Co=256
 
 set fdm=marker
-set incsearch" do incremental searching
+set incsearch " do incremental searching
 set nobackup
 "set backupdir=./.backup,.,/tmp
 "set directory=.,./.backup,/tmp
@@ -38,11 +38,11 @@ set showmode
 set cindent
 set autoindent
 set smartindent
-set softtabstop=4
+"set softtabstop=4
 set shiftwidth=4
-set tabstop=4
+"set tabstop=4
 set copyindent
-set expandtab
+"set expandtab
 set completeopt=menu,longest,preview
 filetype plugin indent on
 syntax on      " syntax
@@ -50,6 +50,7 @@ syntax on      " syntax
 " mappings
 " rot13 haxorize
 map <F12> ggVGg?
+map <F10> :VCSCommit
 " open tha nurdtread
 map <F11> :NERDTreeToggle<Return>
 " input current time and date

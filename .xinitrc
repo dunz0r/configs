@@ -12,5 +12,5 @@ fi
 
 xmodmap ~/.xmodmap
 
-nvidia-settings -a InitialPixmapPlacement=2&
-exec dbus-launch stumpwm &> ~/.xsession-errors
+#nvidia-settings -a InitialPixmapPlacement=2&
+exec startxfce4

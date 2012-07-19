@@ -13,7 +13,7 @@ set signature="~/.signature"
 set sendmail="/usr/bin/msmtp"
 
 # If not set in ~/.bashrc:
-set spoolfile = /var/spool/mail/gabriel
+#set spoolfile = /var/spool/mail/gabriel
 
 # don't highlight the whole shebang
 set arrow_cursor=yes
@@ -28,7 +28,7 @@ set move=no                  # Don't move mail from spool
 #======================================================#
 # Watch these mailboxes for new mail, useful only if 
 # Procmail or Maildrop is used to sort mail.
-mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
+mailboxes `find ~/mail/ -type d -name cur -printf '%h '`
 #mailboxes ! +slrn +fetchmail +mutt
 #set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 

@@ -41,3 +41,7 @@ aur-general/
 :0
 * ^(From|Cc|To):.*arch-general@archlinux.org
 arch-general/
+
+:0
+* ^(From|Cc|To):.*gf@hax0r.se
+main/

@@ -13,9 +13,8 @@ fortune
 PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
 export PATH
 
-# dobbs rulez!
 echo -e "\n$(uptime)\n"
-ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
+#ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
 
 # Sets the Mail env
 MAIL=/var/spool/mail/gabriel && export MAIL

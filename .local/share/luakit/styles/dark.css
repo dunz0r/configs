@@ -1,23 +1,11 @@
 * {
-    font:"Fontin Sans"  !important;
-    font-family:"Fontin Sans", sans-serif !important ;
-    font-family:"Fontin", serif  !important;
-    font-family:"Delicious", monospace  !important;
-}
+	background-color: #222 !important;
+	background-image: none !important;
+	color: #ccc !important;
+	border-color: #1E2320 !important;
+	}
+a:link, a:active, a:visited {
+    color: #99e438 !important;}
 
-
-body {
-    font:"Fontin Sans"  ;
-    font-family:"Fontin Sans", sans-serif  ;
-    font-family:"Fontin", serif  ;
-    font-family:"Delicious", monospace  ;
-    font-size:11px;
-
-}
-
-pre
-{
-   font-family:"Delicious", monospace  ;
-   font-size:9px;
-}
-
+a:hover {
+    color: lightgrey !important;}

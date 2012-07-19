@@ -1,7 +1,6 @@
 -- Global variables for luakit
 globals = {
     homepage            = "http://en.wikipedia.org/wiki/Special:Random",
- -- homepage            = "http://github.com/mason-larobina/luakit",
     scroll_step         = 40,
     zoom_step           = 0.1,
     max_cmd_history     = 100,
@@ -23,7 +22,6 @@ globals.useragent = string.format("Mozilla/5.0 (%s) AppleWebKit/%s+ (KHTML, like
     string.sub(arch, 1, -2), luakit.webkit_user_agent_version,
     luakit.webkit_version, (lkv and ("/" .. lkv)) or "")
 
-
 -- Search common locations for a ca file which is used for ssl connection validation.
 local ca_files = {
     -- $XDG_DATA_HOME/luakit/ca-certificates.crt
@@ -39,8 +37,6 @@ for _, ca_file in ipairs(ca_files) do
     end
 end
 
-
-
 -- Change to stop navigation sites with invalid or expired ssl certificates
 soup.ssl_strict = false
 
@@ -53,7 +49,15 @@ soup.accept_policy = cookie_policy.always
 -- character (%) may need to be escaped by placing another % before or after
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
--- Set google as fallback search engine
+search_engines = {
+    luakit      = "http://luakit.org/search/index/luakit?q=%s",
+    gg      = "http://google.com/search?q=%s",
+    ddg  = "http://duckduckgo.com/?q=%s",
+    wp   = "http://en.wikipedia.org/wiki/Special:Search?search=%s",
+    imdb        = "http://imdb.com/find?s=all&q=%s",
+    sf = "http://sf.net/search/?words=%s",
+}
+
 search_engines = {
     luakit      = "http://luakit.org/search/index/luakit?q=%s",
     gg          = "http://google.com/search?q=%s",
@@ -75,23 +79,18 @@ search_engines = {
 
 }
 
-
+-- Set google as fallback search engine
 search_engines.default = search_engines.gg
 -- Use this instead to disable auto-searching
 --search_engines.default = "%s"
 
 -- Per-domain webview properties
--- See http://webkitgtk.org/reference/webkitgtk-WebKitWebSettings.html
+-- See http://webkitgtk.org/reference/WebKitWebSettings.html
 domain_props = {
     ["all"] = {
-        ["enable-scripts"]          = false,
-        ["enable-plugins"]          = false,
-        ["enable-private-browsing"] = true,
-        ["user-stylesheet-uri"]     = "file://" .. luakit.data_dir .. "/styles/zenburn.css",
-    },
-    ["youtube.com"] = {
-        ["enable-scripts"] = true,
-        ["enable-plugins"] = true,
+        enable_scripts          = true,
+        enable_plugins          = true,
+        enable_private_browsing = true,
     },
 }
 
