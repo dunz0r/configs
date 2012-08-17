@@ -35,11 +35,11 @@ set showmode
 
 " Indentation stuff
 "set fdm=indent
-set cindent
+"set cindent
 set autoindent
 set smartindent
 "set softtabstop=4
-set shiftwidth=4
+"set shiftwidth=4
 "set tabstop=4
 set copyindent
 "set expandtab

@@ -1,6 +1,6 @@
 ! URxvt
-!URxvt*font:xft:MonteCarlo Fixed 12:pixelsize=12:antialias=true
-!URxvt*boldFont:xft:MonteCarlo Fixed 12:bold:pixelsize=12:antialias=true
+URxvt*font:xft:Monaco:pixelsize=10:antialias=true
+URxvt*boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
 
 URxvt.loginShell: true
 
@@ -10,17 +10,16 @@ URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
 URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
-URxvt.perl-lib: /home/gabriel/.urxvt/
 URxvt.perl-ext:      default,url-select
 URxvt.keysym.C-M-u:    perl:url-select:select_next
-URxvt.urlLauncher:   iceweasel
+URxvt.urlLauncher:   luakit
 URxvt.underlineURLs: true
 
 URxvt*depth: 32
 URxvt*background: rgba:1111/1111/1111/dddd
 URxvt*foreground: #cccccc
 
-URxvt*transparent:        true
+!URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140

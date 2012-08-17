@@ -5,7 +5,6 @@
 source /etc/profile
 source /etc/bash_completion.d/git
 export MPD_USER=gabriel
-export CDPATH=.:~:~/Utveckling
 # shows a fortune upon login
 printf "\n"
 fortune
@@ -24,7 +23,6 @@ umask=0007
 set show-all-if-ambiguos on
 source ~/.aliasrc
 # source completion for git
-#set TERM rxvt-256color; export TERM
 # Set some variables
 export WINEARCH=win32
 PROMPT_COMMAND=prompt_command
@@ -35,21 +33,21 @@ MPD_HOST=localhost
 PAGER=`which less`
 GREP_OPTIONS='--colour=auto'
 
-LANG="en_GB.UTF-8"
-LANGUAGE="en_GB.UTF-8"
-#export LC_CTYPE="sv_SE.UTF-8"
-#export LC_NUMERIC="sv_SE.UTF-8"
-##export LC_TIME="sv_SE.UTF-8"
-#export LC_COLLATE="sv_SE.UTF-8"
-#export LC_MONETARY="sv_SE.UTF-8"
-#export LC_MESSAGES="sv_SE.UTF-8"
-#export LC_PAPER="sv_SE.UTF-8"
-#export LC_NAME="sv_SE.UTF-8"
-#export LC_ADDRESS="sv_SE.UTF-8"
-#export LC_TELEPHONE="sv_SE.UTF-8"
-#export LC_MEASUREMENT="sv_SE.UTF-8"
-#export LC_IDENTIFICATION="sv_SE.UTF-8"
-
+export LANG="en_GB.UTF-8"
+export LANGUAGE="en_GB.UTF-8"
+export LC_CTYPE="sv_SE.UTF-8"
+export LC_NUMERIC="sv_SE.UTF-8"
+export LC_TIME="sv_SE.UTF-8"
+export LC_COLLATE="sv_SE.UTF-8"
+export LC_MONETARY="sv_SE.UTF-8"
+export LC_MESSAGES="sv_SE.UTF-8"
+export LC_PAPER="sv_SE.UTF-8"
+export LC_NAME="sv_SE.UTF-8"
+export LC_ADDRESS="sv_SE.UTF-8"
+export LC_TELEPHONE="sv_SE.UTF-8"
+export LC_MEASUREMENT="sv_SE.UTF-8"
+export LC_IDENTIFICATION="sv_SE.UTF-8"
+export LC_ALL=
 # Make python perdy
 PYTHONSTARTUP="$HOME/.pythonrc"
 # Set the options for the historyfile
@@ -89,7 +87,7 @@ prompt_command () {
     [ $rts -eq 0 ] && \
         local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
         local p="[\[\033[1;31m\]${rts}\[\033[m\]]\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
-    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;31m\]\h\[\033[m\] in \[\033[1;35m\]${w} $(git_prompt_info) [\[\033[1;34m\]\j\[\033[m\]]\n${p} "
+    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;31m\]\h\[\033[m\] in \[\033[1;35m\]${w} [\[\033[1;34m\]\j\[\033[m\]]\n${p} "
    
     case $TERM in
      xterm*|rxvt*)

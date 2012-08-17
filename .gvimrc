@@ -1,1 +1,1 @@
-set guifont=Droid\ Sans\ Mono\ 9
+set guifont=Monaco\ 9
