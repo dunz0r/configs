@@ -6,9 +6,10 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme neverland
+set background=dark
+colorscheme neverland2
 " use all the wonderful 256 colors that urxvt supply
-"set t_Co=256
+set t_Co=256
 
 set fdm=marker
 set incsearch " do incremental searching
@@ -19,7 +20,7 @@ set fileformat=unix
 set history=50 " keep 50 lines of command line history
 " Display
 set number  " I like line numbers
-set numberwidth=3   " I usually only edit small files so therefore 3 digits should be enough
+set numberwidth=4   " I usually only edit small files so therefore 4 digits should be enough
 set nolazyredraw      " redraw!
 set showcmd      " display incomplete commands
 set smartcase      " searching
@@ -60,7 +61,8 @@ map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
-
+" Make a comment
+map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
 
 " grep should always generate a file-name
 set grepprg=grep\ -nH\ $*
@@ -89,6 +91,23 @@ autocmd BufReadPost *.doc %!antiword "%"
 " For arduino syntax
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+
+" To automatically put a comment in a new c-file
+autocmd bufnewfile *.c so /home/gabriel/.vim/templates/c_header.txt
+autocmd bufnewfile *.c exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
+autocmd bufnewfile *.c exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.c execute "normal ma"
+autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.c execute "normal `a"
+"
+" To automatically put a comment in a new h-file
+autocmd bufnewfile *.h so /home/gabriel/.vim/templates/c_header.txt
+autocmd bufnewfile *.h exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
+autocmd bufnewfile *.h exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.h execute "normal ma"
+autocmd Bufwritepre,filewritepre *.h exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.h execute "normal `a"
+
 
 " I want a big window when I'm using gvim
 if has("gui_running")

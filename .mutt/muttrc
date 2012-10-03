@@ -58,7 +58,7 @@ set sort_alias=alias                 # Sort alphabetically
 source ~/.mutt/macros
 #======================================================#
 # Colours:
-source ~/.mutt/colors-blackback            # In their own file
+source /home/gabriel/.mutt/colors-blackback # In their own file
 #======================================================#
 # GPG: encryption-party!
 source ~/.mutt/gpg.mutt

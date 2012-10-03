@@ -1,4 +1,0 @@
-add("http://feeds.idg.se/idg/vzzs")
-add("http://www.svd.se/?service=rss")
-add("http://www.reddit.com/.rss?feed=561d220b9383038cb7b3c7a016043e53aff43bf4&user=dunz", rate=10)
-link_handler("elinks \"%u\"", text=True)

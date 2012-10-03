@@ -77,3 +77,4 @@ alias shitdown='fail && shutdown' # :D
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias tmux='tmux -2 -u'
 alias traidy-update='ssh -t traidy update.sh'
+

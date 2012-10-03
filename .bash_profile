@@ -3,13 +3,12 @@
 # {{{ Variables etc
 # Init stuff
 source /etc/profile
-source /etc/bash_completion.d/git
 export MPD_USER=gabriel
 # shows a fortune upon login
 printf "\n"
 fortune
 # sets the path
-PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
+PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin
 export PATH
 
 echo -e "\n$(uptime)\n"
@@ -20,7 +19,7 @@ MAIL=/var/spool/mail/gabriel && export MAIL
 
 # set umask
 umask=0007
-set show-all-if-ambiguos on
+#set show-all-if-ambiguos on
 source ~/.aliasrc
 # source completion for git
 # Set some variables
@@ -29,11 +28,11 @@ PROMPT_COMMAND=prompt_command
 export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
 MPD_PORT=6600
-MPD_HOST=localhost
+MPD_HOST=cocks@localhost
 PAGER=`which less`
 GREP_OPTIONS='--colour=auto'
 
-export LANG="en_GB.UTF-8"
+#export LANG="en_GB.UTF-8"
 export LANGUAGE="en_GB.UTF-8"
 export LC_CTYPE="sv_SE.UTF-8"
 export LC_NUMERIC="sv_SE.UTF-8"
@@ -48,6 +47,7 @@ export LC_TELEPHONE="sv_SE.UTF-8"
 export LC_MEASUREMENT="sv_SE.UTF-8"
 export LC_IDENTIFICATION="sv_SE.UTF-8"
 export LC_ALL=
+export LANG=C
 # Make python perdy
 PYTHONSTARTUP="$HOME/.pythonrc"
 # Set the options for the historyfile
@@ -246,6 +246,13 @@ function hstream() {
     cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{access=http,mux=ogg,dst=10.0.0.2:8000}'
 }
 # }}}
-
+#{{{ Upload an image to server
+function imgupl()
+{
+	name=$(basename "$1")
+	scp "$1" hax0r:/www/docs/hax0r.se/files/img/
+	echo "http://hax0r.se/files/img/$name"
+}
+#}}}
 # }}}
 

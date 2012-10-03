@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 
-xset -b # disable bell
+#xset -b # disable bell
 eval `/usr/bin/ssh-agent`
-urxvtd -o -f
+#urxvtd -o -f
 
 if test -f /usr/lib/openssh/x11-ssh-askpass # Archlinux
 then
@@ -11,6 +11,15 @@ then
 fi
 
 xmodmap ~/.xmodmap
-
-#nvidia-settings -a InitialPixmapPlacement=2&
-exec startxfce4
+urxvtd -o -f
+nvidia-settings -a InitialPixmapPlacement=2&
+nitrogen --restore
+# Clock + mpd
+while true; do 
+	xsetroot -name "$(date +"%F %R |" ;mpc|head -1)"; 
+	sleep 1m; 
+done&
+# To not have to quit X when restarting dwm
+while true; do
+	$HOME/.dwm/dwm &> $HOME/.xsession-errors
+done
