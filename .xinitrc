@@ -14,6 +14,7 @@ xmodmap ~/.xmodmap
 urxvtd -o -f
 nvidia-settings -a InitialPixmapPlacement=2&
 nitrogen --restore
+#openbox
 # Clock + mpd
 while true; do 
 	xsetroot -name "$(date +"%F %R |" ;mpc|head -1)"; 

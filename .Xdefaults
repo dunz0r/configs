@@ -19,7 +19,7 @@ URxvt*depth: 32
 URxvt*background: rgba:1111/1111/1111/dddd
 URxvt*foreground: #cccccc
 
-!URxvt*transparent:        true
+URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
