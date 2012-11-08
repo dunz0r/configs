@@ -21,18 +21,9 @@ ulug/
 * ^(To|Cc|From):.*styrelse@ulug.org
 ulug-styrelse/
 
-
-:0
-* ^(Cc|From|To): [a-z]+@securityfocus.com
-focus-ids/
-
 :0
 * ^(Cc|From|To):.*luakit-dev@lists.luakit.org
 luakit-dev/
-
-:0
-* ^(From|Cc|To):.*pacman-dev@archlinux.org
-pacman-dev/
 
 :0
 * ^(From|Cc|To):.*aur-general@archlinux.org

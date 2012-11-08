@@ -30,7 +30,7 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:-,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\>\ 
+set listchars=trail:-,tab:\»\ 
 set hlsearch      " hilight searches
 set showmode
 
@@ -91,7 +91,14 @@ autocmd BufReadPost *.doc %!antiword "%"
 " For arduino syntax
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-
+" To automatically put a comment in a new ino-file
+autocmd bufnewfile *.ino so /home/gabriel/.vim/templates/c_header.txt
+autocmd bufnewfile *.ino exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
+autocmd bufnewfile *.ino exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.ino execute "normal ma"
+autocmd Bufwritepre,filewritepre *.ino exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.ino execute "normal `a"
+"
 " To automatically put a comment in a new c-file
 autocmd bufnewfile *.c so /home/gabriel/.vim/templates/c_header.txt
 autocmd bufnewfile *.c exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
