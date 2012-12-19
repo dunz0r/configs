@@ -1,0 +1,10 @@
+:insert
+/*
+ * File Name :
+ * Purpose :
+ * Creation Date :
+ * Last Modified :
+ * Created By : Gabriel Fornaeus, <gf@hax0r.se>
+ *
+ */
+.

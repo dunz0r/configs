@@ -23,7 +23,7 @@ URxvt*transparent:        true
 URxvt.cursorBlink:        true
 URxvt.cursorOnTime:       300
 URxvt.cursorOffTime:      140
-URxvt*shading:            30
+URxvt*shading:            20
 !URxvt*fading:             40
 URxvt*scrollBar:          False
 

@@ -81,7 +81,7 @@ domain_props = {
         enable_scripts          = true,
         enable_plugins          = true,
         enable_private_browsing = true,
-        user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/lich.css",
+        --user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/lich.css",
     },
     ["youtube.com"] = {
         enable_scripts = true,
