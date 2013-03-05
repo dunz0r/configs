@@ -2,7 +2,6 @@
 ########################################
 # File: shotgen.sh                     #
 ########################################
-# Constants
 if [ $1 == "-f" ] ; then
     tag=$(date '+%Y-%m-%d-%H%M')-$2
     forum=1
@@ -11,6 +10,7 @@ else
     forum=0
 fi
 
+# Constants
 FILE=$tag-scrot.png
 THUMB=$tag-scrot-thumb.png
 LINKFILE=$tag-links.txt
