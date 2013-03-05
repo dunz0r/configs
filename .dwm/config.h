@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "Monte Carlo 7";
-static const char normbordercolor[] = "#262626";
+static const char font[]            = "Monaco 7";
+static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#262626";
 static const char normfgcolor[]     = "#bdf13d";
 static const char selbordercolor[]  = "#6be603";
@@ -16,7 +16,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
+static const char *tags[] = { "1", "2", "3", "q", "w", "e" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -26,6 +26,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "luakit",  NULL,       NULL,        1 << 1,       False,       -1 },
+	{ "Firefox",  NULL,       NULL,        1 << 1,       False,      -1 },
 };
 
 /* layout(s) */
@@ -37,11 +38,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "bstackhoriz.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "TTT",      bstack },/* first entry is default */
 	{ "[]=",      tile },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "TTT",      bstack },/* first entry is default */
 	{ "[M]",      monocle },
 	{ "===",      bstackhoriz },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 	/* Because of the cycle function */
 	{ .symbol = NULL,   .arrange = NULL    },
 };

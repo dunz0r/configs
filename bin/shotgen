@@ -37,9 +37,8 @@ if [ $? -eq 0 ] ; then
     else
         SHOTLINK="$WEBPAGE/$FILE"
     fi
-    notify-send -i /usr/share/awesome/icons/awesome48.png "::shotgen::" "Links Created!"
+    notify-send -i /usr/share/awesome/icons/awesome48.png "::shotgen::" "Links Created."
     echo "$SHOTLINK" | xclip -i
-    rm $LINKFILE
     rm $FILE $THUMB
     exit 0
 else

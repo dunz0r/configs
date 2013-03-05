@@ -44,7 +44,6 @@ char* get_aud_song(size_t *len) {
 }
 
 char get_battery_status() {
-	// TODO read first character of BAT0/status
 	FILE *fd = fopen("/sys/class/power_supply/BAT0/status", "r");
 	char bat_status;
 	if(fd == NULL) {
@@ -139,10 +138,10 @@ int main(void) {
 		exit(1);
 	for(;;sleep(10)) {
 		datetime = get_datetime();
-		battery_status = get_battery_status();
-		bat0 = get_battery();
-		//char *np = get_aud_song(&ret_len);
-		snprintf(status, 200, "%c%d%% | %s ", battery_status, bat0, datetime);
+	//	battery_status = get_battery_status();
+	//	bat0 = get_battery();
+		char *np = get_aud_song(&ret_len);
+		snprintf(status, 200, "%s | %s ", np, datetime);
 		//fprintf(stdout, "%s\n", status);
 
 		free(datetime);
