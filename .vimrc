@@ -34,6 +34,8 @@ set listchars=trail:-,tab:\»\
 set hlsearch      " hilight searches
 set showmode
 
+set tags=+~/.vim/systags
+
 " Indentation stuff
 "set fdm=indent
 "set cindent

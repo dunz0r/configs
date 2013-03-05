@@ -15,11 +15,11 @@ urxvtd -o -f
 nvidia-settings -a InitialPixmapPlacement=2&
 nitrogen --restore
 # Clock + mpd
-while true; do 
-	xsetroot -name "$(date +"%F %R |" ;mpc|head -1)"; 
-	sleep 1m; 
-done&
+#hile true; do 
+#xsetroot -name "$(date +"%F %R |" ;mpc|head -1)"; 
+#sleep 1m; 
+#one&
 # To not have to quit X when restarting dwm
 while true; do
-	$HOME/.dwm/dwm &> $HOME/.xsession-errors
+$HOME/.dwm/dwm &> $HOME/.xsession-errors
 done

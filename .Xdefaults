@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:Monaco:pixelsize=10:antialias=true
-URxvt*boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
+URxvt*font:xft:Monte Carlo:pixelsize=10:antialias=true
+URxvt*boldFont:xft:Monte Carlo:bold:pixelsize=10:antialias=true
 
 URxvt.loginShell: true
 
@@ -59,5 +59,5 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/splurge.Xresources"
+#include "/home/gabriel/.xdefaults-colour/tango.Xresources"
 ! EOF

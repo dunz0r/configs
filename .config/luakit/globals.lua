@@ -81,14 +81,13 @@ domain_props = {
         enable_scripts          = true,
         enable_plugins          = true,
         enable_private_browsing = true,
-        --user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/lich.css",
+        user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/adblock-read-only/adblock.css",
     },
     ["youtube.com"] = {
         enable_scripts = true,
         enable_plugins = true,
     },
     ["bbs.archlinux.org"] = {
-        user_stylesheet_uri     = "file://" .. luakit.data_dir .. "/styles/dark.css",
         enable_private_browsing = true,
     },
 }
