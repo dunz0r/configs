@@ -138,10 +138,9 @@ int main(void) {
 		exit(1);
 	for(;;sleep(10)) {
 		datetime = get_datetime();
-	//	battery_status = get_battery_status();
-	//	bat0 = get_battery();
-		char *np = get_aud_song(&ret_len);
-		snprintf(status, 200, "%s | %s ", np, datetime);
+		battery_status = get_battery_status();
+		bat0 = get_battery();
+		snprintf(status, 200, "%s%d%% | %s ", &battery_status, bat0, datetime);
 		//fprintf(stdout, "%s\n", status);
 
 		free(datetime);
