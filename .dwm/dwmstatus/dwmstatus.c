@@ -128,6 +128,10 @@ int main(void) {
 	char battery_status;
 	int bat0;
 
+	char hostname[64];
+	hostname[63] = '\0';
+	gethostname(hostname, 63);
+
 
 	if (!(dpy = XOpenDisplay(NULL))) {
 		fprintf(stderr, "Cannot open display.\n");
@@ -140,7 +144,7 @@ int main(void) {
 		datetime = get_datetime();
 		battery_status = get_battery_status();
 		bat0 = get_battery();
-		snprintf(status, 200, "%s%d%% | %s ", &battery_status, bat0, datetime);
+		snprintf(status, 200, "%s %s%d%% | %s ", hostname, &battery_status, bat0, datetime);
 		//fprintf(stdout, "%s\n", status);
 
 		free(datetime);
