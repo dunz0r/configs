@@ -7,7 +7,7 @@ set backspace=indent,eol,start
 set title
 
 set background=dark
-colorscheme neverland2
+colorscheme neverland-darker
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 

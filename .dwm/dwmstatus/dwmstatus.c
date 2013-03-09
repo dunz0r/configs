@@ -19,8 +19,8 @@ void setstatus(char *str) {
 	XSync(dpy, False);
 }
 
-char* get_aud_song(size_t *len) {
-	FILE* cmd = popen("audtool current-song", "r");
+char* get_song(size_t *len) {
+	FILE* cmd = popen("mocp -Q '%a; %t'", "r");
 	char buff[256];
 	char *ret = malloc(sizeof(char) * 256);
 	size_t temp_len = 0;
@@ -125,8 +125,10 @@ int get_battery() {
 int main(void) {
 	char *status;
 	char *datetime;
+	char *np;
 	char battery_status;
 	int bat0;
+	size_t ret_len = 0;
 
 	char hostname[64];
 	hostname[63] = '\0';
@@ -144,7 +146,8 @@ int main(void) {
 		datetime = get_datetime();
 		battery_status = get_battery_status();
 		bat0 = get_battery();
-		snprintf(status, 200, "%s %s%d%% | %s ", hostname, &battery_status, bat0, datetime);
+		np = get_song(&ret_len);
+		snprintf(status, 200, "%s %s%d%% | %s | %s", hostname, &battery_status, bat0, datetime, np);
 		//fprintf(stdout, "%s\n", status);
 
 		free(datetime);

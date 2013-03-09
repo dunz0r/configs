@@ -2,7 +2,7 @@
  * File Name : outputcommand.c
  * Purpose : testing popen
  * Creation Date : 12-12-2012
- * Last Modified : Wed 12 Dec 2012 21:07:02 CET
+ * Last Modified : ons  6 mar 2013 12:27:56
  * Created By : Gabriel Fornaeus, <gf@hax0r.se>
  *
  */
@@ -15,7 +15,7 @@ int main(void) {
 	FILE *fp;
 	char song[128];
 
-	fp = popen("audtool current-song", "r");
+	fp = popen(" mocp -Q '%a; %t'", "r");
 	if(fp == NULL) {
 		fprintf(stderr, "Failed to run command\n");
 		return -1;
