@@ -130,9 +130,12 @@ int main(void) {
 	int bat0;
 	size_t ret_len = 0;
 
-	char hostname[64];
-	hostname[63] = '\0';
-	gethostname(hostname, 63);
+	char hostname[16];//, laptop_hostname[16];
+	//laptop_hostname = "eivor";
+	hostname[15] = '\0';
+	gethostname(hostname, 15);
+	int is_laptop;
+	is_laptop = strncmp(hostname, "eivor", 16);
 
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -144,10 +147,16 @@ int main(void) {
 		exit(1);
 	for(;;sleep(10)) {
 		datetime = get_datetime();
-		battery_status = get_battery_status();
-		bat0 = get_battery();
-		np = get_song(&ret_len);
-		snprintf(status, 200, "%s %s%d%% | %s | %s", hostname, &battery_status, bat0, datetime, np);
+		if(is_laptop == 0) {
+			battery_status = get_battery_status();
+			bat0 = get_battery();
+			np = get_song(&ret_len);
+			snprintf(status, 200, "%s %s%d%% | %s | %s",
+				hostname, &battery_status, bat0, datetime, np);
+		} else {
+			np = get_song(&ret_len);
+			snprintf(status, 200, "%s | %s | %s", hostname, datetime, np);
+		}
 		//fprintf(stdout, "%s\n", status);
 
 		free(datetime);

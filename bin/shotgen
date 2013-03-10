@@ -21,10 +21,8 @@ SERVER=dunz0r@hax0r.se
 # Perform the Screenshot and
 # modify the files as necissary.
 
-scrot -cd 5 $tag-scrot.png
+scrot -cd 5 -t 10 $tag-scrot.png
 
-cp $FILE $THUMB
-mogrify -resize 10% $THUMB
 scp $FILE $THUMB $SERVER:/www/docs/hax0r.se/files/img/screenshots
 ########################################
 # Perform error checking and exit
@@ -42,7 +40,7 @@ if [ $? -eq 0 ] ; then
     rm $FILE $THUMB
     exit 0
 else
-    echo "File upload Failed!"
+    echo "File upload Failed"
     rm $FILE $THUMB
     exit 1
 fi
