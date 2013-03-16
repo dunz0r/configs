@@ -20,7 +20,7 @@ void setstatus(char *str) {
 }
 
 char* get_song(size_t *len) {
-	FILE* cmd = popen("mocp -Q '%a; %t'", "r");
+	FILE* cmd = popen("mocp -Q ' | %a; %t'", "r");
 	char buff[256];
 	char *ret = malloc(sizeof(char) * 256);
 	size_t temp_len = 0;
@@ -151,11 +151,11 @@ int main(void) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
 			np = get_song(&ret_len);
-			snprintf(status, 200, "%s %s%d%% | %s | %s",
-				hostname, &battery_status, bat0, datetime, np);
+			snprintf(status, 200, "%s%d%% | %s | %s",
+				&battery_status, bat0, datetime, np);
 		} else {
 			np = get_song(&ret_len);
-			snprintf(status, 200, "%s | %s | %s", hostname, datetime, np);
+			snprintf(status, 200, "%s %s", datetime, np);
 		}
 		//fprintf(stdout, "%s\n", status);
 

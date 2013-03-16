@@ -14,12 +14,9 @@ xmodmap ~/.xmodmap
 urxvtd -o -f
 nvidia-settings -a InitialPixmapPlacement=2&
 nitrogen --restore
-# Clock + mpd
-#hile true; do 
-#xsetroot -name "$(date +"%F %R |" ;mpc|head -1)"; 
-#sleep 1m; 
-#one&
+$HOME/.dwm/dwmstatus/dwmstatus&
 # To not have to quit X when restarting dwm
-while true; do
-$HOME/.dwm/dwm &> $HOME/.xsession-errors
-done
+#while true; do
+#$HOME/.dwm/dwm &> $HOME/.xsession-errors
+#done
+pekwm

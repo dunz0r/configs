@@ -27,7 +27,7 @@ set smartcase      " searching
 set scrolloff=2      " I like to know what's next
 set wildmenu
 set wildmode=list:longest " wildmode works great this way
-set fillchars=stl:-,stlnc:-,vert:\|,fold:-,diff:-
+set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
 set listchars=trail:-,tab:\»\ 
