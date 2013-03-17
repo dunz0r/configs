@@ -76,138 +76,169 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LS_COLORS GREP_OPTIONS PAGER LESS MPD_H
 #{{{ Functions
 # {{{ Alternative prompt
 prompt_command () {
-    local rts=$?
-    local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
-    # pwd max length L, prefix shortened pwd with m
-    local L=45 m='<'
-    [ ${#w} -gt $L ] && { local n=$((${#w} - $L + ${#m}))
-    local w="\[\033[0;32m\]${m}\[\033[0;33m\]${w:$n}\[\033[0m\]" ; } \
-        ||   local w="\[\033[0;33m\]${w}\[\033[0m\]"
-    # different colors for different return status
-    [ $rts -eq 0 ] && \
-        local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
-        local p="[\[\033[1;31m\]${rts}\[\033[m\]]\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
-    PS1="\[\033[1;36m\]\u\[\033[m\] at \[\033[1;31m\]\h\[\033[m\] in \[\033[1;35m\]${w} [\[\033[1;34m\]\j\[\033[m\]]\n${p} "
-   
-    case $TERM in
-     xterm*|rxvt*)
-         echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
-         trap 'printf "\e]2;%s\a" "$(echo "${USER}@${HOSTNAME}:${PWD/$HOME/~}:$BASH_COMMAND")" > /dev/tty' DEBUG
-         ;;
-        *)
-          ;;
-esac
+	local rts=$?
+	local        BLUE="\[\033[0;34m\]"
+	local  LIGHT_GREY="\[\033[0;37m\]"
+	local LIGHT_GREEN="\[\033[1;32m\]"
+	local  LIGHT_BLUE="\[\033[1;34m\]"
+	local  LIGHT_CYAN="\[\033[1;36m\]"
+	local        CYAN="\[\033[0;36m\]"
+	local      YELLOW="\[\033[0;33m\]"
+	local LIGHT_YELLOW="\[\033[1;33m\]"
+	local       WHITE="\[\033[1;37m\]"
+	local	     GREY="\[\033[1;30m\]"
+	local         RED="\[\033[0;31m\]"
+	local  BRIGHT_RED="\[\033[1;31m\]"
+	local   NO_COLOUR="\[\033[0m\]"
+	local       GREEN="\[\033[0;32m\]"
+
+	# change colour of hostname depending on host
+	case $HOSTNAME in
+		ingrid)
+			local HOST_COLOUR=$BLUE
+			;;
+		gertrud)
+			local HOST_COLOUR=$BRIGHT_RED
+			;;
+		eivor)
+			local HOST_COLOUR=$GREEN
+			;;
+		*)
+			local HOST_COLOUR=$CYAN
+			;;
+	esac
+
+	local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
+	# pwd max length L, prefix shortened pwd with m
+	local L=45 m='<'
+	[ ${#w} -gt $L ] && { local n=$((${#w} - $L + ${#m}))
+	local w="${GREEN}${m}${YELLOW}${w:$n}${NO_COLOUR}" ; } \
+		||   local w="${YELLOW}${w}${NO_COLOUR}"
+	# different colors for different return status
+	[ $rts -eq 0 ] && \
+		local p="${GREY}>${LIGHT_GREEN}>${LIGHT_GREEN}>${NO_COLOUR}" || \
+		local p="[${BRIGHT_RED}${rts}${NO_COLOUR}${LIGHT_GREY}>${RED}>${BRIGHT_RED}>${NO_COLOUR}"
+	PS1="${LIGHT_CYAN}\u${NO_COLOUR} at ${HOST_COLOUR}\h${NO_COLOUR} in ${w} [${BLUE}\j${NO_COLOUR}]\n${p} "
+
+	case $TERM in
+		xterm*|rxvt*)
+			echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
+			trap 'printf "\e]2;%s\a" "$(echo "${USER}@${HOSTNAME}:${PWD/$HOME/~}:$BASH_COMMAND")" > /dev/tty' DEBUG
+			;;
+		*)
+			;;
+	esac
 
 
-}
-# }}}
-# This is the main function for the prompt#{{{
-function pprom2 {
-# Capture the exit status
-ESTATUS=$?
+	}
+	# }}}
+	# This is the main function for the prompt#{{{
+	function pprom2 {
+	# Capture the exit status
+	ESTATUS=$?
 
-local        BLUE="\[\033[0;34m\]"
-local  LIGHT_GREY="\[\033[0;37m\]"
-local LIGHT_GREEN="\[\033[1;32m\]"
-local  LIGHT_BLUE="\[\033[1;34m\]"
-local  LIGHT_CYAN="\[\033[1;36m\]"
-local        CYAN="\[\033[0;36m\]"
-local      YELLOW="\[\033[0;33m\]"
-local LIGHT_YELLOW="\[\033[1;33m\]"
-local       WHITE="\[\033[1;37m\]"
-local	     GREY="\[\033[1;30m\]"
-local         RED="\[\033[0;31m\]"
-local  BRIGHT_RED="\[\033[1;31m\]"
-local   NO_COLOUR="\[\033[0m\]"
-local       GREEN="\[\033[0;32m\]"
+	local        BLUE="\[\033[0;34m\]"
+	local  LIGHT_GREY="\[\033[0;37m\]"
+	local LIGHT_GREEN="\[\033[1;32m\]"
+	local  LIGHT_BLUE="\[\033[1;34m\]"
+	local  LIGHT_CYAN="\[\033[1;36m\]"
+	local        CYAN="\[\033[0;36m\]"
+	local      YELLOW="\[\033[0;33m\]"
+	local LIGHT_YELLOW="\[\033[1;33m\]"
+	local       WHITE="\[\033[1;37m\]"
+	local	     GREY="\[\033[1;30m\]"
+	local         RED="\[\033[0;31m\]"
+	local  BRIGHT_RED="\[\033[1;31m\]"
+	local   NO_COLOUR="\[\033[0m\]"
+	local       GREEN="\[\033[0;32m\]"
 
-if [ $UID != 0 ]; then
-    WARNCOL=$GREEN
-else
-    WARNCOL=$RED
-fi
+	if [ $UID != 0 ]; then
+		WARNCOL=$GREEN
+	else
+		WARNCOL=$RED
+	fi
 
-# sets the titlebar if we are in an xterm
-case $TERM in
-    xterm*|rxvt*)
-        TITLEBAR="\[\033]0;term:$0::\h:$PWD\007\]"
-        trap 'printf "\e]2;%s\a" "$(echo "term:$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
-        LINE=$(asciiecho q)
-        ULINE=$(asciiecho lq)
-        LLINE=$(asciiecho mq)
-        ARROW=$(asciiecho z)
-        ;;
-    *)
-        TITLEBAR=""
-        LINE="-"
-        LLINE=""
-        ULINE=""
-        ARROW=">"
-        ;;
-esac
+	# sets the titlebar if we are in an xterm
+	case $TERM in
+		xterm*|rxvt*)
+			TITLEBAR="\[\033]0;term:$0::\h:$PWD\007\]"
+			trap 'printf "\e]2;%s\a" "$(echo "term:$0::$HOSTNAME:$PWD:$BASH_COMMAND")" > /dev/tty' DEBUG
+			LINE=$(asciiecho q)
+			ULINE=$(asciiecho lq)
+			LLINE=$(asciiecho mq)
+			ARROW=$(asciiecho z)
+			;;
+		*)
+			TITLEBAR=""
+			LINE="-"
+			LLINE=""
+			ULINE=""
+			ARROW=">"
+			;;
+	esac
 
-# change colour of hostname depending on host
-case $HOSTNAME in
-    inger)
-        local HOSTCOLOUR=$WHITE
-        ;;
-    gertrud)
-        local HOSTCOLOUR=$BRIGHT_RED
-        ;;
-    ulug)
-        local HOSTCOLOUR=$GREEN
-        ;;
-    *)
-        local HOSTCOLOUR=$CYAN
-        ;;
-esac
-# sets the color to red if exitstatuts is anything but 0
-case $ESTATUS in
-    0)
-        local	ECOLOR="\[\033[1;32m\]"
-        ;;
-    *)
-        ECOLOR="\[\033[1;31m\]"
-        ;;
-esac
-# the prompt starts here
-#PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
-    #PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
-    ##$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
-#PS2="-]$GREEN#$WHITE>$NO_COLOUR "
-#PS4='+ '
-PS1="$TITLEBAR\
-    $GREY$ULINE[$ECOLOR$ESTATUS\
-    $GREY]$GREY$LINE[\
-    $WHITE\W$GREY]\
-    $(__git_ps1 " %s"$LINE)[$HOSTCOLOUR\h$GREY]\n\
-    $LLINE$LINE$LIGHT_GREY\$$GREY»$NO_COLOUR "
+	# change colour of hostname depending on host
+	case $HOSTNAME in
+		inger)
+			local HOSTCOLOUR=$WHITE
+			;;
+		gertrud)
+			local HOSTCOLOUR=$BRIGHT_RED
+			;;
+		ulug)
+			local HOSTCOLOUR=$GREEN
+			;;
+		*)
+			local HOSTCOLOUR=$CYAN
+			;;
+	esac
+	# sets the color to red if exitstatuts is anything but 0
+	case $ESTATUS in
+		0)
+			local	ECOLOR="\[\033[1;32m\]"
+			;;
+		*)
+			ECOLOR="\[\033[1;31m\]"
+			;;
+	esac
+	# the prompt starts here
+	#PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
+		#PS1="$TITLEBAR$GREY<$WHITE\j$GREY>$WHITE-$GREY<$WHITE\w$GREY>-<$HOSTCOLOUR$(hostname)$GREY>\n\
+		##$WHITE[$ECOLOR$ESTATUS$NO_COLOUR$WHITE]$GREY-$WHITE[$CYAN$(__git_ps1 " %s")$WHITE]$GREY$WARNCOL\$$NO_COLOUR:>$NO_COLOUR "
+	#PS2="-]$GREEN#$WHITE>$NO_COLOUR "
+	#PS4='+ '
+	PS1="$TITLEBAR\
+		$GREY$ULINE[$ECOLOR$ESTATUS\
+		$GREY]$GREY$LINE[\
+		$WHITE\W$GREY]\
+		$(__git_ps1 " %s"$LINE)[$HOSTCOLOUR\h$GREY]\n\
+		$LLINE$LINE$LIGHT_GREY\$$GREY»$NO_COLOUR "
 
-PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
+	PS2="$LIGHT_YELLOW$LINE$YELLOW$LINE$GREY$LINE$ARROW$NO_COLOUR "
 }
 #}}}
 # checks the current tty#{{{
 function ttycheck
 {
-    temp=$(tty) ; echo ${temp:5}
+	temp=$(tty) ; echo ${temp:5}
 }
 #}}}
 # asciiecho#{{{
 function asciiecho
 {
-    echo -e "\033(0$1\033(B"
+	echo -e "\033(0$1\033(B"
 }
 #}}}
 # mpc shuffle thingie#{{{
 function mpsa()
 {
-    mpc search $1 "$2" | shuf -n $3 | mpc add
+	mpc search $1 "$2" | shuf -n $3 | mpc add
 }
 #}}}
 # Wiki lookup function#{{{
 function wiki
 {
-    dig +short txt $1.wp.dg.cx
+	dig +short txt $1.wp.dg.cx
 }
 #}}}
 # {{{ Git functions!
@@ -217,19 +248,19 @@ echo "[${ref#refs/heads/}$(parse_git_dirty)]"
     }
 
     parse_git_dirty () {
-        gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
+	    gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
 
-        if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
-            echo -n "!"
-        fi
+	    if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
+		    echo -n "!"
+	    fi
 
-        if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-            echo -n "?"
-        fi
+	    if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
+		    echo -n "?"
+	    fi
 
-        if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
-            echo -n "."
-        fi
+	    if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
+		    echo -n "."
+	    fi
     }
 
     #
@@ -243,7 +274,7 @@ echo "[${ref#refs/heads/}$(parse_git_dirty)]"
 # }}}
 # {{{ Stream a file with cvlc
 function hstream() {
-    cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{access=http,mux=ogg,dst=10.0.0.2:8000}'
+cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{access=http,mux=ogg,dst=10.0.0.2:8000}'
 }
 # }}}
 #{{{ Upload an image to server
