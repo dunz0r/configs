@@ -13,6 +13,7 @@ fi
 xmodmap ~/.xmodmap
 urxvtd -o -f
 #nvidia-settings -a InitialPixmapPlacement=2&
+xset -b
 nitrogen --restore
 $HOME/.dwm/dwmstatus/dwmstatus&
 # To not have to quit X when restarting dwm
