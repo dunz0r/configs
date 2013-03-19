@@ -12,7 +12,10 @@ fi
 
 xmodmap ~/.xmodmap
 urxvtd -o -f
-#nvidia-settings -a InitialPixmapPlacement=2&
+if [ $HOSTNAME == "ingrid" ]
+then
+	nvidia-settings -a InitialPixmapPlacement=2&
+fi
 xset -b
 nitrogen --restore
 $HOME/.dwm/dwmstatus/dwmstatus&
