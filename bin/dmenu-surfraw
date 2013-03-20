@@ -1,0 +1,2 @@
+#!/bin/bash
+surfraw -elvi|cut -f1 | dmenu -fn "$1" -nb "$2" -nf "$3" -sb "$4" -sf "$5" -p Surfraw | xargs surfraw -browser=luakit

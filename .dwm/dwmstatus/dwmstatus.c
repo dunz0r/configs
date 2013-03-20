@@ -20,7 +20,7 @@ void setstatus(char *str) {
 }
 
 char* get_song(size_t *len) {
-	FILE* cmd = popen("mocp -Q ' | %a; %t'", "r");
+	FILE* cmd = popen("mocp -Q '| %a; %t'", "r");
 	char buff[256];
 	char *ret = malloc(sizeof(char) * 256);
 	size_t temp_len = 0;

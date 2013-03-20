@@ -1,0 +1,4 @@
+#!/bin/bash
+
+entries=$(sqlite3 -line $HOME/.local/share/luakit/bookmarks.db 'select uri from bookmarks;')
+echo $entries|sed -s 's/uri = /\n/g'| dmenu -fn "$1" -nb "$2" -nf "$3" -sb "$4" -sf "$5" -p Luakit | xargs luakit
