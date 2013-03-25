@@ -54,6 +54,8 @@ syntax on      " syntax
 " rot13 haxorize
 map <F12> ggVGg?
 map <F10> :VCSCommit
+" Make
+map <F9> <Esc>:!make<Space>
 " open tha nurdtread
 map <F11> :NERDTreeToggle<Return>
 " input current time and date

@@ -151,7 +151,7 @@ int main(void) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
 			np = get_song(&ret_len);
-			snprintf(status, 200, "%s%d%% | %s | %s",
+			snprintf(status, 200, "%s%d%% | %s %s",
 				&battery_status, bat0, datetime, np);
 		} else {
 			np = get_song(&ret_len);
