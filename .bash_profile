@@ -108,6 +108,7 @@ prompt_command () {
 			;;
 	esac
 
+	local g=$(git_prompt_info)
 	local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
 	# pwd max length L, prefix shortened pwd with m
 	local L=45 m='<'
@@ -118,7 +119,7 @@ prompt_command () {
 	[ $rts -eq 0 ] && \
 		local p="${GREY}>${LIGHT_GREEN}>${LIGHT_GREEN}>${NO_COLOUR}" || \
 		local p="[${BRIGHT_RED}${rts}${NO_COLOUR}${LIGHT_GREY}>${RED}>${BRIGHT_RED}>${NO_COLOUR}"
-	PS1="${LIGHT_CYAN}\u${NO_COLOUR} at ${HOST_COLOUR}\h${NO_COLOUR} in ${w} [${BLUE}\j${NO_COLOUR}]\n${p} "
+	PS1="${LIGHT_CYAN}\u${NO_COLOUR} at ${HOST_COLOUR}\h${NO_COLOUR} in ${w} [${BLUE}\j${NO_COLOUR}] ${g}\n${p} "
 
 	case $TERM in
 		xterm*|rxvt*)

@@ -1,15 +1,17 @@
 "3.6 (created: 2012/12/24 13:05:56)
 
-highlight CmdLine color: #999; background-color: #111
-highlight CmdOutput color: #999; background-color: #111
-highlight Normal color: #999; background-color: #111
-highlight StatusLine color: #999; background-color: #111
+highlight CmdLine color: #aaa; background-color: #222
+highlight CmdOutput color: #aaa; background-color: #222
+highlight Normal color: #999; background-color: #222
+highlight StatusLine color: #999; background-color: #222
 highlight Hint color: #afd700; background-color: #333
 highlight HintElem color: #5fd7ff; background-color: #333
 highlight HintActive background-color: #5fd7ff; color: #333
 highlight Function color: #afd700;
-highlight CompTitle font-weight: bold; background: -moz-linear-gradient(19% 75% 90deg, #333, #111, #444 100%);
-highlight CompTitle>* color: #aaa; 
+highlight CompTitle font-weight: bold; background: -moz-linear-gradient(19% 75% 90deg, #444, #444, #444 100%);
+highlight CompTitle>* color: #aaa;
 source! ~/.vimperatorrc.local
 
+nmap h :back<CR>
+nmap l :forward<CR>
 " vim: set ft=vimperator:

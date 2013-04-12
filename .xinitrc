@@ -16,9 +16,8 @@ then
 fi
 xset -b
 nitrogen --restore
-#$HOME/.dwm/dwmstatus/dwmstatus&
+$HOME/.dwm/dwmstatus/dwmstatus&
 # To not have to quit X when restarting dwm
-#while true; do
-#$HOME/.dwm/dwm &> $HOME/.xsession-errors
-#done
-pekwm
+while true; do
+$HOME/.dwm/dwm &> $HOME/.xsession-errors
+done
