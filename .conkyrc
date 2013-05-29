@@ -1,10 +1,11 @@
-background yes
-use_xft yes
+background no
+use_xft no
 xftfont Fontin Sans:=12
 xftalpha 0.1
+font -*-montecarlo-medium-*-*-*-*-110-*-*-*-*-*-*
 update_interval 5
 total_run_times 0
-own_window yes
+own_window no
 own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
@@ -29,10 +30,4 @@ override_utf8_locale yes
 
 
 TEXT
-${voffset 10}${color cacaca}${font Fontin:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color FFA300}${font Delicious:pixelsize=42}${time %d} ${voffset -15}${color cacaca}${font Fontin Smallcaps:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font Fontin Smallcaps:pixelsize=58}${offset -148}${time %A}${font}
-${voffset 20}${offset 12}${font Fontin:pixelsize=12}${color FFA300}HD ${offset 9}$color${fs_free /} / ${fs_size /}${offset 30}${color FFA300}RAM ${offset 9}$color$mem / $memmax${offset 30}${color FFA300}CPU ${offset 9}$color${cpu cpu0}%
-${color yellow}${offset 12}Played ${execi 6 lf-playcount-image.sh}${execi 6 cut -f 2 -d \  "/tmp/lf-playcount-image"} times$color
-${execpi 6 echo "\${image /tmp/lf-images/large.png -p 1,160 -s 160x160 -n -f 6}"}
-${font Fontin:pixelsize=12}${offset 170}Playing ${color FFA300}$mpd_title $color 
-${offset 170}By ${color FFA300} $mpd_artist $color 
-${offset 170}From ${color FFA300} $mpd_album
+${color white}${offset 12}${exec ~/bin/showcal}$color

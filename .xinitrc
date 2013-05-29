@@ -16,6 +16,7 @@ then
 fi
 xset -b
 nitrogen --restore
+unclutter
 $HOME/.dwm/dwmstatus/dwmstatus&
 # To not have to quit X when restarting dwm
 while true; do

@@ -102,7 +102,7 @@
 #                     be doubled (i.e., '\\').  (See zshmisc
 #                     documentation for more information.)
 #
-FormatString = "%(a:%a - :)%(t:%t:)%(A: (%A):)"
+FormatString = "%(A:%A; :)%(a:%a - :)%(t:%t:)"
 
 # Input and ouput buffer sizes (in kilobytes).
 #InputBuffer = 512                  # Minimum value is 32KB
@@ -387,7 +387,7 @@ ResampleMethod = SincBestQuality
 # to use 24bit output.  (The MP3 decoder, for example, uses this format.)
 # This is disabled by default because there were reports that it prevents
 # MP3 files from playing on some soundcards.
-#Allow24bitOutput = no
+Allow24bitOutput = yes
 
 # Use realtime priority for output buffer thread.  This will prevent gaps
 # while playing even with heavy load.  The user who runs MOC must have
@@ -447,7 +447,6 @@ ResampleMethod = SincBestQuality
 #             occupy 10 lines and the directory menu the rest.
 #
 Layout1 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
-#Layout1 = directory(0,0,30%,100%):playlist(0,0,FILL,FILL)
 #Layout2 = directory(0,0,100%,100%):playlist(0,0,100%,100%)
 #Layout3 = ""
 
@@ -511,13 +510,13 @@ CanStartInPlaylist = yes
 #UseCursorSelection = no
 
 # Set the terminal title when running under xterm.
-#SetXtermTitle = yes
+SetXtermTitle = yes
 
 # Set the terminal title when running under screen.
-#SetScreenTitle = yes
+SetScreenTitle = yes
 
 # Display full paths instead of just file names in the playlist.
-#PlaylistFullPaths = yes
+PlaylistFullPaths = no
 
 # The following setting describes how block markers are displayed in
 # the play time progress bar.  Its value is a string of exactly three
