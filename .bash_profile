@@ -282,7 +282,7 @@ cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{
 function imgupl()
 {
 	name=$(basename "$1")
-	scp "$1" hax0r:/www/docs/hax0r.se/files/img/
+	scp -C -q "$1" hax0r:/www/docs/hax0r.se/files/img/
 	echo "http://hax0r.se/files/img/$name"
 }
 #}}}
