@@ -8,7 +8,7 @@ then
 	SSH_ASKPASS=/usr/lib/openssh/x11-ssh-askpass ssh-add < /dev/null
 fi
 
-xmodmap ~/.xmodmap
+#xmodmap ~/.xmodmap
 urxvtd -o -f
 if [ $HOSTNAME == "ingrid" ]
 then
