@@ -8,7 +8,7 @@ then
 	SSH_ASKPASS=/usr/lib/openssh/x11-ssh-askpass ssh-add < /dev/null
 fi
 
-xmodmap ~/.xmodmap
+#xmodmap ~/.xmodmap
 urxvtd -o -f
 if [ $HOSTNAME == "ingrid" ]
 then
@@ -16,7 +16,11 @@ then
 fi
 xset -b
 nitrogen --restore
+<<<<<<< HEAD
 wmname LG3D
+=======
+unclutter
+>>>>>>> 6d4e199ef00cfff5d3be3b6e185ad1044e5ae1d2
 $HOME/.dwm/dwmstatus/dwmstatus&
 # To not have to quit X when restarting dwm
 while true; do

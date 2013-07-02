@@ -1,7 +1,8 @@
-background yes
-use_xft yes
+background no
+use_xft no
 xftfont Fontin Sans:=12
 xftalpha 0.1
+font -*-montecarlo-medium-*-*-*-*-110-*-*-*-*-*-*
 update_interval 5
 total_run_times 0
 own_window no
@@ -29,5 +30,9 @@ override_utf8_locale yes
 
 
 TEXT
+<<<<<<< HEAD
 ${execpi 6 gcalcli --nocolor calw }
 
+=======
+${color white}${offset 12}${exec ~/bin/showcal}$color
+>>>>>>> 6d4e199ef00cfff5d3be3b6e185ad1044e5ae1d2

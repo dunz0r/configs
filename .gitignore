@@ -1,2 +1,4 @@
 *.db
 *.pid
+.netrwhist
+*.m3u

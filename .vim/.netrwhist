@@ -1,2 +1,8 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =0
+=======
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/gabriel/Dokument/Du_och_din_8-bitars_mikrokontroller/lib/css'
+let g:netrw_dirhist_2='/home/gabriel/Dokument/Du_och_din_8-bitars_mikrokontroller/kod/2'
+>>>>>>> 6d4e199ef00cfff5d3be3b6e185ad1044e5ae1d2
