@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/gabriel/.config/luakit'
-let g:netrw_dirhist_2='/home/gabriel/Utveckling/traidy.se/repository/web/hjartslag.se/trunk/public_html/pages'
-let g:netrw_dirhist_3='/home/gabriel/Utveckling/arduino/sketchbook/libraries/Motor'
-let g:netrw_dirhist_4='/home/gabriel/.config/luakit'
-let g:netrw_dirhist_5='/home/gabriel/.vim/templates'
-let g:netrw_dirhist_6='/home/gabriel/Hämtningar/ut-436-GOTY'
-let g:netrw_dirhist_7='/home/gabriel/.vimperator'
-let g:netrw_dirhist_8='/home/gabriel/Utveckling/Arduino/Minisumo2012'
+let g:netrw_dirhist_cnt =0

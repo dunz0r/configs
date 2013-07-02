@@ -15,20 +15,35 @@ set sendmail="/usr/bin/msmtp"
 # If not set in ~/.bashrc:
 #set spoolfile = /var/spool/mail/gabriel
 
+set imap_user = "gf@hax0r.se"
+set imap_pass = "***REMOVED***"
+
+set smtp_url = "smtp://gf@hax0r.se@smtp.gmail.com:587/"
+set smtp_pass = "***REMOVED***"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed="+[Gmail]/Drafts"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move = no
 # don't highlight the whole shebang
 set arrow_cursor=yes
 #======================================================#
 # Folders
-set folder="$HOME/mail"      # Local mailboxes stored here
-set record="+sent"           # Where to store sent messages
-set postponed="+postponed"   # Where to store draft messages
-set mbox_type=mbox           # Mailbox type
-set move=no                  # Don't move mail from spool
+#set folder="$HOME/mail"      # Local mailboxes stored here
+##set record="+sent"           # Where to store sent messages
+#set postponed="+postponed"   # Where to store draft messages
+#set mbox_type=mbox           # Mailbox type
+#set move=no                  # Don't move mail from spool
 
 #======================================================#
 # Watch these mailboxes for new mail, useful only if 
 # Procmail or Maildrop is used to sort mail.
-mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
+#mailboxes `find ~/mail/ -type d -name cur -printf '%h '` /var/spool/mail/gabriel
 #mailboxes ! +slrn +fetchmail +mutt
 #set sort_browser=alpha    # Sort mailboxes by alpha(bet)
 
@@ -66,17 +81,17 @@ set pgp_autosign=yes
 #======================================================#
 # Lists:
 
-lists awesome abbenay ulug luakit-dev ulug-styrelse aur-general arch-general
-subscribe awesome abbenay ulug ulug-styrelse luakit-dev aur-general arch-general
-set followup_to=yes        # Sets 'Mail-Followup-To' header
-set honor_followup_to=yes
-fcc-hook awesome +awesome # See your own posts using fcc
-fcc-hook abbenay +abbenay # See your own posts using fcc
-fcc-hook ulug +ulug
-fcc-hook ulug-styrelse +ulug-styrelse
-fcc-hook luakit-dev +luakit-dev
-fcc-hook aur-general +aur-general
-fcc-hook arch-general +arch-general
+#lists awesome abbenay ulug luakit-dev ulug-styrelse aur-general arch-general
+#subscribe awesome abbenay ulug ulug-styrelse luakit-dev aur-general arch-general
+#set followup_to=yes        # Sets 'Mail-Followup-To' header
+#set honor_followup_to=yes
+#fcc-hook awesome +awesome # See your own posts using fcc
+#fcc-hook abbenay +abbenay # See your own posts using fcc
+#fcc-hook ulug +ulug
+#fcc-hook ulug-styrelse +ulug-styrelse
+#fcc-hook luakit-dev +luakit-dev
+#fcc-hook aur-general +aur-general
+#fcc-hook arch-general +arch-general
 
 #======================================================#
 # Atachments

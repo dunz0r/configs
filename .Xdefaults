@@ -1,42 +1,40 @@
 ! URxvt
 URxvt*font:xft:Monaco:pixelsize=10:antialias=true
 URxvt*boldFont:xft:Monaco:bold:pixelsize=10:antialias=true
-
-URxvt.loginShell: true
-
+URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
 URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
-URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
-URxvt.perl-ext:      default,url-select
-URxvt.keysym.C-M-u:    perl:url-select:select_next
-URxvt.urlLauncher:   luakit
-URxvt.underlineURLs: true
+URxvt*perl-ext:      default,url-select
+URxvt*keysym.C-M-u:    perl:url-select:select_next
+URxvt*urlLauncher:   luakit
+URxvt*underlineURLs: true
 
 URxvt*depth: 32
 URxvt*background: rgba:1111/1111/1111/dddd
 URxvt*foreground: #cccccc
 
 URxvt*transparent:        false
-URxvt.cursorBlink:        true
-URxvt.cursorOnTime:       300
-URxvt.cursorOffTime:      140
+URxvt*cursorBlink:        true
+URxvt*cursorOnTime:       300
+URxvt*cursorOffTime:      140
 URxvt*shading:            20
 !URxvt*fading:             40
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
 URxvt*colorUL:            green
-URxvt.cursorColor: #999
+URxvt*cursorColor: #999
 
-Xft.dpi:		96	
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintsfull
-Xft.lcdfilter:  lcddefault
+Xft*dpi:		96	
+Xft*antialias:  true
+Xft*rgba:       rgb
+Xft*hinting:    true
+Xft*hintstyle:  hintsfull
+Xft*lcdfilter:  lcddefault
 
 ! this line makes so that only the SSH-sessions become "Urgent" on bell
 SSH*urgentOnBell: true
