@@ -16,13 +16,11 @@ then
 fi
 xset -b
 nitrogen --restore
-<<<<<<< HEAD
 wmname LG3D
-=======
-unclutter
->>>>>>> 6d4e199ef00cfff5d3be3b6e185ad1044e5ae1d2
+unclutter&
 $HOME/.dwm/dwmstatus/dwmstatus&
+xmodmap $HOME/.xmodmap
 # To not have to quit X when restarting dwm
 while true; do
-$HOME/.dwm/dwm &> $HOME/.xsession-errors
+	$HOME/.dwm/dwm &> $HOME/.xsession-errors
 done
