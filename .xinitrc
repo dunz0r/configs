@@ -19,7 +19,9 @@ wmname LG3D
 unclutter -j 10 -d 3&
 $HOME/.dwm/dwmstatus/dwmstatus&
 $HOME/bin/bg-change&
+nitrogen --restore
+xmodmap $HOME/.xmodmap
 # To not have to quit X when restarting dwm
 while true; do
-$HOME/.dwm/dwm &> $HOME/.xsession-errors
+	$HOME/.dwm/dwm &> $HOME/.xsession-errors
 done
