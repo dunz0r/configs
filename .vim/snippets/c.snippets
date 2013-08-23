@@ -1,13 +1,18 @@
 # main()
 snippet main
-	int main(int argc, const char *argv[])
-	{
+	int main(int argc, const char *argv[]) {
 		${1}
 		return 0;
 	}
 # #include <...>
 snippet inc
 	#include <${1:stdio}.h>${2}
+# #include <stdlib.h\n #include <stdio.h>\n #include <unistd.h>
+snippet incl
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <unistd.h>
+
 # #include "..."
 snippet Inc
 	#include "${1:`Filename("$1.h")`}"${2}

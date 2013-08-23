@@ -30,9 +30,5 @@ override_utf8_locale yes
 
 
 TEXT
-<<<<<<< HEAD
-${execpi 6 gcalcli --nocolor calw }
+${execpi 6 gcalcli --nocolor calw -w 20}
 
-=======
-${color white}${offset 12}${exec ~/bin/showcal}$color
->>>>>>> 6d4e199ef00cfff5d3be3b6e185ad1044e5ae1d2
