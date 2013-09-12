@@ -5,7 +5,7 @@
 local theme = {}
 
 -- Default settings
-theme.font = "Deja Vu Sans 9"
+theme.font = "ProggyCleanTTSZ 11"
 theme.fg   = "#99e438"
 theme.bg   = "#222"
 

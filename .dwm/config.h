@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "ProggyCleanTTSZ 12";
+static const char font[]            = "ProggyCleanTTSZ 11";
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#232323";
 static const char normfgcolor[]     = "#969696";
@@ -38,7 +38,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 

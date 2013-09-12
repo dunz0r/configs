@@ -40,6 +40,7 @@ char* get_song(size_t *len) {
 		}
 	} while(temp_len == 256);
 	pclose(cmd);
+	fprintf(stderr, ret);
 	return ret;
 }
 
@@ -157,7 +158,7 @@ int main(void) {
 			np = get_song(&ret_len);
 			snprintf(status, 200, "%s %s", datetime, np);
 		}
-		//fprintf(stdout, "%s\n", status);
+		fprintf(stdout, "%s\n", status);
 
 		free(datetime);
 		setstatus(status);
