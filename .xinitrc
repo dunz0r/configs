@@ -15,12 +15,9 @@ then
 	nvidia-settings -a InitialPixmapPlacement=2&
 fi
 xset -b
-nitrogen --restore
 wmname LG3D
-unclutter&
 $HOME/.dwm/dwmstatus/dwmstatus&
 xmodmap $HOME/.xmodmap
+nitrogen --restore
 # To not have to quit X when restarting dwm
-while true; do
-	$HOME/.dwm/dwm &> $HOME/.xsession-errors
-done
+$HOME/bin/startdwm

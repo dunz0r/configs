@@ -30,7 +30,7 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\»\ 
+set listchars=trail:-,tab:\|\ 
 set hlsearch      " hilight searches
 set showmode
 
@@ -42,8 +42,8 @@ set tags=+~/.vim/systags
 set autoindent
 set smartindent
 "set softtabstop=4
-"set shiftwidth=4
-"set tabstop=4
+set shiftwidth=4
+set tabstop=4
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
@@ -53,9 +53,11 @@ syntax on      " syntax
 " mappings
 " rot13 haxorize
 map <F12> ggVGg?
-map <F10> :VCSCommit
+map <F10> :VCSCommit<Return>
+" Tagbar
+map <F8> :TagbarToggle<Return>
 " Make
-map <F9> <Esc>:!make<Space>
+map <F9> :!make<Space>
 " open tha nurdtread
 map <F11> :NERDTreeToggle<Return>
 " input current time and date
@@ -126,3 +128,4 @@ if has("gui_running")
   " Maximize gvim window.
   set lines=40 columns=100
 endif
+

@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:ProggyCleanTTSZ:pixelsize=16:antialias=false
-URxvt*boldFont:xft:ProggyCleanTTSZ:bold:pixelsize=16:antialias=false
+URxvt*font:xft:ProggyCleanTTSZ:pixelsize=16:antialias=true
+URxvt*boldFont:xft:ProggyCleanTTSZ:bold:pixelsize=16:antialias=true
 URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -13,9 +13,9 @@ URxvt*keysym.C-M-u:    perl:url-select:select_next
 URxvt*urlLauncher:   luakit
 URxvt*underlineURLs: true
 
-URxvt*depth: 32
-URxvt*background: rgba:1111/1111/1111/dddd
-URxvt*foreground: #cccccc
+!URxvt*depth: 32
+URxvt*background: #080808
+URxvt*foreground: #ffd7ff
 
 URxvt*transparent:        true
 URxvt*cursorBlink:        true

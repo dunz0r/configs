@@ -190,8 +190,7 @@ XTerms = rxvt-unicode-256colour:rxvt-unicode-256color
 # ~/.moc/themes/ .
 #
 # Example:    Theme = laras_theme
-#
-Theme = moca_theme
+theme = transparent-background
 
 # The theme used when running on an xterm.
 #
@@ -264,16 +263,16 @@ Theme = moca_theme
 #             Fastdir3 = /mp3/rap
 #             Fastdir4 = /mp3/etc
 #
-#Fastdir1 =
-#Fastdir2 =
-#Fastdir3 =
-#Fastdir4 =
-#Fastdir5 =
-#Fastdir6 =
-#Fastdir7 =
-#Fastdir8 =
-#Fastdir9 =
-#Fastdir10 =
+Fastdir1 = /mnt/NAS/music/ambient
+Fastdir2 = /mnt/NAS/music/chip
+Fastdir3 = /mnt/NAS/music/metal
+Fastdir4 = /mnt/NAS/music/dnd.dubstep/
+Fastdir5 = /mnt/NAS/music/electro
+Fastdir6 = /mnt/NAS/music/funk
+Fastdir7 = /mnt/NAS/music/goa.psytrance
+Fastdir8 = /mnt/NAS/music/goth
+Fastdir9 = /mnt/NAS/music/synth
+Fastdir10 = /mnt/NAS/music/rock
 
 # How fast to seek (in number of seconds per keystroke).  The first
 # option is for normal seek and the second for silent seek.
@@ -446,8 +445,8 @@ Allow24bitOutput = yes
 #             and the directory menu at the bottom.  Playlist will
 #             occupy 10 lines and the directory menu the rest.
 #
-Layout1 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
-#Layout2 = directory(0,0,100%,100%):playlist(0,0,100%,100%)
+Layout2 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
+Layout1 = directory(0,0,50%,100%):playlist(0,0,100%,100%)
 #Layout3 = ""
 
 # When the song changes, should the menu be scrolled so that the currently

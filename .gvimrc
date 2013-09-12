@@ -1,1 +1,1 @@
-set guifont=Monaco\ 9
+set guifont=ProggyCleanTTSZ\ 12

@@ -1,32 +1,124 @@
 #EXTM3U
-#MOCSERIAL: 35072
-#EXTINF:596,solar corona; the machine - solar corona
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/01 - solar corona.mp3
-#EXTINF:167,solar corona; the machine - x.
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/02 - x..mp3
-#EXTINF:881,solar corona; the machine - caterpillar's mushroom
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/03 - caterpillar's mushroom.mp3
-#EXTINF:260,solar corona; the machine - interstellar medium
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/04 - interstellar medium.mp3
-#EXTINF:671,solar corona; the machine - jam no. phi
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/05 - jam no. phi.mp3
-#EXTINF:382,solar corona; the machine - infinite
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/06 - infinite.mp3
-#EXTINF:1023,solar corona; the machine - moons of neptune
-/mnt/music/rock/The_Machine/The Machine - Solar Corona (2009)/07 - moons of neptune.mp3
-#EXTINF:326,Listen While Drunk Or Stoned; Alcoholatry - Alcohol
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 01 Alcohol.flac
-#EXTINF:303,Listen While Drunk Or Stoned; Alcoholatry - Time Destroys It All
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 02 Time Destroys It All.flac
-#EXTINF:270,Listen While Drunk Or Stoned; Alcoholatry - I Just Wanna Use You
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 03 I Just Wanna Use You.flac
-#EXTINF:261,Listen While Drunk Or Stoned; Alcoholatry - Inside Four Walls
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 04 Inside Four Walls.flac
-#EXTINF:247,Listen While Drunk Or Stoned; Alcoholatry - Going Out
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 05 Going Out.flac
-#EXTINF:347,Listen While Drunk Or Stoned; Alcoholatry - All For Show
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 06 All For Show.flac
-#EXTINF:339,Listen While Drunk Or Stoned; Alcoholatry - Gotta Move On
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 07 Gotta Move On.flac
-#EXTINF:285,Listen While Drunk Or Stoned; Alcoholatry - The Funeral March
-/mnt/music/metal/Alcoholatry/Alcoholatry_-_Listen_While_Drunk_Or_Stoned-2013/Alcoholatry - Listen While Drunk Or Stoned - 08 The Funeral March.flac
+#MOCSERIAL: 512
+#EXTINF:359,Concrete Ground; Beborn Beton - Dr. Channard
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/01 Dr. Channard.flac
+#EXTINF:339,Concrete Ground; Beborn Beton - Lost Little Robot
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/02 Lost Little Robot.flac
+#EXTINF:352,Concrete Ground; Beborn Beton - No Promise
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/03 No Promise.flac
+#EXTINF:278,Concrete Ground; Beborn Beton - Bountyhunter (edit)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/04 Bountyhunter (edit).flac
+#EXTINF:219,Concrete Ground; Beborn Beton - Control
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/05 Control.flac
+#EXTINF:271,Concrete Ground; Beborn Beton - Genauso Wie Ich
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/06 Genauso Wie Ich.flac
+#EXTINF:231,Concrete Ground; Beborn Beton - To Tell  You The Truth
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/07 To Tell  You The Truth.flac
+#EXTINF:251,Concrete Ground; Beborn Beton - Encounting
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/08 Encounting.flac
+#EXTINF:194,Concrete Ground; Beborn Beton - Rosanna
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/09 Rosanna.flac
+#EXTINF:222,Concrete Ground; Beborn Beton - Being Boiled
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/10 Being Boiled.flac
+#EXTINF:339,Concrete Ground; Beborn Beton - Finally (version)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/11 Finally (version).flac
+#EXTINF:284,Concrete Ground; Beborn Beton - Lost Little Robot (piano-edit)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/12 Lost Little Robot (piano-edit).flac
+#EXTINF:338,Concrete Ground; Beborn Beton - No Promise (honeynut-loop)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/13 No Promise (honeynut-loop).flac
+#EXTINF:225,Concrete Ground; Beborn Beton - Being Boiled (club-mix)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/14 Being Boiled (club-mix).flac
+#EXTINF:319,Concrete Ground; Beborn Beton - Fortuneteller
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Concrete Ground [what.cd]/15 Fortuneteller.flac
+#EXTINF:265,Tales From Another World CD1; Beborn Beton - Another World
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/101 - Another World.mp3
+#EXTINF:223,Tales From Another World CD1; Beborn Beton - The Colour Of Love
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/102 - The Colour Of Love.mp3
+#EXTINF:325,Tales From Another World CD1; Beborn Beton - Poison 2002
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/103 - Poison 2002.mp3
+#EXTINF:266,Tales From Another World CD1; Beborn Beton - Mantrap - A Wish Come True
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/104 - Mantrap - A Wish Come True.mp3
+#EXTINF:277,Tales From Another World CD1; Beborn Beton - Deeper Than The Usual Feeling
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/105 - Deeper Than The Usual Feeling.mp3
+#EXTINF:244,Tales From Another World CD1; Beborn Beton - Life Is A Distance
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/106 - Life Is A Distance.mp3
+#EXTINF:336,Tales From Another World CD1; Beborn Beton - Lost Little Robot
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/107 - Lost Little Robot.mp3
+#EXTINF:301,Tales From Another World CD1; Beborn Beton - Peach 2002
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/108 - Peach 2002.mp3
+#EXTINF:274,Tales From Another World CD1; Beborn Beton - Ambush
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/109 - Ambush.mp3
+#EXTINF:287,Tales From Another World CD1; Beborn Beton - Earth
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/110 - Earth.mp3
+#EXTINF:250,Tales From Another World CD1; Beborn Beton - Spawn
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/111 - Spawn.mp3
+#EXTINF:240,Tales From Another World CD1; Beborn Beton - New Born King
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/112 - New Born King.mp3
+#EXTINF:311,Tales From Another World CD1; Beborn Beton - Eisplanet
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/113 - Eisplanet.mp3
+#EXTINF:261,Tales From Another World CD1; Beborn Beton - The Edge Of Wisdom 2002
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/114 - The Edge Of Wisdom 2002.mp3
+#EXTINF:300,Tales From Another World CD1; Beborn Beton - Mantrap - The Seduction
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/115 - Mantrap - The Seduction.mp3
+#EXTINF:224,Tales From Another World CD1; Beborn Beton - Elaine
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/116 - Elaine.mp3
+#EXTINF:339,Tales From Another World CD2; Beborn Beton - Dr. Channard (Funker Vogt Re..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/201 - Dr. Channard (Funker Vogt Remix).mp3
+#EXTINF:311,Tales From Another World (Be..; Beborn Beton - Peach (DJ RAM Breath Away Mix)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/202 - Peach (DJ RAM Breath Away Mix).mp3
+#EXTINF:338,Tales From Another World (Be..; Beborn Beton - Another World (FAP7 Classico..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/203 - Another World (FAP7 Classico Mix).mp3
+#EXTINF:355,Tales From Another World (Be..; Beborn Beton - Genauso Wie Ich (Future Pop ..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/204 - Genauso Wie Ich (Future Pop Remix).mp3
+#EXTINF:299,Tales From Another World (Be..; Beborn Beton - Im Innern Einer Frau (APB Re..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/205 - Im Innern Einer Frau (APB Remix).mp3
+#EXTINF:298,Tales From Another World (Be..; Beborn Beton - Poison (El Presidente 'Jetly..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/206 - Poison (El Presidente 'Jetlyzer' Remix).mp3
+#EXTINF:424,Tales From Another World (Be..; Beborn Beton - Too Emotional (DJ RAM Sensua..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/207 - Too Emotional (DJ RAM Sensuality Edit).mp3
+#EXTINF:417,Tales From Another World (Be..; Beborn Beton - Another World (World-Beater ..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/208 - Another World (World-Beater Mix).mp3
+#EXTINF:464,Tales From Another World (Be..; Beborn Beton - Vorbei (FAP7 Remix)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/209 - Vorbei (FAP7 Remix).mp3
+#EXTINF:349,Tales From Another World (Be..; Beborn Beton - Im Innern Einer Frau (Spice ..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/210 - Im Innern Einer Frau (Spice Remix).mp3
+#EXTINF:216,Tales From Another World (Be..; Beborn Beton - Eisplanet (California Sunpla..
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/211 - Eisplanet (California Sunplanet Remix).mp3
+#EXTINF:283,Tales From Another World (Be..; Beborn Beton - Peach (cut.rate.box Remix)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/212 - Peach (cut.rate.box Remix).mp3
+#EXTINF:232,Tales From Another World (Be..; Beborn Beton - Another World (Ephemeral Rage)
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tales From Another World (Best Of) - 2002/213 - Another World (Ephemeral Rage).mp3
+#EXTINF:272,Tybalt; Beborn Beton - Myers Flat
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/01 - Myers Flat.mp3
+#EXTINF:249,Tybalt; Beborn Beton - The Edge of Wisdom
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/02 - The Edge of Wisdom.mp3
+#EXTINF:250,Tybalt; Beborn Beton - Twisted
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/03 - Twisted.mp3
+#EXTINF:242,Tybalt; Beborn Beton - Personal Hell
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/04 - Personal Hell.mp3
+#EXTINF:221,Tybalt; Beborn Beton - Into PCS
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/05 - Into PCS.mp3
+#EXTINF:203,Tybalt; Beborn Beton - Ameriqua
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/06 - Ameriqua.mp3
+#EXTINF:291,Tybalt; Beborn Beton - Torture
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/07 - Torture.mp3
+#EXTINF:288,Tybalt; Beborn Beton - Winter
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/08 - Winter.mp3
+#EXTINF:258,Tybalt; Beborn Beton - Psycholgic Secrets
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/09 - Psycholgic Secrets.mp3
+#EXTINF:247,Tybalt; Beborn Beton - The Reanimator
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/10 - The Reanimator.mp3
+#EXTINF:297,Tybalt; Beborn Beton - Chameleon
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/11 - Chameleon.mp3
+#EXTINF:226,Tybalt; Beborn Beton - The Bolt
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/12 - The Bolt.mp3
+#EXTINF:282,Tybalt; Beborn Beton - That Deadly Kiss
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/13 - That Deadly Kiss.mp3
+#EXTINF:248,Tybalt; Beborn Beton - Despair
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/14 - Despair.mp3
+#EXTINF:294,Tybalt; Beborn Beton - Tybalt
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/15 - Tybalt.mp3
+#EXTINF:294,Tybalt; Beborn Beton - The 7th Trombone
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/16 - The 7th Trombone.mp3
+#EXTINF:102,Tybalt; Beborn Beton - The Scythe
+/mnt/NAS/music/synth/Beborn_Beton/Beborn Beton - Tybalt []/17 - The Scythe.mp3

@@ -1,21 +1,21 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "ProggyCleanTTSZ 12";
-/*
+static const char font[]            = "ProggyCleanTTSZ 11";
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#232323";
 static const char normfgcolor[]     = "#969696";
 static const char selbordercolor[]  = "#343434";
 static const char selbgcolor[]      = "#4c4c4c";
 static const char selfgcolor[]      = "#aaaaaa";
-*/
+/*
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#262626";
 static const char normfgcolor[]     = "#bdf13d";
 static const char selbordercolor[]  = "#6be603";
 static const char selbgcolor[]      = "#4d4c4c";
 static const char selfgcolor[]      = "#ff8f00";
+*/
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -38,7 +38,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 

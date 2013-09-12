@@ -4,11 +4,11 @@
 # Init stuff
 source /etc/profile
 export MPD_USER=gabriel
+# sets the path
+PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin:/usr/games
 # shows a fortune upon login
 printf "\n"
 fortune
-# sets the path
-PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin
 export PATH
 
 echo -e "\n$(uptime)\n"
