@@ -3,12 +3,11 @@
 
 eval `/usr/bin/ssh-agent`
 
-if test -f /usr/lib/openssh/x11-ssh-askpass # Archlinux
+if test -f /usr/lib/openssh/gnome-ssh-askpass
 then
-	SSH_ASKPASS=/usr/lib/openssh/x11-ssh-askpass ssh-add < /dev/null
+	SSH_ASKPASS=/usr/lib/openssh/gnome-ssh-askpass ssh-add < /dev/null
 fi
 
-#xmodmap ~/.xmodmap
 urxvtd -o -f
 if [ $HOSTNAME == "ingrid" ]
 then
@@ -21,5 +20,7 @@ $HOME/bin/bg-change&
 nitrogen --restore
 xmodmap $HOME/.xmodmap
 nitrogen --restore
+xfce4-power-manager&
+nm-applet&
 # To not have to quit X when restarting dwm
 $HOME/bin/startdwm
