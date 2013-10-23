@@ -17,7 +17,7 @@ URxvt*underlineURLs: true
 URxvt*background: #080808
 URxvt*foreground: #ffd7ff
 
-URxvt*transparent:        true
+!URxvt*transparent:        true
 URxvt*cursorBlink:        true
 URxvt*cursorOnTime:       300
 URxvt*cursorOffTime:      140

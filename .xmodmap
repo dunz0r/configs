@@ -7,4 +7,3 @@ keycode 20 = 0x2d 0x5f ssharp
 keycode 34 = 0x5b 0x7b aring Aring
 keycode 47 = 0x3b 0x3a odiaeresis Odiaeresis
 keycode 48 = 0x27 0x22 adiaeresis Adiaeresis
-keycode 26 = e E Eurosign

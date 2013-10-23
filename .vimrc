@@ -9,7 +9,7 @@ set title
 set background=dark
 colorscheme neverland-darker
 " use all the wonderful 256 colors that urxvt supply
-"set t_Co=256
+set t_Co=256
 
 set fdm=marker
 set incsearch " do incremental searching
