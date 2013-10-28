@@ -10,6 +10,7 @@ PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin
 printf "\n"
 fortune
 export PATH
+export TODO_DIR="$HOME/Dropbox/todo/"
 
 echo -e "\n$(uptime)\n"
 #ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
