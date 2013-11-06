@@ -82,4 +82,7 @@ alias mplayer='systemd-inhibit --what=handle-lid-switch:sleep:idle mplayer'
 alias t='todo.sh'
 alias td='date +"%Y-%m-%d"'
 alias t='todo.sh'
+<<<<<<< HEAD
 alias apt-cache='apt-cache -n'
+=======
+>>>>>>> 0f21f3e3ad78eaba2e4fc36bf7f2424008860b1b
