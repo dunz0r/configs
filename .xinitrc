@@ -22,5 +22,6 @@ xmodmap $HOME/.xmodmap
 nitrogen --restore
 xfce4-power-manager&
 nm-applet&
+dropbox start&
 # To not have to quit X when restarting dwm
 $HOME/bin/startdwm

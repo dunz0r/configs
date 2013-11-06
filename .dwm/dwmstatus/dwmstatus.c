@@ -19,31 +19,6 @@ void setstatus(char *str) {
 	XSync(dpy, False);
 }
 
-char* get_song(size_t *len) {
-	FILE* cmd = popen("mocp -Q '| %a; %t'", "r");
-	char buff[256];
-	char *ret = malloc(sizeof(char) * 256);
-	size_t temp_len = 0;
-	do {
-		temp_len = fread(buff, sizeof(char), 256, cmd);
-		memcpy(ret + *len, buff, temp_len);
-		*len += temp_len;
-		if(temp_len == 256) {
-			char *temp = (char*)malloc(sizeof(char) * *len + 256);
-			memcpy(temp, ret, sizeof(char) * *len);
-			free(ret);
-			ret = temp;
-			if(ret == NULL) {
-				printf("FUCK YOU\n");
-				exit(1);
-			}
-		}
-	} while(temp_len == 256);
-	pclose(cmd);
-	fprintf(stderr, ret);
-	return ret;
-}
-
 char get_battery_status() {
 	FILE *fd = fopen("/sys/class/power_supply/BAT0/status", "r");
 	char bat_status;
@@ -126,7 +101,6 @@ int get_battery() {
 int main(void) {
 	char *status;
 	char *datetime;
-	char *np;
 	char battery_status;
 	int bat0;
 	size_t ret_len = 0;
@@ -136,7 +110,7 @@ int main(void) {
 	hostname[15] = '\0';
 	gethostname(hostname, 15);
 	int is_laptop;
-	is_laptop = strncmp(hostname, "eivor", 16);
+	is_laptop = strncmp(hostname, "inger", 16);
 
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -151,14 +125,11 @@ int main(void) {
 		if(is_laptop == 0) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
-			np = get_song(&ret_len);
-			snprintf(status, 200, "%s%d%% | %s %s",
-				&battery_status, bat0, datetime, np);
+			snprintf(status, 200, "%s%d%% | %s",
+				&battery_status, bat0, datetime);
 		} else {
-			np = get_song(&ret_len);
-			snprintf(status, 200, "%s %s", datetime, np);
+			snprintf(status, 200, "%s", datetime);
 		}
-		fprintf(stdout, "%s\n", status);
 
 		free(datetime);
 		setstatus(status);
