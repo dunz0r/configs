@@ -5,9 +5,9 @@ static const char font[]            = "ProggyCleanTTSZ 11";
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#232323";
 static const char normfgcolor[]     = "#969696";
-static const char selbordercolor[]  = "#343434";
+static const char selbordercolor[]  = "#a6ce39";
 static const char selbgcolor[]      = "#4c4c4c";
-static const char selfgcolor[]      = "#aaaaaa";
+static const char selfgcolor[]      = "#a6ce39";
 /*
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#262626";

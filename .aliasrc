@@ -77,6 +77,6 @@ alias shitdown='fail && shutdown' # :D
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias tmux='tmux -2 -u'
 alias damnit='!!'
-
-
 alias mplayer='systemd-inhibit --what=handle-lid-switch:sleep:idle mplayer'
+alias t='todo.sh'
+alias td='date +"%Y-%m-%d"'
