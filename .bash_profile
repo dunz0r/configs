@@ -13,7 +13,8 @@ export PATH
 export TODO_DIR="$HOME/Dropbox/todo/"
 
 echo -e "\n$(uptime)\n"
-#ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
+ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
+echo -e '\x28\xE3\x81\xA5\xEF\xBD\xA1\xE2\x97\x95\xE2\x80\xBF\xE2\x80\xBF\xE2\x97\x95\xEF\xBD\xA1\x29\xE3\x81\xA5'
 
 # Sets the Mail env
 MAIL=/var/spool/mail/gabriel && export MAIL
