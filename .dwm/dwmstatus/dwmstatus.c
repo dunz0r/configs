@@ -103,10 +103,8 @@ int main(void) {
 	char *datetime;
 	char battery_status;
 	int bat0;
-	size_t ret_len = 0;
 
-	char hostname[16];//, laptop_hostname[16];
-	//laptop_hostname = "eivor";
+	char hostname[16];
 	hostname[15] = '\0';
 	gethostname(hostname, 15);
 	int is_laptop;
@@ -122,7 +120,7 @@ int main(void) {
 		exit(1);
 	for(;;sleep(10)) {
 		datetime = get_datetime();
-		if(is_laptop == 0) {
+		if(is_laptop) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
 			snprintf(status, 200, "%s%d%% | %s",
