@@ -102,7 +102,7 @@ prompt_command () {
 		gertrud)
 			local HOST_COLOUR=$BRIGHT_RED
 			;;
-		eivor)
+		lillemor)
 			local HOST_COLOUR=$GREEN
 			;;
 		*)
