@@ -120,7 +120,7 @@ int main(void) {
 		exit(1);
 	for(;;sleep(10)) {
 		datetime = get_datetime();
-		if(is_laptop) {
+		if(!is_laptop) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
 			snprintf(status, 200, "%s%d%% | %s",
