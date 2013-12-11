@@ -17,11 +17,11 @@ URxvt*underlineURLs: true
 URxvt*background: #080808
 URxvt*foreground: #ffd7ff
 
-!URxvt*transparent:        true
+URxvt*transparent:        true
 URxvt*cursorBlink:        true
 URxvt*cursorOnTime:       300
 URxvt*cursorOffTime:      140
-URxvt*shading:            20
+URxvt*shading:            10
 !URxvt*fading:             40
 URxvt*scrollBar:          False
 
@@ -57,5 +57,5 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/tango.Xresources"
+#include "/home/gabriel/.xdefaults-colour/molokai"
 ! EOF
