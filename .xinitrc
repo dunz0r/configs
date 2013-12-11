@@ -9,20 +9,18 @@ then
 fi
 
 urxvtd -o -f
+xset -b
+# To not have to quit X when restarting dwm
+$HOME/bin/startdwm
 if [ $HOSTNAME == "ingrid" ]
 then
 	nvidia-settings -a InitialPixmapPlacement=2&
+else
+	xfce4-powermanager&
 fi
-xset -b
 wmname LG3D
 $HOME/.dwm/dwmstatus/dwmstatus&
-$HOME/bin/bg-change&
-nitrogen --restore
 xmodmap $HOME/.xmodmap
-nitrogen --restore
-xfce4-power-manager&
 gnome-settings-daemon&
 nm-applet&
-dropbox start&
-# To not have to quit X when restarting dwm
-$HOME/bin/startdwm
+nitrogen --restore
