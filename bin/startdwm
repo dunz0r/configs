@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 while true; do
+    sleep 1;
     $HOME/.dwm/dwm 1>&2> $HOME/.xsession-errors
 done
