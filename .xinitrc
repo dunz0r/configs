@@ -20,7 +20,7 @@ else
 fi
 wmname LG3D
 gnome-settings-daemon&
-xmodmap $HOME/.xmodmap
+xmodmap us altgr-intl compose:menu,ctrl:nocaps
 nm-applet&
 nitrogen --restore
 $HOME/bin/startdwm
