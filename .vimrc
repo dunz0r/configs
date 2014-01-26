@@ -13,9 +13,7 @@ colorscheme neverland-darker
 
 set fdm=marker
 set incsearch " do incremental searching
-set nobackup
-"set backupdir=./.backup,.,/tmp
-"set directory=.,./.backup,/tmp
+set backupdir=/tmp
 set fileformat=unix
 set history=50 " keep 50 lines of command line history
 " Display
@@ -30,12 +28,14 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\|\ 
+set listchars=trail:-,tab:\>\ 
 set hlsearch      " hilight searches
 set showmode
 
 set tags=+~/.vim/systags
 
+" Shortmess off
+set shortmess+=I
 " Indentation stuff
 "set fdm=indent
 "set cindent
@@ -57,7 +57,7 @@ map <F10> :VCSCommit<Return>
 " Tagbar
 map <F8> :TagbarToggle<Return>
 " Make
-map <F9> :!make<Space>
+map <F9> :!make<Return>
 " open tha nurdtread
 map <F11> :NERDTreeToggle<Return>
 " input current time and date
@@ -67,6 +67,7 @@ map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
+nnoremap <F1> <nop>
 " Make a comment
 map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
 

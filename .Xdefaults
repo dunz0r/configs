@@ -8,9 +8,9 @@ URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
 URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
-URxvt*perl-ext:      default,url-select
+URxvt*perl-ext:      default,matcher
 URxvt*keysym.C-M-u:    perl:url-select:select_next
-URxvt*urlLauncher:   luakit
+URxvt*urlLauncher:   firefox
 URxvt*underlineURLs: true
 
 !URxvt*depth: 32

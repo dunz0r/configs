@@ -2,24 +2,25 @@
 
 highlight CmdLine color: #aaa; background-color: #222;
 highlight CmdLine>* font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight CmdOutput color: #a6ce39; background-color: #222; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight CmdOutput color: #aaa; background-color: #222; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight Normal color: #999; background-color: #222; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight StatusLine color: #999; background-color: #222; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight Hint color: #afd700; background-color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight HintElem color: #a6ce39; background-color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight HintActive background-color: #5fd7ff; color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight Function color: #afd700; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight Hint color: #aaa; background-color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight HintElem color: #ccc; background-color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight HintActive background-color: #ccc; color: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight Function color: #aaa; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight CompTitle background: -moz-linear-gradient(19% 75% 90deg, #444, #444, #444 100%); font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight CompTitle>* color: #a6ce39; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight CompTitle>* color: #ccc; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight CompItem[selected] background: #999; color: #222; box-shadow: 0px 0px 1px #CC0; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight InfoMsg background: #333; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight LineNr background: #444; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight ModeMsg background: #444; color: #afd700; font-family: ProggyCleanTTSZ; font-size: 12pt;
-highlight MoreMsg background: #444; color: #afd700; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight ModeMsg background: #444; color: #ccc; font-family: ProggyCleanTTSZ; font-size: 12pt;
+highlight MoreMsg background: #444; color: #ccc; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight Question background: #333; color: #aaa; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight Title background: #222; color: #9f0; font-family: ProggyCleanTTSZ; font-size: 12pt;
 highlight WarningMsg background: #222; color: #f00; font-family: ProggyCleanTTSZ; font-size: 12pt;
 source! ~/.vimperatorrc.local
+set hintchars="asdfqwerhkjlzxcv"
 
 nmap h :back<CR>
 nmap l :forward<CR>

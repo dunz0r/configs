@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/gabriel/Dokument/Du_och_din_8-bitars_mikrokontroller/lib/css'
 let g:netrw_dirhist_2='/home/gabriel/Dokument/Du_och_din_8-bitars_mikrokontroller/kod/2'
 let g:netrw_dirhist_3='/home/gabriel/.git'
 let g:netrw_dirhist_4='/etc/apt/sources.list.d'
+let g:netrw_dirhist_5='/etc/dpkg/dpkg.cfg.d'
+let g:netrw_dirhist_6='/home/gabriel/Utveckling/arduino/sketchbook/libraries/UTFT_Buttons'
