@@ -258,7 +258,9 @@ echo "[${ref#refs/heads/}$(parse_git_dirty)]"
 	    fi
 
 	    if [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
-		    echo -n "?"
+		    if [ "$PWD" != "$HOME" ]; then
+				echo -n "?"
+			fi
 	    fi
 
 	    if [[ $(echo ${gitstat} | wc -l | tr -d ' ') == 0 ]]; then
@@ -295,4 +297,3 @@ function imgupl()
 }
 #}}}
 # }}}
-
