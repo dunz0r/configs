@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:ProggyCleanTTSZ:pixelsize=16:antialias=true
-URxvt*boldFont:xft:ProggyCleanTTSZ:bold:pixelsize=16:antialias=true
+URxvt*font:xft:Inconsolata:pixelsize=12:antialias=true
+URxvt*boldFont:xft:Inconsolata:bold:pixelsize=12:antialias=true
 URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -13,9 +13,8 @@ URxvt*keysym.C-M-u:    perl:url-select:select_next
 URxvt*urlLauncher:   firefox
 URxvt*underlineURLs: true
 
-!URxvt*depth: 32
-URxvt*background: #080808
-URxvt*foreground: #ffd7ff
+URxvt*depth: 32
+!URxvt*background: rgba:1111/1111/1111/dddd
 
 URxvt*transparent:        true
 URxvt*cursorBlink:        true
@@ -26,14 +25,14 @@ URxvt*shading:            10
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
-URxvt*colorUL:            green
+URxvt*colorUL:            grey
 URxvt*cursorColor: #999
 
 Xft*dpi:		96	
-Xft*antialias:  true
+Xft*antialias:  false
 Xft*rgba:       rgb
 Xft*hinting:    true
-Xft*hintstyle:  hintsfull
+Xft*hintstyle:  hintlight
 Xft*lcdfilter:  lcddefault
 
 ! this line makes so that only the SSH-sessions become "Urgent" on bell

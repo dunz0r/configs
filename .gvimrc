@@ -1,1 +1,1 @@
-set guifont=ProggyCleanTTSZ\ 12
+set guifont=Inconsolata\ 12

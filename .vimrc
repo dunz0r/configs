@@ -7,10 +7,19 @@ set backspace=indent,eol,start
 set title
 
 set background=dark
-colorscheme neverland-darker
+colorscheme desert
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
+" I can has lightline
+set laststatus=2
+let g:lightline = {
+	\ 'component' : {
+	\	'readonly': '%{&readonly?"⭤":""}',
+	\	},
+	\ 'separator' : { 'left': '⮀', 'right': '⮂' },
+	\ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+	\ }
 set fdm=marker
 set incsearch " do incremental searching
 set backupdir=/tmp
