@@ -15,13 +15,11 @@ XINERAMALIBS = -L${X11LIB} -lXinerama
 XINERAMAFLAGS = -DXINERAMA
 
 # includes and libs
-INCS = -I. -I/usr/include -I${X11INC}
-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 
-#${XINERAMALIBS}
+INCS = -I. -I/usr/include -I${X11INC} 
+LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
 
 # flags
-CPPFLAGS = -DVERSION=\"${VERSION}\" 
-#${XINERAMAFLAGS}
+CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
 CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 #LDFLAGS = -g ${LIBS}

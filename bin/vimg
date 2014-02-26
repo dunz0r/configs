@@ -1,7 +1,7 @@
 #!/bin/bash
 IMG=$1
 CURL=`which curl`
-VIEWER=`which display`
+VIEWER="`which feh` -dZ"
 
 if [ -z $IMG ]; then
 	printf "You need to specify an image to download\n"

@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "ProggyCleanTTSZ 11";
+static const char font[]            = "Inconsolata 12";
 static const char normbordercolor[] = "#111111";
 static const char normbgcolor[]     = "#232323";
 static const char normfgcolor[]     = "#969696";
@@ -18,10 +18,11 @@ static const char selfgcolor[]      = "#ff8f00";
 */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int gappx     = 6;        /* gap pixel between windows */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
-static const Bool topbar            = False;     /* False means bottom bar */
+static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "q", "w", "e" };

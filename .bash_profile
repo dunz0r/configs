@@ -14,7 +14,6 @@ export TODO_DIR="$HOME/Dropbox/todo/"
 
 echo -e "\n$(uptime)\n"
 ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
-echo -e '\x28\xE3\x81\xA5\xEF\xBD\xA1\xE2\x97\x95\xE2\x80\xBF\xE2\x80\xBF\xE2\x97\x95\xEF\xBD\xA1\x29\xE3\x81\xA5'
 
 # Sets the Mail env
 MAIL=/var/spool/mail/gabriel && export MAIL
@@ -28,8 +27,6 @@ source ~/.aliasrc
 PROMPT_COMMAND=prompt_command
 export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
-MPD_PORT=6600
-MPD_HOST=cocks@localhost
 PAGER=`which less`
 GREP_OPTIONS='--colour=auto'
 
