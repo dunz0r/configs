@@ -7,19 +7,19 @@ set backspace=indent,eol,start
 set title
 
 set background=dark
-colorscheme desert
+colorscheme molokai
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
 " I can has lightline
 set laststatus=2
 let g:lightline = {
-	\ 'component' : {
-	\	'readonly': '%{&readonly?"⭤":""}',
-	\	},
-	\ 'separator' : { 'left': '⮀', 'right': '⮂' },
-	\ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-	\ }
+      \ 'component': {
+      \   'readonly': '%{&readonly?"L":""}',
+      \ },
+      \ 'separator': { 'left': '▸', 'right': '<' },
+      \ 'subseparator': { 'left': '≥', 'right': '≤' }
+	\}
 set fdm=marker
 set incsearch " do incremental searching
 set backupdir=/tmp
@@ -130,12 +130,3 @@ autocmd bufnewfile *.h exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " 
 autocmd Bufwritepre,filewritepre *.h execute "normal ma"
 autocmd Bufwritepre,filewritepre *.h exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
 autocmd bufwritepost,filewritepost *.h execute "normal `a"
-
-
-" I want a big window when I'm using gvim
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  set lines=40 columns=100
-endif
-

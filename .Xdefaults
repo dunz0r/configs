@@ -8,9 +8,9 @@ URxvt*cutchars:         `"()'*<>[]{|}
 /* places a hardcopy in home dir when print is pressed */
 URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 
-URxvt*perl-ext:      default,matcher
+URxvt*perl-ext:      default,url-select
 URxvt*keysym.C-M-u:    perl:url-select:select_next
-URxvt*urlLauncher:   firefox
+URxvt*urlLauncher:   firefox -new-tab
 URxvt*underlineURLs: true
 
 URxvt*depth: 32
@@ -56,5 +56,5 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/sicp"
+#include "/home/gabriel/.xdefaults-colour/molokai"
 ! EOF
