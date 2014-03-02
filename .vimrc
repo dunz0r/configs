@@ -62,13 +62,13 @@ syntax on      " syntax
 " mappings
 " rot13 haxorize
 map <F12> ggVGg?
+" Indent
+map <F11> :gg=G<Return>
 map <F10> :VCSCommit<Return>
-" Tagbar
-map <F8> :TagbarToggle<Return>
 " Make
 map <F9> :!make<Return>
-" open tha nurdtread
-map <F11> :NERDTreeToggle<Return>
+" Tagbar
+map <F8> :TagbarToggle<Return>
 " input current time and date
 map <F5> :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
 " Use hjkl you tit!
@@ -79,7 +79,13 @@ map <Right> <NOP>
 nnoremap <F1> <nop>
 " Make a comment
 map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
+" Nicer window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
+map <silent> ,/ :nohlsearch<CR>
 " grep should always generate a file-name
 set grepprg=grep\ -nH\ $*
 
