@@ -17,8 +17,8 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&readonly?"L":""}',
       \ },
-      \ 'separator': { 'left': '▸', 'right': '<' },
-      \ 'subseparator': { 'left': '≥', 'right': '≤' }
+      \ 'separator': { 'left': '➤', 'right': '◄' },
+      \ 'subseparator': { 'left': '➤', 'right': '◄' }
 	\}
 set fdm=marker
 set incsearch " do incremental searching
@@ -37,7 +37,7 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\>\ 
+set listchars=trail:-,tab:\»\ 
 set hlsearch      " hilight searches
 set showmode
 
@@ -82,9 +82,6 @@ map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
 
 " grep should always generate a file-name
 set grepprg=grep\ -nH\ $*
-
-" make sure .tex-files is opened as latex-files
-let g:tex_flavor='latex'
 
 "dictionary thingies
 set iskeyword+=:
