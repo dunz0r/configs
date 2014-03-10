@@ -1,6 +1,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" pathogen!
+execute pathogen#infect()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " do want title
@@ -79,11 +81,6 @@ map <Right> <NOP>
 nnoremap <F1> <nop>
 " Make a comment
 map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
-" Nicer window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 map <silent> ,/ :nohlsearch<CR>
 " grep should always generate a file-name
@@ -102,6 +99,15 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
     \ endif
 
   augroup END
+
+" Ycm vs ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Open MS word doc with antiword
 autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
