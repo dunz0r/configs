@@ -109,11 +109,9 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_h,      		setmfact,       	{.f = -0.05} },
 	{ MODKEY,                       	XK_l,      		setmfact,       	{.f = +0.05} },
 	{ MODKEY,                       	XK_Return, 		zoom,           	{0} },
-	{ MODKEY,                       	XK_Tab,    		view,           	{0} },
-	{ MODKEY,             			XK_w,      		killclient,    		{0} },
+	{ MODKEY|ShiftMask,             	XK_c,      		killclient,    		{0} },
 	{ MODKEY,                       	XK_m,      		setlayout,      	{.v = &layouts[0]} },
 	{ MODKEY,                       	XK_f,      		setlayout,      	{.v = &layouts[1]} },
-	{ MODKEY,                       	XK_t,      		setlayout,      	{.v = &layouts[2]} },
 	{ MODKEY,				XK_a,			setlayout,		{.v = &layouts[3]} },
 	{ MODKEY,				XK_g,			setlayout,		{.v = &layouts[4]} },
 	{ MODKEY,                       	XK_space,  		setlayout,      	{0} },
@@ -121,15 +119,11 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_0,      		view,           	{.ui = ~0 } },
 	{ MODKEY|ShiftMask,             	XK_0,      		tag,            	{.ui = ~0 } },
 	{ MODKEY,                       	XK_comma,  		focusmon,       	{.i = -1 } },
-	{ MODKEY,                       	XK_period, 		focusmon,       	{.i = +1 } },
 	{ MODKEY|ShiftMask,             	XK_comma,  		tagmon,         	{.i = -1 } },
-	{ MODKEY|ShiftMask,             	XK_period, 		tagmon,         	{.i = +1 } },
 	{ MODKEY|ShiftMask,			XK_q,			quit,			{0} },
 	{ MODKEY|ShiftMask,			XK_r,			reload,			{0} },
-	{ MODKEY,                 		XK_Left,   		cycleprev,  		{.ui = -1} },
-	{ MODKEY,                 		XK_Right,  		cyclenext,  		{.ui = +1} },
-	{ MODKEY|ShiftMask,			XK_Left,		cyclemoveprev,		{.ui = -1} },
-	{ MODKEY|ShiftMask,			XK_Right,		cyclemovenext,		{.ui = +1} },
+	{ MODKEY|ShiftMask,                 		XK_Tab,   		cycleprev,  		{.ui = -1} },
+	{ MODKEY|ShiftMask,                 		XK_Tab,  		cyclenext,  		{.ui = +1} },
 	{ ControlMask,                       	XK_Down,  		moveresize,     	{.v = (int []){ 0, 25, 0, 0 }}},
 	{ ControlMask,                       	XK_Up,    		moveresize,     	{.v = (int []){ 0, -25, 0, 0 }}},
 	{ ControlMask,                       	XK_Right, 		moveresize,     	{.v = (int []){ 25, 0, 0, 0 }}},
@@ -140,7 +134,7 @@ static Key keys[] = {
 	{ ControlMask|ShiftMask,             	XK_Left,  		moveresize,     	{.v = (int []){ 0, 0, -25, 0 }}},
 	{ MODKEY|ShiftMask,             	XK_j,      		pushup,      		{.i = +1 } },
 	{ MODKEY|ShiftMask,             	XK_k,     		pushdown,      		{.i = -1 } },
-	TAGKEYS(                        	XK_1,                      0)
+		TAGKEYS(                        	XK_1,                      0)
 		TAGKEYS(                        	XK_2,                      1)
 		TAGKEYS(                        	XK_3,                      2)
 		TAGKEYS(                        	XK_q,                      3)
