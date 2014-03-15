@@ -9,7 +9,7 @@ https://www.github.com/nixmeal
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
 	{ "#ababab", "#828282", "#020202" },  // 01 - normal
-	{ "#AF7130", "#20b2e7", "#121212" },  // 02 - selected
+	{ "#AF7130", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
 	{ "#118900", "#DDDDDD", "#020202" },  // 04 - orange (Occupied Color)
 	{ "#20b2e7", "#20b2e7", "#020202" },  // 05 - Light Blue
@@ -32,7 +32,7 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 	//    { "#0300ff", "#0300ff", "#802635" },  // 15 - warning
 };
 
-static const char font[]			= "Roboto Light 9";
+static const char font[]			= "Roboto Sans 9";
 static const unsigned int borderpx  		= 0;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
 static const unsigned int gappx			= 4;
@@ -49,9 +49,9 @@ static const Layout layouts[] = {
 	/* symbol	function */
 	{ "[]=",	tile }, 		/* first entry is default */
 	{ "==",	bstack },
-	{ "[Q]",	monocle },
+	{ "[m]",	monocle },
 	{ "<><",	NULL },    		/* no layout function means floating behavior */
-	{ "[G]",	gaplessgrid },
+	{ .symbol = NULL,   .arrange = NULL    },
 };
 
 /* Tagging */
@@ -68,7 +68,7 @@ static const char *tags[] = { "1", "2", "3", "q", "w", "e" };
 static const Rule rules[] = {
 	/* class      		instance	title		tags mask	isfloating 	monitor */
 	{ "Gimp",     		NULL,       	NULL,       	1 << 4,         True,        	-1 },
-	{ "Firefox",		NULL,		NULL,	    	1 << 0,	  	False,		-1 },
+	{ "Firefox",		NULL,		NULL,    	2,	  	False,		-1 },
 	{ "VirtualBox",		NULL,		NULL,		1 << 4,		False,		-1 },
 	{ "Google-chrome",	NULL,		NULL,		1 << 0,		False,		-1 },
 	{ "Qpaeq",		NULL,		NULL,		0,		True,		-1 },
@@ -110,11 +110,7 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_l,      		setmfact,       	{.f = +0.05} },
 	{ MODKEY,                       	XK_Return, 		zoom,           	{0} },
 	{ MODKEY|ShiftMask,             	XK_c,      		killclient,    		{0} },
-	{ MODKEY,                       	XK_m,      		setlayout,      	{.v = &layouts[0]} },
-	{ MODKEY,                       	XK_f,      		setlayout,      	{.v = &layouts[1]} },
-	{ MODKEY,				XK_a,			setlayout,		{.v = &layouts[3]} },
-	{ MODKEY,				XK_g,			setlayout,		{.v = &layouts[4]} },
-	{ MODKEY,                       	XK_space,  		setlayout,      	{0} },
+	{ MODKEY,                       	XK_space,  		nextlayout,      	{0} },
 	{ MODKEY|ShiftMask,             	XK_space,  		togglefloating, 	{0} },
 	{ MODKEY,                       	XK_0,      		view,           	{.ui = ~0 } },
 	{ MODKEY|ShiftMask,             	XK_0,      		tag,            	{.ui = ~0 } },
@@ -124,14 +120,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,			XK_r,			reload,			{0} },
 	{ MODKEY|ShiftMask,                 		XK_Tab,   		cycleprev,  		{.ui = -1} },
 	{ MODKEY|ShiftMask,                 		XK_Tab,  		cyclenext,  		{.ui = +1} },
-	{ ControlMask,                       	XK_Down,  		moveresize,     	{.v = (int []){ 0, 25, 0, 0 }}},
-	{ ControlMask,                       	XK_Up,    		moveresize,     	{.v = (int []){ 0, -25, 0, 0 }}},
-	{ ControlMask,                       	XK_Right, 		moveresize,     	{.v = (int []){ 25, 0, 0, 0 }}},
-	{ ControlMask,                       	XK_Left,  		moveresize,     	{.v = (int []){ -25, 0, 0, 0 }}},
-	{ ControlMask|ShiftMask,             	XK_Down,  		moveresize,     	{.v = (int []){ 0, 0, 0, 25 }}},
-	{ ControlMask|ShiftMask,             	XK_Up,    		moveresize,     	{.v = (int []){ 0, 0, 0, -25 }}},
-	{ ControlMask|ShiftMask,             	XK_Right, 		moveresize,     	{.v = (int []){ 0, 0, 25, 0 }}},
-	{ ControlMask|ShiftMask,             	XK_Left,  		moveresize,     	{.v = (int []){ 0, 0, -25, 0 }}},
+	{ MODKEY,                       	XK_Down,  		moveresize,     	{.v = (int []){ 0, 25, 0, 0 }}},
+	{ MODKEY,                       	XK_Up,    		moveresize,     	{.v = (int []){ 0, -25, 0, 0 }}},
+	{ MODKEY,                       	XK_Right, 		moveresize,     	{.v = (int []){ 25, 0, 0, 0 }}},
+	{ MODKEY,                       	XK_Left,  		moveresize,     	{.v = (int []){ -25, 0, 0, 0 }}},
 	{ MODKEY|ShiftMask,             	XK_j,      		pushup,      		{.i = +1 } },
 	{ MODKEY|ShiftMask,             	XK_k,     		pushdown,      		{.i = -1 } },
 		TAGKEYS(                        	XK_1,                      0)
