@@ -20,7 +20,7 @@ highlight Question background: #333; color: #aaa; font-family: Inconsolata; font
 highlight Title background: #222; color: #9f0; font-family: Inconsolata; font-size: 10pt;
 highlight WarningMsg background: #222; color: #f00; font-family: Inconsolata; font-size: 10pt;
 source! ~/.vimperatorrc.local
-set hintchars="asdfqwerhkjlzxcv"
+"set hintchars="asdfqwerhkjlzxcv"
 
 nmap h :back<CR>
 nmap l :forward<CR>

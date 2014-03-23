@@ -88,7 +88,8 @@ static const Rule rules[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenurun[] 		= 	{ "dmenu_run", NULL };
+static const char *dmenurun[] 		= 	{ "dmenu_run", "-fn", font, "-nb", colors[0][2], "-nf", colors[0][1], 
+	"-sf", colors[1][1], "-sb", colors[1][2], NULL };
 static const char *killdwm[]		=	{ "killall", "dwm", NULL };
 static const char *fileman[] 		= 	{ "thunar", NULL };
 static const char *terminal[]  		= 	{ "urxvtc", NULL };
