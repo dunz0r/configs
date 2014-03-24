@@ -5,7 +5,7 @@
 source /etc/profile
 export MPD_USER=gabriel
 # sets the path
-PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin:/usr/games:$HOME/Utveckling/Pebble/arm-cs-tools/bin:$HOME/adt/tools:$HOME/adt/platform-tools
+PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin:/usr/games:$HOME/Utveckling/Pebble/arm-cs-tools/bin:$HOME/adt/tools:$HOME/adt/platform-tools:$HOME/.gem/ruby/2.1.0/bin
 # shows a fortune upon login
 printf "\n"
 fortune

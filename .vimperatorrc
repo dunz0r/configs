@@ -7,7 +7,7 @@ highlight Normal color: #999; background-color: #222; font-family: Inconsolata; 
 highlight StatusLine color: #999; background-color: #222; font-family: Inconsolata; font-size: 10pt;
 highlight Hint color: #aaa; background-color: #333; font-family: Inconsolata; font-size: 10pt;
 highlight HintElem color: #ccc; background-color: #333; font-family: Inconsolata; font-size: 10pt;
-highlight HintActive background-color: #ccc; color: #333; font-family: Inconsolata; font-size: 10pt;
+highlight HintActive background-color: #333; color: #ccc; font-family: Inconsolata; font-size: 10pt;
 highlight Function color: #aaa; font-family: Inconsolata; font-size: 11pt;
 highlight CompTitle background: -moz-linear-gradient(19% 75% 90deg, #444, #444, #444 100%); font-family: Inconsolata; font-size: 10pt;
 highlight CompTitle>* color: #ccc; font-family: Inconsolata; font-size: 10pt;
