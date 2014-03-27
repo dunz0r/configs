@@ -6,6 +6,7 @@ skype&
 nitrogen --restore&
 unclutter -idle 7&
 wmname LG3D&
+compton --config $HOME/.config/compton.conf -b
 setxkbmap -layout "us" -variant "altgr-intl"
 xmodmap -e 'keycode 66 = Control_L'
 xmodmap -e 'clear Lock'
