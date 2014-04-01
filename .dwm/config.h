@@ -8,10 +8,10 @@ https://www.github.com/nixmeal
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#ababab", "#828282", "#020202" },  // 01 - normal
-	{ "#AF7130", "#020202", "#dedede" },  // 02 - selected
+	{ "#121212", "#828282", "#020202" },  // 01 - normal
+	{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
-	{ "#118900", "#DDDDDD", "#020202" },  // 04 - orange (Occupied Color)
+	{ "#acacac", "#DDDDDD", "#020202" },  // 04 - orange (Occupied Color)
 	{ "#20b2e7", "#20b2e7", "#020202" },  // 05 - Light Blue
 	//    { "#608040", "#608040", "#020202" },  // 06 - green
 	//    { "#877C43", "#877C43", "#020202" },  // 07 - yellow
@@ -33,7 +33,7 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 };
 
 static const char font[]			= "Roboto Sans 9";
-static const unsigned int borderpx  		= 0;        	// border pixel of windows 
+static const unsigned int borderpx  		= 1;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
 static const unsigned int gappx			= 4;
 static const Bool showbar               	= True;  	// False means no bar

@@ -1,6 +1,6 @@
 #!/bin/bash
-xset -b
 urxvtd -o -f
+xset -b
 pulseaudio -D &
 skype&
 nitrogen --restore&
