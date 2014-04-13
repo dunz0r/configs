@@ -62,27 +62,29 @@ filetype plugin indent on
 syntax on      " syntax
 
 " mappings
+let mapleader=" "
 " rot13 haxorize
-map <F12> ggVGg?
+map <Leader>r ggVGg?
 " Indent
-map <F11> :gg=G<Return>
-map <F10> :VCSCommit<Return>
+map <Leader>i :gg=G<Return>
+map <Leader>c :VCSCommit<Return>
 " Make
-map <F9> :!make<Return>
+map <Leader>m :!make<Return>
 " Tagbar
-map <F8> :TagbarToggle<Return>
+map <Leader>t :TagbarToggle<Return>
 " input current time and date
-map <F5> :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
+map <Leader>d :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
 " Use hjkl you tit!
 map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
+" Because I always hit help by accident
 nnoremap <F1> <nop>
 " Make a comment
-map <F3> <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
+map <Leader>C <ESC>i/*<ESC>o<ESC>o/<ESC>ki <ESC>a
 
-map <silent> ,/ :nohlsearch<CR>
+map <silent> <Leader><Space> :nohlsearch<CR>
 " grep should always generate a file-name
 set grepprg=grep\ -nH\ $*
 
