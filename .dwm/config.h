@@ -8,8 +8,10 @@ https://www.github.com/nixmeal
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#121212", "#828282", "#020202" },  // 01 - normal
-	{ "#acacac", "#020202", "#dedede" },  // 02 - selected
+	{ "#337373", "#337373", "#020202" },  // 0B - cyan
+	{ "#6C98A6", "#6C98A6", "#121212" },  // 13 - light cyan
+	//{ "#121212", "#828282", "#020202" },  // 01 - normal
+	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
 	{ "#acacac", "#DDDDDD", "#020202" },  // 04 - orange (Occupied Color)
 	{ "#20b2e7", "#20b2e7", "#020202" },  // 05 - Light Blue
@@ -32,7 +34,8 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 	//    { "#0300ff", "#0300ff", "#802635" },  // 15 - warning
 };
 
-static const char font[]			= "Roboto Sans 9";
+static const char font[]			= "Inconsolata 10";
+static const char dmenu_font[]			= "Xft:Inconsoloata:pixelsize=12";
 static const unsigned int borderpx  		= 1;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
 static const unsigned int gappx			= 4;
@@ -88,7 +91,7 @@ static const Rule rules[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenurun[] 		= 	{ "dmenu_run", "-fn", font, "-nb", colors[0][2], "-nf", colors[0][1], 
+static const char *dmenurun[] 		= 	{ "dmenu_run", "-fn", dmenu_font, "-nb", colors[0][2], "-nf", colors[0][1], 
 	"-sf", colors[1][1], "-sb", colors[1][2], NULL };
 static const char *killdwm[]		=	{ "killall", "dwm", NULL };
 static const char *fileman[] 		= 	{ "thunar", NULL };
