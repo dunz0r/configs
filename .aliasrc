@@ -18,7 +18,7 @@ fi
 if which git &> /dev/null ; then
 	alias gc='git commit -a'
 	alias gb='git branch'
-	alias go='git checkout'
+	#alias go='git checkout'
 	alias gp='git push'
 	alias gP='git push origin;git push gh'
 	alias gu='git pull' # git update...-ish.

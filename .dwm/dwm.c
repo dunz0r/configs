@@ -1978,12 +1978,12 @@ tile(Monitor *m) {
 		if(i < m->nmaster) {
 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), False);
-			my += HEIGHT(c) + gappx;
+			my += HEIGHT(c) + gappx*2;
 		}
 		else {
 			h = (m->wh - ty) / (n - i);
 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
-			ty += HEIGHT(c) + gappx;
+			ty += HEIGHT(c) + gappx*2;
 		}
 }
 
