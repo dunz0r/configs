@@ -71,7 +71,7 @@ static const char *tags[] = { "1", "2", "3", "q", "w", "e" };
 static const Rule rules[] = {
 	/* class      		instance	title		tags mask	isfloating 	monitor */
 	{ "Gimp",     		NULL,       	NULL,       	1 << 4,         True,        	-1 },
-	{ "Firefox",		NULL,		NULL,    	2,	  	False,		-1 },
+	{ "Firefox",		NULL,		NULL,    	2,	  	False,		0 },
 	{ "VirtualBox",		NULL,		NULL,		1 << 4,		False,		-1 },
 	{ "Google-chrome",	NULL,		NULL,		1 << 0,		False,		-1 },
 	{ "Qpaeq",		NULL,		NULL,		0,		True,		-1 },
