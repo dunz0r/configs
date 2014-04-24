@@ -8,11 +8,10 @@ export MPD_USER=gabriel
 PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin:/usr/games:$HOME/Utveckling/Pebble/arm-cs-tools/bin:$HOME/adt/tools:$HOME/adt/platform-tools:$HOME/.gem/ruby/2.1.0/bin
 # shows a fortune upon login
 printf "\n"
-fortune
+fortune -s
 export PATH
 export TODO_DIR="$HOME/Documents/todo/"
 
-echo -e "\n$(uptime)\n"
 ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
 
 # Sets the Mail env
@@ -22,7 +21,8 @@ MAIL=/var/spool/mail/gabriel && export MAIL
 umask=0007
 #set show-all-if-ambiguos on
 source ~/.aliasrc
-# source completion for git
+# show todo
+t ls
 # Set some variables
 PROMPT_COMMAND=prompt_command
 export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
@@ -281,6 +281,9 @@ cvlc -vv "$1" --sout '#transcode{vcode=mp4v,acodec=mpga,vb=800,ab=128}:standard{
 #{{{ Upload an image to server
 function imgupl()
 {
+	if [ -z $1 ]; then
+		echo 'filename <folder>'
+	fi
 	if [ -z $2 ]; then
 		name=$(basename "$1")
 		scp -C -q "$1" hax0r:/www/docs/hax0r.se/files/img/
