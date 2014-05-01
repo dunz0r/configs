@@ -66,7 +66,7 @@ let mapleader=" "
 " rot13 haxorize
 map <Leader>r ggVGg?
 " Indent
-map <Leader>i :gg=G<Return>
+map <Leader>i gg=G<Return>
 map <Leader>c :VCSCommit<Return>
 " Make
 map <Leader>m :!make<Return>
