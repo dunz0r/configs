@@ -222,6 +222,7 @@ static void drawbar(Monitor *m);
 static void drawbars(void);
 static void drawcoloredtext(char *text);
 static void drawtext(const char *text, XftColor col[ColLast], Bool pad);
+static void enternotify(XEvent *e);
 static void expose(XEvent *e);
 static void focus(Client *c);
 static void focusin(XEvent *e);
@@ -329,6 +330,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
+	[EnterNotify] = enternotify,
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
@@ -968,6 +970,26 @@ drawtext(const char *text, XftColor col[ColLast], Bool pad) {
 	//	XftDrawStringUtf8(d, (XftColor *) &col[ColFG].pixel, dc.font.xfont, x, y, (XftChar8 *) buf, len);
 	XftDrawDestroy(d);
 }
+
+void
+enternotify(XEvent *e) {
+	Client *c;
+	Monitor *m;
+	XCrossingEvent *ev = &e->xcrossing;
+
+	if((ev->mode != NotifyNormal || ev->detail == NotifyInferior) && ev->window != root)
+		return;
+	c = wintoclient(ev->window);
+	m = c ? c->mon : wintomon(ev->window);
+	if(m != selmon) {
+		unfocus(selmon->sel, True);
+		selmon = m;
+	}
+	else if(!c || c == selmon->sel)
+		return;
+	focus(c);
+}
+
 
 void
 expose(XEvent *e) {
