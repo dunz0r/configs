@@ -120,7 +120,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             	XK_0,      		tag,            	{.ui = ~0 } },
 	{ MODKEY,                       	XK_comma,  		focusmon,       	{.i = -1 } },
 	{ MODKEY|ShiftMask,             	XK_comma,  		tagmon,         	{.i = -1 } },
-	{ MODKEY|ShiftMask,			XK_q,			quit,			{0} },
+	{ MODKEY|ShiftMask,			XK_x,			quit,			{0} },
 	{ MODKEY|ShiftMask,			XK_r,			reload,			{0} },
 	{ MODKEY|ShiftMask,                 		XK_Tab,   		cycleprev,  		{.ui = -1} },
 	{ MODKEY|ShiftMask,                 		XK_Tab,  		cyclenext,  		{.ui = +1} },
