@@ -1,5 +1,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+set all&
 
 " pathogen!
 execute pathogen#infect()
@@ -54,7 +55,6 @@ set autoindent
 set smartindent
 "set softtabstop=4
 set shiftwidth=4
-set tabstop=4
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
