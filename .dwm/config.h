@@ -8,13 +8,13 @@ https://www.github.com/nixmeal
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#337373", "#337373", "#020202" },  // 0B - cyan
-	{ "#6C98A6", "#6C98A6", "#121212" },  // 13 - light cyan
+	{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
+	{ "#808080", "#cccccc", "#121212" },  // 0C - light gray
 	//{ "#121212", "#828282", "#020202" },  // 01 - normal
 	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
-	{ "#acacac", "#DDDDDD", "#020202" },  // 04 - orange (Occupied Color)
-	{ "#20b2e7", "#20b2e7", "#020202" },  // 05 - Light Blue
+	{ "#acacac", "#4c4c4c", "#1c1c1c" },  // 04 - orange (Occupied Color)
+	{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
 	//    { "#608040", "#608040", "#020202" },  // 06 - green
 	//    { "#877C43", "#877C43", "#020202" },  // 07 - yellow
 	//    { "#1C678C", "#1C678C", "#020202" },  // 08 - blue
@@ -104,7 +104,8 @@ static Key keys[] = {
 	{ MODKEY,				XK_t,			spawn,			{.v = terminal } },
 	{ MODKEY,	 			XK_f,	   		spawn,	   		{.v = fileman} },
 	{ MODKEY,				XK_r,      		spawn,	   		{.v = dmenurun } },
-	{ Mod1Mask|ControlMask,			XK_Delete,		spawn,			{.v = killdwm } },
+	{ MODKEY,				XK_4,      		spawn,	   		SHCMD("surfraw -elvi|cut -f1 | dmenu -p Surfraw | xargs surfraw")},
+	{ MODKEY|ControlMask,			XK_Delete,		spawn,			{.v = killdwm } },
 	{ MODKEY,                       	XK_b,      		togglebar,     	        {0} },
 	{ MODKEY,                       	XK_j,      		focusstack,     	{.i = +1 } },
 	{ MODKEY,                       	XK_k,      		focusstack,     	{.i = -1 } },
