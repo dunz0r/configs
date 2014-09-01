@@ -3,7 +3,6 @@
 # {{{ Variables etc
 # Init stuff
 source /etc/profile
-export MPD_USER=gabriel
 # sets the path
 PATH=$PATH:$HOME/bin:/usr/local/bin:/opt/java/bin:/usr/lib/perl5/vendor_perl/bin:/usr/dt/bin:/usr/games:$HOME/Utveckling/Pebble/arm-cs-tools/bin:$HOME/adt/tools:$HOME/adt/platform-tools:$HOME/.gem/ruby/2.1.0/bin
 # shows a fortune upon login
@@ -29,6 +28,7 @@ export LESS="-R -P ?f%f(?b%bb/?B%B Byte)Line %lb of %L %pb\% ?eEOF"
 EDITOR=/usr/bin/vim
 PAGER=`which less`
 GREP_OPTIONS='--colour=auto'
+export MPD_HOST=cocks@10.0.0.10
 
 #export LANG="en_GB.UTF-8"
 export LANGUAGE="en_GB.UTF-8"

@@ -9,8 +9,7 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-set background=dark
-colorscheme molokai
+colorscheme default
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
@@ -54,7 +53,7 @@ set shortmess+=I
 set autoindent
 set smartindent
 "set softtabstop=4
-set shiftwidth=4
+"set shiftwidth=4
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
@@ -103,9 +102,9 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
   augroup END
 
 " Ycm vs ultisnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
 

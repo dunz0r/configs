@@ -8,8 +8,13 @@ https://www.github.com/nixmeal
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
-	{ "#808080", "#cccccc", "#121212" },  // 0C - light gray
+	{ "#121212", "#a9a9a9", "#121212" },  // grey
+	{ "#121212", "#121212", "#a9a9a9" },  // grey
+	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
+	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
+	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
+	 //{ "#1C679C", "#3995BF", "#1c1c1c" },  // 08 - blue
+	//{ "#808080", "#cccccc", "#121212" },  // 0C - light gray
 	//{ "#121212", "#828282", "#020202" },  // 01 - normal
 	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
@@ -95,7 +100,8 @@ static const char *dmenurun[] 		= 	{ "dmenu_run", "-fn", dmenu_font, "-nb", colo
 	"-sf", colors[1][1], "-sb", colors[1][2], NULL };
 static const char *killdwm[]		=	{ "killall", "dwm", NULL };
 static const char *fileman[] 		= 	{ "thunar", NULL };
-static const char *terminal[]  		= 	{ "urxvtc", NULL };
+static const char *terminal[]  		= 	{ "urxvt", NULL };
+static const char *surfrawcmd[]		=	{ "/home/gabriel/bin/dmenu-surfraw", dmenu_font, colors[0][2], colors[0][1], colors[1][2], colors[1][1], NULL };
 //static const char *thunarterm[]		=	{ "/home/garry/.scripts/thunarterm", NULL };
 //static const char *composite[]		=	{ "/home/garry/.scripts/composite", NULL };
 
@@ -104,7 +110,7 @@ static Key keys[] = {
 	{ MODKEY,				XK_t,			spawn,			{.v = terminal } },
 	{ MODKEY,	 			XK_f,	   		spawn,	   		{.v = fileman} },
 	{ MODKEY,				XK_r,      		spawn,	   		{.v = dmenurun } },
-	{ MODKEY,				XK_4,      		spawn,	   		SHCMD("surfraw -elvi|cut -f1 | dmenu -p Surfraw | xargs surfraw")},
+	{ MODKEY,				XK_4,      		spawn,	   		{.v = surfrawcmd }, },
 	{ MODKEY|ControlMask,			XK_Delete,		spawn,			{.v = killdwm } },
 	{ MODKEY,                       	XK_b,      		togglebar,     	        {0} },
 	{ MODKEY,                       	XK_j,      		focusstack,     	{.i = +1 } },
