@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:Inconsolata:pixelsize=12:antialias=true
-URxvt*boldFont:xft:Inconsolata:bold:pixelsize=12:antialias=true
+URxvt*font:xft:Inconsolata:size=9:antialias=true
+URxvt*boldFont:xft:Inconsolata:bold:size=9:antialias=true
 URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -14,8 +14,8 @@ URxvt*urlLauncher:   firefox -new-tab
 URxvt*underlineURLs: true
 
 URxvt*depth: 32
-URxvt*background: #111
-URxvt*foreground: #aaa
+!URxvt*background: #111
+!URxvt*foreground: #aaa
 
 URxvt*transparent:        false
 URxvt*cursorBlink:        true
@@ -29,8 +29,8 @@ URxvt*colorBD:            lightyellow
 URxvt*colorUL:            grey
 URxvt*cursorColor: #999
 
-Xft*dpi:		96	
-Xft*antialias:  false
+Xft*dpi:	96
+Xft*antialias:  true
 Xft*rgba:       rgb
 Xft*hinting:    true
 Xft*hintstyle:  hintlight
@@ -57,5 +57,5 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/mikado.Xresources"
+#include "/home/gabriel/.xdefaults-colour/astromouse.Xresources"
 ! EOF
