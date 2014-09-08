@@ -134,7 +134,7 @@ autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last
 autocmd bufwritepost,filewritepost *.c execute "normal `a"
 "
 " To automatically put a comment in a new h-file
-autocmd bufnewfile *.h so /home/gabriel/.vim/templates/c_header.txt
+autocmd bufnewfile *.h so /home/gabriel/.vim/templates/h_header.txt
 autocmd bufnewfile *.h exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
 autocmd bufnewfile *.h exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
 autocmd Bufwritepre,filewritepre *.h execute "normal ma"
