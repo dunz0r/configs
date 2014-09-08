@@ -349,7 +349,6 @@ static DC dc;
 static Monitor *mons = NULL, *selmon = NULL;
 static Window root;
 static int globalborder ;
-static int globalborder ;
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
