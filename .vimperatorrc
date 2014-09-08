@@ -1,24 +1,24 @@
 "3.6 (created: 2012/12/24 13:05:56)
 
 highlight CmdLine color: #aaa; background-color: #222;
-highlight CmdLine>* font-family: Inconsolata; font-size: 10pt;
-highlight CmdOutput color: #aaa; background-color: #222; font-family: Inconsolata; font-size: 10pt;
-highlight Normal color: #999; background-color: #222; font-family: Inconsolata; font-size: 10pt;
-highlight StatusLine color: #999; background-color: #222; font-family: Inconsolata; font-size: 10pt;
-highlight Hint color: #aaa; background-color: #121212; font-family: Inconsolata; font-size: 10pt;
-highlight HintElem color: #333; background-color: #999; font-family: Inconsolata; font-size: 10pt;
-highlight HintActive background-color: #933; color: #ccc; font-family: Inconsolata; font-size: 10pt;
+highlight CmdLine>* font-family: Inconsolata; font-size: 9pt;
+highlight CmdOutput color: #aaa; background-color: #222; font-family: Inconsolata; font-size: 9pt;
+highlight Normal color: #999; background-color: #222; font-family: Inconsolata; font-size: 9pt;
+highlight StatusLine color: #999; background-color: #222; font-family: Inconsolata; font-size: 9pt;
+highlight Hint color: #aaa; background-color: #121212; font-family: Inconsolata; font-size: 9pt;
+highlight HintElem color: #333; background-color: #999; font-family: Inconsolata; font-size: 9pt;
+highlight HintActive background-color: #933; color: #ccc; font-family: Inconsolata; font-size: 9pt;
 highlight Function color: #aaa; font-family: Inconsolata; font-size: 11pt;
-highlight CompTitle background: -moz-linear-gradient(19% 75% 90deg, #444, #444, #444 100%); font-family: Inconsolata; font-size: 10pt;
-highlight CompTitle>* color: #ccc; font-family: Inconsolata; font-size: 10pt;
-highlight CompItem[selected] background: #999; color: #222; box-shadow: 0px 0px 1px #CC0; font-family: Inconsolata; font-size: 10pt;
-highlight InfoMsg background: #333; font-family: Inconsolata; font-size: 10pt;
-highlight LineNr background: #444; font-family: Inconsolata; font-size: 10pt;
-highlight ModeMsg background: #444; color: #ccc; font-family: Inconsolata; font-size: 10pt;
-highlight MoreMsg background: #444; color: #ccc; font-family: Inconsolata; font-size: 10pt;
-highlight Question background: #333; color: #aaa; font-family: Inconsolata; font-size: 10pt;
-highlight Title background: #222; color: #9f0; font-family: Inconsolata; font-size: 10pt;
-highlight WarningMsg background: #222; color: #f00; font-family: Inconsolata; font-size: 10pt;
+highlight CompTitle background: -moz-linear-gradient(19% 75% 90deg, #444, #444, #444 100%); font-family: Inconsolata; font-size: 9pt;
+highlight CompTitle>* color: #ccc; font-family: Inconsolata; font-size: 9pt;
+highlight CompItem[selected] background: #999; color: #222; box-shadow: 0px 0px 1px #CC0; font-family: Inconsolata; font-size: 9pt;
+highlight InfoMsg background: #333; font-family: Inconsolata; font-size: 9pt;
+highlight LineNr background: #444; font-family: Inconsolata; font-size: 9pt;
+highlight ModeMsg background: #444; color: #ccc; font-family: Inconsolata; font-size: 9pt;
+highlight MoreMsg background: #444; color: #ccc; font-family: Inconsolata; font-size: 9pt;
+highlight Question background: #333; color: #aaa; font-family: Inconsolata; font-size: 9pt;
+highlight Title background: #222; color: #9f0; font-family: Inconsolata; font-size: 9pt;
+highlight WarningMsg background: #222; color: #f00; font-family: Inconsolata; font-size: 9pt;
 source! ~/.vimperatorrc.local
 set gui=noaddons,nonavigation,nomenu,nobookmarks,tabs
 
