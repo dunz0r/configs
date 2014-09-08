@@ -19,25 +19,31 @@ void setstatus(char *str) {
 	XSync(dpy, False);
 }
 
-char get_battery_status() {
+char* get_battery_status() {
+	char *buf;
 	FILE *fd = fopen("/sys/class/power_supply/BAT0/status", "r");
 	char bat_status;
+
+	if((buf = malloc(sizeof(char)*3)) == NULL) {
+		fprintf(stderr, "Cannot allocate memory for buf.\n");
+		exit(1);
+	}
 	if(fd == NULL) {
 		fprintf(stderr, "Error opening status.\n");
-		return -1;
+		exit(1);
 	}
 	fscanf(fd, "%c", &bat_status);
 	if(bat_status == 'D')
-		bat_status = '-';
+		snprintf(buf, 2, "-");
 	if(bat_status == 'C')
-		bat_status = '+';
+		snprintf(buf, 2, "+");
 	if(bat_status == 'F')
-		bat_status = '=';
+		snprintf(buf, 2, "=");
 	if(bat_status == 'U')
-		bat_status = '?';
+		snprintf(buf, 2, "?");
 
 	fclose(fd);
-	return bat_status;
+	return buf;
 }
 
 char* get_datetime() {
@@ -94,21 +100,20 @@ int get_battery() {
 	fscanf(fd, "%d", &voltage_now);
 	fclose(fd);
 
-
 	return ((float)energy_now * 1000 / (float)voltage_now) * 100 / ((float)energy_full * 1000 / (float)voltage_now);
 }
 
 int main(void) {
 	char *status;
 	char *datetime;
-	char battery_status;
+	char *battery_status;
 	int bat0;
 
 	char hostname[16];
-	hostname[15] = '\0';
+	//hostname[15] = '\0';
 	gethostname(hostname, 15);
 	int is_laptop;
-	is_laptop = strncmp(hostname, "inger", 16);
+	is_laptop = strcmp(hostname, "miku");
 
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -124,14 +129,14 @@ int main(void) {
 			battery_status = get_battery_status();
 			bat0 = get_battery();
 			snprintf(status, 200, "%s%d%% | %s",
-				&battery_status, bat0, datetime);
+				battery_status, bat0, datetime);
 		} else {
 			snprintf(status, 200, "%s", datetime);
 		}
 
-		free(datetime);
 		setstatus(status);
 	}
+	free(datetime);
 	free(status);
 	XCloseDisplay(dpy);
 	return 0;
