@@ -92,10 +92,10 @@ prompt_command () {
 
 	# change colour of hostname depending on host
 	case $HOSTNAME in
-		inger)
+		ingrid)
 			local HOST_COLOUR=$YELLOW
 			;;
-		gertrud)
+		miku)
 			local HOST_COLOUR=$BRIGHT_RED
 			;;
 		lillemor)
