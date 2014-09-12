@@ -39,8 +39,8 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 	//    { "#0300ff", "#0300ff", "#802635" },  // 15 - warning
 };
 
-static const char font[]			= "Inconsolata 10";
-static const char dmenu_font[]			= "Xft:Inconsolata:pixelsize=12";
+static const char font[]			= "Inconsolata 9";
+static const char dmenu_font[]			= "Xft:Inconsolata:size=9";
 static const unsigned int borderpx  		= 1;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
 static const unsigned int gappx			= 4;
