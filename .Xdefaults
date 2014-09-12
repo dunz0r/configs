@@ -14,8 +14,8 @@ URxvt*urlLauncher:   firefox -new-tab
 URxvt*underlineURLs: true
 
 URxvt*depth: 32
-!URxvt*background: #111
-!URxvt*foreground: #aaa
+URxvt*background: #111
+URxvt*foreground: #aaa
 
 URxvt*transparent:        false
 URxvt*cursorBlink:        true
@@ -57,5 +57,6 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/astromouse.Xresources"
+#include "/home/gabriel/.xdefaults-colour/molokai"
+
 ! EOF
