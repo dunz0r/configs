@@ -9,7 +9,7 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme default
+colorscheme molokai
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
