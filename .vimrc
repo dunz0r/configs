@@ -1,6 +1,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
+" source from current directory
+set exrc
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -111,7 +113,7 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_select_previous_compltetion=[]
 
-let &path = "/usr/avr/include,/usr/include"
+let &path = "/usr/avr/include,/usr/include,./"
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
 
