@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
+Bundle 'scrooloose/nerdtree'
 call vundle#end()
 
 
@@ -79,6 +80,8 @@ map <Leader>c :Gcommit<Return>
 map <Leader>m :!make<Return>
 " Tagbar
 map <Leader>t :TagbarToggle<Return>
+" NERDTree
+map <Leader>n :NERDTreeToggle<Return>
 " input current time and date
 map <Leader>d :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
 " Use hjkl you tit!
