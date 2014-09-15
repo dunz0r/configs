@@ -1,9 +1,17 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-set all&
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'SirVer/ultisnips.git'
+Plugin 'tpope/vim-fugitive.git'
+call vundle#end()
 
-" pathogen!
-execute pathogen#infect()
+
+filetype plugin indent on
+syntax on
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " do want title
@@ -57,16 +65,14 @@ set smartindent
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
-filetype plugin indent on
-syntax on      " syntax
-
+"
 " mappings
 let mapleader=" "
 " rot13 haxorize
 map <Leader>r ggVGg?
 " Indent
 map <Leader>i gg=G<Return>
-map <Leader>c :VCSCommit<Return>
+map <Leader>c :Gcommit<Return>
 " Make
 map <Leader>m :!make<Return>
 " Tagbar
@@ -102,9 +108,10 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
   augroup END
 
 " Ycm vs ultisnips
-"let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_select_previous_compltetion=[]
+
+let &path = "/usr/avr/include,/usr/include"
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
 
