@@ -1,19 +1,17 @@
 /* 
    Configuration file for DWM. 
-Maintainer: illusionist
-https://www.github.com/nixmeal
 */
 /*Appearance*/
 #include "push.c"
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#121212", "#a9a9a9", "#121212" },  // grey
-	{ "#121212", "#121212", "#a9a9a9" },  // grey
+	{ "#121212", "#4c4c4c", "#121212" },  // grey
+	{ "#121212", "#a9a9a9", "#4c4c4c" },  // grey
 	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
-	 //{ "#1C679C", "#3995BF", "#1c1c1c" },  // 08 - blue
+	//{ "#1C679C", "#3995BF", "#1c1c1c" },  // 08 - blue
 	//{ "#808080", "#cccccc", "#121212" },  // 0C - light gray
 	//{ "#121212", "#828282", "#020202" },  // 01 - normal
 	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
@@ -67,7 +65,7 @@ static const char *tags[] = { "1", "2", "3", "q", "w", "e" };
 //static const Tag tags[] = {
 //    /* name    	layout       	mfact  	nmaster*/
 //    { "¹",   	&layouts[0], 	-1,    	-1 },
-//    { "B",	&layouts[0], 	-1,  	-1 },
+//    { "B",	&layouts[0], 	-1,	-1 },
 //    { "C",  	&layouts[0], 	-1,    	-1 },
 //    { "D", 	&layouts[0], 	-1,    	-1 },
 //    { "E",  	&layouts[0], 	-1,    	-1 },
@@ -137,7 +135,7 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_Left,  		moveresize,     	{.v = (int []){ -25, 0, 0, 0 }}},
 	{ MODKEY|ShiftMask,             	XK_j,      		pushup,      		{.i = +1 } },
 	{ MODKEY|ShiftMask,             	XK_k,     		pushdown,      		{.i = -1 } },
-		TAGKEYS(                        	XK_1,                      0)
+	TAGKEYS(                        	XK_1,                      0)
 		TAGKEYS(                        	XK_2,                      1)
 		TAGKEYS(                        	XK_3,                      2)
 		TAGKEYS(                        	XK_q,                      3)

@@ -10,6 +10,7 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
 call vundle#end()
 
 
@@ -53,6 +54,7 @@ set list
 set listchars=trail:-,tab:\»\ 
 set hlsearch      " hilight searches
 set showmode
+set colorcolumn=100
 
 set tags=+~/.vim/systags
 
@@ -69,6 +71,7 @@ set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
 "
+
 " mappings
 let mapleader=" "
 " rot13 haxorize
