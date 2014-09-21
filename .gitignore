@@ -4,4 +4,4 @@
 *.m3u
 last_directory
 *.db
-~/.mutt/muttrc
+~/.mutt/passwords.mutt
