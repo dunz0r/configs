@@ -21,19 +21,19 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme molokai
+colorscheme koehler
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
 " I can has lightline
 set laststatus=2
 let g:lightline = {
-      \ 'component': {
-      \   'readonly': '%{&readonly?"L":""}',
-      \ },
-      \ 'separator': { 'left': '➤', 'right': '◄' },
-      \ 'subseparator': { 'left': '➤', 'right': '◄' }
-	\}
+     \ 'component': {
+     \   'readonly': '%{&readonly?"RO":""}',
+     \ },
+     \ 'separator': { 'left': '>', 'right': '<' },
+     \ 'subseparator': { 'left': '->', 'right': '<-' }
+\}
 set fdm=marker
 set incsearch " do incremental searching
 set backupdir=/tmp
@@ -51,7 +51,7 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\�\ 
+set listchars=trail:-,tab:\>\ 
 set hlsearch      " hilight searches
 set showmode
 set colorcolumn=100

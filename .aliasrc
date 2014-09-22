@@ -36,7 +36,6 @@ pftp='rlwrap pftp'
 
 # Some nice aliases
 alias rar=unrar
-alias ls='ls $LS_OPTIONS'
 alias lock='vlock -n'
 alias aurbuild='sudo -E aurbuild'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'

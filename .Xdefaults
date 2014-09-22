@@ -57,5 +57,5 @@ XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/eight"
+#include "/home/gabriel/.xdefaults-colour/bleh-1.Xresources"
 ! EOF
