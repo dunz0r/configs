@@ -32,7 +32,7 @@ defyn   SURFRAW_graphical		yes
 
 # name/path of text browser executable
 # e.g links, lynx, w3m
-def   SURFRAW_text_browser	
+def   SURFRAW_text_browser	w3m
 
 # name/path of browser executable
 # e.g mozilla, netscape etc
@@ -51,7 +51,7 @@ defyn   SURFRAW_graphical_remote	no
 defyn   SURFRAW_new_window	no
 
 # name of screen command to run
-def   SURFRAW_screen		screen
+def   SURFRAW_screen		tmux
 
 # If surfraw is running under screen(1), start a new screen
 # for each text browser invocation?
