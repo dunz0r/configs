@@ -1,0 +1,43 @@
+fortune -a
+ddate +'Today is %{%A, the %e of %B%}, in the YOLD %Y. %. %N%nCelebrate %H'
+set -U
+export PATH=$PATH:$HOME/bin
+source ~/.aliasrc
+MANWIDTH=80 
+LESSHISTFILE=-
+PAGER=$(which less)
+EDITOR=$(which vim)
+GREP_OPTIONS='--colour=auto'
+LANGUAGE="en_GB.UTF-8"
+LC_CTYPE="sv_SE.UTF-8"
+LC_NUMERIC="sv_SE.UTF-8"
+LC_TIME="sv_SE.UTF-8"
+LC_COLLATE="sv_SE.UTF-8"
+LC_MONETARY="sv_SE.UTF-8"
+LC_MESSAGES="en_GB.UTF-8"
+LC_PAPER="sv_SE.UTF-8"
+LC_NAME="sv_SE.UTF-8"
+LC_ADDRESS="sv_SE.UTF-8"
+LC_TELEPHONE="sv_SE.UTF-8"
+LC_MEASUREMENT="sv_SE.UTF-8"
+LC_IDENTIFICATION="sv_SE.UTF-8"
+LC_ALL="en_GB.UTF-8"
+LANG=C
+
+export MANWIDTH LESSHISTFILE PAGER EDITOR GREP_OPTIONS LANGUAGE LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE\
+LC_MONETARY LC_MESSAGES LC_PAPER LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION LC_ALL LANG
+
+HISTSIZE=50000
+HISTFILE="$HOME/.mksh_history"
+PS1=$'\001\r''${|
+	local e=$?
+
+	(( e )) && REPLY+="$e|"
+
+	local d=${PWD:-?} p=~; [[ $p = ?(*/) ]] || d=${d/#$p/~}
+	local m=${%d} n p=...; (( m > 0 )) || m=${#d}
+	(( m > (n = (COLUMNS/3 < 7 ? 7 : COLUMNS/3)) )) && d=${d:(-n)} || p=
+	REPLY+=$p$d
+
+	return $e
+}
