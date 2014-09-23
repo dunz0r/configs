@@ -16,3 +16,7 @@ set message_cachedir = ~/.mutt/cache/bodies
 set move = no
 set timeout = 15
 autoview text/html
+
+set alias_file = "~/.mutt/aliases.mutt"
+set sort_alias = alias
+source $alias_file
