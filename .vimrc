@@ -81,8 +81,8 @@ map <Leader>i gg=G<Return>
 map <Leader>c :Gcommit<Return>
 " Make
 map <Leader>m :!make<Return>
-" Tagbar
-map <Leader>t :TagbarToggle<Return>
+" Taglist
+map <Leader>t :TlistToggle<Return>
 " NERDTree
 map <Leader>n :NERDTreeToggle<Return>
 " input current time and date
