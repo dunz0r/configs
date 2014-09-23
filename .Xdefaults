@@ -14,10 +14,8 @@ URxvt*urlLauncher:   firefox -new-tab
 URxvt*underlineURLs: true
 
 URxvt*depth: 32
-URxvt*background: #111
-URxvt*foreground: #aaa
 
-URxvt*transparent:        true
+URxvt*transparent:        false
 URxvt*cursorBlink:        true
 URxvt*cursorOnTime:       300
 URxvt*cursorOffTime:      140
@@ -27,7 +25,7 @@ URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
 URxvt*colorUL:            grey
-URxvt*cursorColor: #999
+URxvt*cursorColor: yellow
 
 Xft*dpi:	96
 Xft*antialias:  true
@@ -50,12 +48,12 @@ XTerm*printerAutoClose: true
 XLock.invalidCapsLock: Invalid login.
 XLock.mode: matrix
 XLock.info:  
-XLock.program: fortune -ao
+XLock.program: fortune -o
 XLock.username:
 XLock.password:
 XLock.erasetime: 3
 XLock.mono: true
 
 ! Which theme to use
-#include "/home/gabriel/.xdefaults-colour/bleh-1.Xresources"
+#include "/home/gabriel/.xdefaults-colour/molokai"
 ! EOF
