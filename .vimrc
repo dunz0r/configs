@@ -10,7 +10,7 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
+Bundle 'taglist.vim'
 call vundle#end()
 
 
@@ -21,7 +21,7 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme koehler
+colorscheme molokai
 " use all the wonderful 256 colors that urxvt supply
 "set t_Co=256
 
