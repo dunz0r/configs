@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-NOTEFOLDER="$HOME/Dokument/notes"
+NOTEFOLDER="$HOME/Documents/notes"
 YEAR="$(date +'%Y')"
 MONTH="$(date +'%m')"
 DAY="$(date +'%d')"
