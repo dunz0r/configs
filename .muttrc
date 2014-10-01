@@ -3,10 +3,8 @@ account-hook imap://gmail"set
 set imap_user = "gf@hax0r.se"
 set smtp_url = "smtp://gf@hax0r.se@smtp.gmail.com:587/"
 source ~/.mutt/passwords.mutt
-
 set from = "gf@hax0r.se"
 set realname = "Gabriel Fornaeus"
-
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
@@ -17,6 +15,10 @@ set move = no
 set timeout = 15
 autoview text/html
 
+# Gpg support
+source ~/.mutt/gpg.mutt
+
+# Aliases
 set alias_file = "~/.mutt/aliases.mutt"
 set sort_alias = alias
 source $alias_file
