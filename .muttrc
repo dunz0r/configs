@@ -1,6 +1,5 @@
 # Imap settings for gapps
-account-hook imap://gmail"set
-set imap_user = "gf@hax0r.se"
+set imap_user = gf@hax0r.se
 set smtp_url = "smtp://gf@hax0r.se@smtp.gmail.com:587/"
 source ~/.mutt/passwords.mutt
 set from = "gf@hax0r.se"
@@ -13,7 +12,6 @@ set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set move = no
 set timeout = 15
-autoview text/html
 
 # Gpg support
 source ~/.mutt/gpg.mutt
