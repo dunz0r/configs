@@ -11,6 +11,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'tomasr/molokai'
+Plugin 'aperezdc/vim-template'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
@@ -72,8 +73,11 @@ set smartindent
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
+" Template settings
+let g:email = 'gf@hax0r.se'
+let g:username = 'Gabriel Fornaeus'
+let g:license = 'GPLv3'
 "
-
 " mappings
 let mapleader=" "
 " rot13 haxorize
@@ -131,29 +135,3 @@ autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
 
-" For arduino syntax
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-" To automatically put a comment in a new ino-file
-autocmd bufnewfile *.ino so /home/gabriel/.vim/templates/c_header.txt
-autocmd bufnewfile *.ino exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
-autocmd bufnewfile *.ino exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.ino execute "normal ma"
-autocmd Bufwritepre,filewritepre *.ino exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.ino execute "normal `a"
-"
-" To automatically put a comment in a new c-file
-autocmd bufnewfile *.c so /home/gabriel/.vim/templates/c_header.txt
-autocmd bufnewfile *.c exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
-autocmd bufnewfile *.c exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.c execute "normal ma"
-autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.c execute "normal `a"
-"
-" To automatically put a comment in a new h-file
-autocmd bufnewfile *.h so /home/gabriel/.vim/templates/h_header.txt
-autocmd bufnewfile *.h exe "1," . 8 . "g/File Name :.*/s//File Name : " .expand("%")
-autocmd bufnewfile *.h exe "1," . 8 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.h execute "normal ma"
-autocmd Bufwritepre,filewritepre *.h exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.h execute "normal `a"
