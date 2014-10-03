@@ -9,6 +9,7 @@ Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'tomasr/molokai'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
