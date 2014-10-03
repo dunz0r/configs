@@ -51,7 +51,7 @@ set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
 set smarttab
 set list
-set listchars=trail:-,tab:\>\ 
+set listchars=trail:-,tab:\»\ 
 set hlsearch      " hilight searches
 set showmode
 set colorcolumn=100
