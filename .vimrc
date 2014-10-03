@@ -9,7 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
-Bundle 'Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
