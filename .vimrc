@@ -6,10 +6,10 @@ set exrc
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
+Bundle 'Valloric/YouCompleteMe.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
