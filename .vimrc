@@ -3,9 +3,8 @@ set nocompatible
 filetype off
 " source from current directory
 set exrc
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
