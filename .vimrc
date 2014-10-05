@@ -9,9 +9,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
-Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'tomasr/molokai'
 Plugin 'aperezdc/vim-template'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/open-pdf.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
@@ -92,7 +93,9 @@ map <Leader>t :TlistToggle<Return>
 " NERDTree
 map <Leader>n :NERDTreeToggle<Return>
 " input current time and date
-map <Leader>d :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
+map <Leader>D :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
+" Open PDF
+map <Leader>d :Pdf ~/Documents/Datasheets/
 " Use hjkl you tit!
 map <Up> <NOP>
 map <Down> <NOP>
