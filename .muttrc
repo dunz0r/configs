@@ -14,7 +14,7 @@ set move = no
 set timeout = 15
 
 # Gpg support
-source ~/.mutt/gpg.mutt
+source /usr/share/doc/mutt/samples/gpg.rc
 
 # Aliases
 set alias_file = "~/.mutt/aliases.mutt"
