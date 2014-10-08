@@ -8,6 +8,7 @@ set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
 
+# Cache settings
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set move = no
@@ -15,12 +16,29 @@ set timeout = 15
 
 # Gpg support
 source /usr/share/doc/mutt/samples/gpg.rc
+set pgp_use_gpg_agent = yes
+set pgp_autosign = yes
+
 
 # Aliases
 set alias_file = "~/.mutt/aliases.mutt"
 set sort_alias = alias
 source $alias_file
 
+# Attachments
+auto_view text/html
+alternative_order text/plain text/html
+
+# Display
+set sort=threads
+set markers
+# Don't wrap mid-word
+set smart_wrap
+# Retain 5 lines
+set pager_context=5
+set status_on_top
+set edit_headers=yes
+set arrow_cursor=yes
 # Colours
 color hdrdefault blue black
 color quoted blue black
