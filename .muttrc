@@ -27,7 +27,7 @@ source $alias_file
 
 # Attachments
 auto_view text/html
-alternative_order text/plain text/html
+alternative_order text/plain text/enriched text/html
 
 # Display
 set sort=threads
