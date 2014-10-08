@@ -1,1 +1,3 @@
 application/msword; antiword %s; copiousoutput
+text/html; elinks %s; nametemplate=%s.html
+text/html; elinks -dump %s; namespace=%s.html; copiousoutput
