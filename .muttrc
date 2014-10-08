@@ -56,4 +56,5 @@ color tilde brightred black
 color index blue black ~F
 color index red black "~N|~O"
 
-
+# set window name to mutt
+set my_init = `/bin/echo -en "\033]0;mutt\007" >/proc/$PPID/fd/1 `
