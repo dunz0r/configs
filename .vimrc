@@ -74,6 +74,8 @@ set smartindent
 set copyindent
 "set expandtab
 set completeopt=menu,longest,preview
+" Set nerdtree to always open on the right
+let g:NERDTreeWinPos = "right"
 " Template settings
 let g:email = 'gf@hax0r.se'
 let g:username = 'Gabriel Fornaeus'
