@@ -6,7 +6,6 @@ set exrc
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'SirVer/ultisnips.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tomasr/molokai'
@@ -14,6 +13,7 @@ Plugin 'aperezdc/vim-template'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/open-pdf.vim'
 Bundle 'scrooloose/nerdtree'
+Plugin 'SirVer/ultisnips.git'
 Bundle 'taglist.vim'
 call vundle#end()
 
@@ -126,15 +126,14 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
   augroup END
 
-" Ycm vs ultisnips
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_select_previous_compltetion=[]
-
+" Ycm 
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 let &path = "/usr/avr/include,/usr/include,./"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
 
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Open MS word doc with antiword
 autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
