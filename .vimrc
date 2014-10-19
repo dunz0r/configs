@@ -58,7 +58,6 @@ set list
 set listchars=trail:-,tab:\»\ 
 set hlsearch      " hilight searches
 set showmode
-set colorcolumn=100
 
 set tags=+~/.vim/systags
 

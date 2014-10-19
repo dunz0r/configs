@@ -6,8 +6,8 @@
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#121212", "#4c4c4c", "#121212" },  // grey
-	{ "#121212", "#a9a9a9", "#4c4c4c" },  // grey
+	{ "#111111", "#3c3c3c", "#111111" },  // grey
+	{ "#111111", "#c0c0c0", "#808080" },  // grey
 	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
@@ -73,8 +73,8 @@ static const char *tags[] = { "1", "2", "3", "q", "w", "e" };
 
 static const Rule rules[] = {
 	/* class      		instance	title		tags mask	isfloating 	monitor */
-	{ "Gimp",     		NULL,       	NULL,       	1 << 4,         True,        	-1 },
-	{ "Firefox",		NULL,		NULL,    	2,	  	False,		0 },
+	{ "Gimp",     		NULL,       	NULL,       	1 << 4,         True,		-1 },
+	{ "Firefox",		NULL,		NULL,    	2,		False,		-2 },
 	{ "VirtualBox",		NULL,		NULL,		1 << 4,		False,		-1 },
 	{ "Google-chrome",	NULL,		NULL,		1 << 0,		False,		-1 },
 	{ "Qpaeq",		NULL,		NULL,		0,		True,		-1 },
