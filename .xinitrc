@@ -7,9 +7,7 @@ unclutter -idle 7&
 wmname LG3D&
 owncloud &
 compton --config $HOME/.config/compton.conf -b
-setxkbmap -layout "us" -variant "altgr-intl"&
-xmodmap -e 'keycode 66 = Control_L'&
-xmodmap -e 'clear Lock'&
-xmodmap -e 'add Control = Control_L'&
+setxkbmap -layout "us" -variant "altgr-intl" -option "ctrl:nocaps"
+xset mouse 6 5&
 $HOME/.dwm/dwmstatus/dwmstatus&
 $HOME/bin/startdwm

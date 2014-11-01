@@ -6,7 +6,7 @@ set from = "gf@hax0r.se"
 set realname = "Gabriel Fornaeus"
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
+set postponed = "Utkast"
 
 # Cache settings
 set header_cache = ~/.mutt/cache/headers
@@ -55,6 +55,3 @@ color search white black
 color tilde brightred black
 color index blue black ~F
 color index red black "~N|~O"
-
-# set window name to mutt
-set my_init = `/bin/echo -en "\033]0;mutt\007" >/proc/$PPID/fd/1 `
