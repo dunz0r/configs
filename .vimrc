@@ -12,6 +12,7 @@ Plugin 'tomasr/molokai'
 Plugin 'aperezdc/vim-template'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/open-pdf.vim'
+Plugin 'vimwiki/vimwiki'
 Bundle 'scrooloose/nerdtree'
 Plugin 'SirVer/ultisnips.git'
 Bundle 'taglist.vim'
@@ -138,3 +139,5 @@ autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
 
+" my own, personal wiki
+let g:vimwiki_list = [{'path' : '/home/gabriel/ownCloud/wiki'}]

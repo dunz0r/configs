@@ -1,12 +1,14 @@
 # Imap settings for gapps
+set from = "gf@hax0r.se"
+set realname = "Gabriel Fornaeus"
 set imap_user = gf@hax0r.se
 set smtp_url = "smtp://gf@hax0r.se@smtp.gmail.com:587/"
 source ~/.mutt/passwords.mutt
-set from = "gf@hax0r.se"
-set realname = "Gabriel Fornaeus"
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "Utkast"
+set move = no
+set imap_keepalive = 900
 
 # Cache settings
 set header_cache = ~/.mutt/cache/headers
