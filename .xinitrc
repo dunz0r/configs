@@ -6,7 +6,6 @@ nitrogen --restore&
 unclutter -idle 7&
 wmname LG3D&
 owncloud &
-compton --config $HOME/.config/compton.conf -b
 setxkbmap -layout "us" -variant "altgr-intl" -option "ctrl:nocaps"
 xset mouse 6 5&
 $HOME/.dwm/dwmstatus/dwmstatus&
