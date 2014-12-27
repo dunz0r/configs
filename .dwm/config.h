@@ -6,8 +6,8 @@
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#111111", "#3c3c3c", "#111111" },  // grey
-	{ "#111111", "#c0c0c0", "#808080" },  // grey
+	{ "#e0e0e0", "#000000", "#b0b0b0" },  // grey
+	{ "#111111", "#303030", "#e0e0e0" },  // grey
 	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
@@ -16,7 +16,7 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 	//{ "#121212", "#828282", "#020202" },  // 01 - normal
 	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
-	{ "#acacac", "#4c4c4c", "#1c1c1c" },  // 04 - orange (Occupied Color)
+	{ "#acacac", "#000000", "#c0c0c0" },  // 04 - orange (Occupied Color)
 	{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
 	//    { "#608040", "#608040", "#020202" },  // 06 - green
 	//    { "#877C43", "#877C43", "#020202" },  // 07 - yellow
