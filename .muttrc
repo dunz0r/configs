@@ -39,7 +39,6 @@ set smart_wrap
 # Retain 5 lines
 set pager_context=5
 set status_on_top
-set edit_headers=yes
 set arrow_cursor=yes
 # Colours
 color hdrdefault blue black
