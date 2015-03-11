@@ -15,7 +15,7 @@ URxvt*underlineURLs: true
 
 URxvt*depth: 32
 
-URxvt*transparent:        true
+URxvt*transparent:        false
 URxvt*cursorBlink:        true
 URxvt*cursorOnTime:       300
 URxvt*cursorOffTime:      140
@@ -24,7 +24,7 @@ URxvt*shading:            10
 URxvt*scrollBar:          False
 
 URxvt*colorBD:            lightyellow
-URxvt*colorUL:            grey
+URxvt*colorUL:            green
 URxvt*cursorColor: yellow
 
 Xft*dpi:	96
