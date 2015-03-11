@@ -7,7 +7,6 @@ MANWIDTH=80
 LESSHISTFILE=-
 PAGER=$(which less)
 EDITOR=$(which vim)
-GREP_OPTIONS='--colour=auto'
 LANGUAGE="en_GB.UTF-8"
 LC_CTYPE="sv_SE.UTF-8"
 LC_NUMERIC="sv_SE.UTF-8"
