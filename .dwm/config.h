@@ -6,8 +6,8 @@
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#111111", "#000000", "#b0b0b0" },  // grey
-	{ "#e0e0e0", "#303030", "#e0e0e0" },  // grey
+	{ "#111111", "#aaaaaa", "#121212" },  // grey
+	{ "#e0e0e0", "#121212", "#aaaaaa" },  // grey
 	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
