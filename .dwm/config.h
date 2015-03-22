@@ -97,8 +97,11 @@ static const Rule rules[] = {
 static const char *dmenurun[] 		= 	{ "dmenu_run", "-fn", dmenu_font, "-nb", colors[0][2], "-nf", colors[0][1], 
 	"-sf", colors[1][1], "-sb", colors[1][2], NULL };
 static const char *killdwm[]		=	{ "killall", "dwm", NULL };
-static const char *fileman[] 		= 	{ "thunar", NULL };
-static const char *terminal[]  		= 	{ "urxvt", NULL };
+static const char *fileman[]		=	{ "thunar", NULL };
+static const char *terminal[]		=	{ "urxvt", NULL };
+static const char *tmuxsplit[]  	=	{ "tmux", "split", NULL };
+static const char *tmuxhsplit[]  	=	{ "tmux", "split", "-h", NULL };
+static const char *tmuxnew[]		=	{ "tmux", "new-window", NULL };
 static const char *surfrawcmd[]		=	{ "/home/gabriel/bin/dmenu-surfraw", dmenu_font, colors[0][2], colors[0][1], colors[1][2], colors[1][1], NULL };
 //static const char *thunarterm[]		=	{ "/home/garry/.scripts/thunarterm", NULL };
 //static const char *composite[]		=	{ "/home/garry/.scripts/composite", NULL };
@@ -109,6 +112,9 @@ static Key keys[] = {
 	{ MODKEY,	 			XK_f,	   		spawn,	   		{.v = fileman} },
 	{ MODKEY,				XK_r,      		spawn,	   		{.v = dmenurun } },
 	{ MODKEY,				XK_4,      		spawn,	   		{.v = surfrawcmd }, },
+	{ MODKEY,				XK_s,      		spawn,	   		{.v = tmuxsplit }, },
+	{ MODKEY,				XK_v,      		spawn,	   		{.v = tmuxhsplit }, },
+	{ MODKEY,				XK_c,      		spawn,	   		{.v = tmuxnew }, },
 	{ MODKEY|ControlMask,			XK_Delete,		spawn,			{.v = killdwm } },
 	{ MODKEY,                       	XK_b,      		togglebar,     	        {0} },
 	{ MODKEY,                       	XK_j,      		focusstack,     	{.i = +1 } },
@@ -127,8 +133,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             	XK_comma,  		tagmon,         	{.i = -1 } },
 	{ MODKEY|ShiftMask,			XK_x,			quit,			{0} },
 	{ MODKEY|ShiftMask,			XK_r,			reload,			{0} },
-	{ MODKEY|ShiftMask,                 		XK_Tab,   		cycleprev,  		{.ui = -1} },
-	{ MODKEY|ShiftMask,                 		XK_Tab,  		cyclenext,  		{.ui = +1} },
+	{ MODKEY|ShiftMask,			XK_Tab,   		cycleprev,  		{.ui = -1} },
+	{ MODKEY|ShiftMask,			XK_Tab,  		cyclenext,  		{.ui = +1} },
 	{ MODKEY,                       	XK_Down,  		moveresize,     	{.v = (int []){ 0, 25, 0, 0 }}},
 	{ MODKEY,                       	XK_Up,    		moveresize,     	{.v = (int []){ 0, -25, 0, 0 }}},
 	{ MODKEY,                       	XK_Right, 		moveresize,     	{.v = (int []){ 25, 0, 0, 0 }}},
