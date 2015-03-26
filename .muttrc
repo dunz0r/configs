@@ -31,16 +31,23 @@ source $alias_file
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
+# Bindings
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CP sidebar-open
 # Display
 set sort=threads
 set markers
-# Don't wrap mid-word
+## Don't wrap mid-word
 set smart_wrap
-# Retain 5 lines
+## Retain 5 lines
 set pager_context=5
 set status_on_top
 set arrow_cursor=yes
-# Colours
+## Sidebar
+set sidebar_visible=yes
+set sidebar_sort=yes
+## Colours
 color hdrdefault blue black
 color quoted blue black
 color signature blue black
