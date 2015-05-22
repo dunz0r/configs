@@ -33,6 +33,7 @@ colorscheme molokai
 " I can has lightline
 set laststatus=2
 let g:lightline = {
+     \ 'colorscheme': 'jellybeans',
      \ 'component': {
      \   'readonly': '%{&readonly?"RO":""}',
      \ },
@@ -50,6 +51,7 @@ set numberwidth=4   " I usually only edit small files so therefore 4 digits shou
 set nolazyredraw      " redraw!
 set showcmd      " display incomplete commands
 set smartcase      " searching
+set noshowmode
 set scrolloff=2      " I like to know what's next
 set wildmenu
 set wildmode=list:longest " wildmode works great this way
