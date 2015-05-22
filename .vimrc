@@ -67,17 +67,14 @@ set tags=+~/.vim/systags
 " Shortmess off
 set shortmess+=I
 " Indentation stuff
-"set fdm=indent
-"set cindent
 set autoindent
 set smartindent
-"set softtabstop=4
-"set shiftwidth=4
 set copyindent
-"set expandtab
 set completeopt=menu,longest,preview
+
 " Set nerdtree to always open on the right
 let g:NERDTreeWinPos = "right"
+
 " Template settings
 let g:email = 'gf@hax0r.se'
 let g:username = 'Gabriel Fornaeus'
@@ -85,10 +82,10 @@ let g:license = 'GPLv3'
 "
 " mappings
 let mapleader=" "
-" rot13 haxorize
-map <Leader>r ggVGg?
+
 " Indent
 map <Leader>i gg=G<Return>
+" Git Commit
 map <Leader>c :Gcommit<Return>
 " Make
 map <Leader>m :!make<Return>
