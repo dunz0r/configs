@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:Inconsolata:size=8:antialias=true
-URxvt*boldFont:xft:Inconsolata:bold:size=8:antialias=true
+URxvt*font: xft:Inconsolata:size=8:antialias=true
+URxvt*boldFont: xft:Inconsolata:bold:size=8:antialias=true
 URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -28,6 +28,9 @@ URxvt*colorUL:            green
 URxvt*cursorColor: yellow
 
 Xft*dpi:	96
+Xft*rgba:	rgb
+Xft*hinting:	true
+Xft*hintstyle:	hintslight
 XLock.mono:	true
 XLock.info:	
 XLock.username:	
@@ -37,3 +40,5 @@ XLock.mode:	matrix
 XLock.erasetime:	3
 XLock.invalidCapsLock:	Invalid login.
 
+
+#include "/home/gabriel/.xdefaults-colour/molokai"
