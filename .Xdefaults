@@ -1,35 +1,32 @@
-URxvt*keysym.C-M-u:	perl:url-select:select_next
-URxvt*transparent:	true
-URxvt*letterSpace:	-1
-URxvt*cursorColor:	yellow
-URxvt*boldFont:	xft:Inconsolata:bold:size=8:antialias=true
-URxvt*cursorBlink:	true
-URxvt*loginShell:	true
-URxvt*print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
-URxvt*shading:	10
-URxvt*cursorOnTime:	300
-URxvt*underlineURLs:	true
-URxvt*cursorOffTime:	140
-URxvt*depth:	32
-URxvt*saveLines:	5500
-URxvt*font:	xft:Inconsolata:size=8:antialias=true
-URxvt*urlLauncher:	firefox -new-tab
-URxvt*cutchars:	`"()'*<>[]{|}
-URxvt*colorBD:	lightyellow
-URxvt*colorUL:	green
-URxvt*scrollBar:	False
-URxvt*perl-ext:	default,url-select
-XTerm*printerAutoClose:	true
-XTerm*LoginShell:	true
-XTerm*Background:	black
-XTerm*CursorColor:	rgb:99/99/00
-XTerm*Foreground:	grey90
-SSH*urgentOnBell:	true
-Xft*lcdfilter:	lcddefault
-Xft*hinting:	true
-Xft*hintstyle:	hintlight
-Xft*antialias:	true
-Xft*rgba:	rgb
+! URxvt
+URxvt*font:xft:Inconsolata:size=8:antialias=true
+URxvt*boldFont:xft:Inconsolata:bold:size=8:antialias=true
+URxvt*letterSpace: -1
+URxvt*loginShell:       true
+URxvt*saveLines:        5500
+URxvt*cutchars:         `"()'*<>[]{|}
+/* places a hardcopy in home dir when print is pressed */
+URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+
+URxvt*perl-ext:      default,url-select
+URxvt*keysym.C-M-u:    perl:url-select:select_next
+URxvt*urlLauncher:   firefox -new-tab
+URxvt*underlineURLs: true
+
+URxvt*depth: 32
+
+URxvt*transparent:        true
+URxvt*cursorBlink:        true
+URxvt*cursorOnTime:       300
+URxvt*cursorOffTime:      140
+URxvt*shading:            10
+!URxvt*fading:             40
+URxvt*scrollBar:          False
+
+URxvt*colorBD:            lightyellow
+URxvt*colorUL:            green
+URxvt*cursorColor: yellow
+
 Xft*dpi:	96
 XLock.mono:	true
 XLock.info:	
@@ -39,26 +36,4 @@ XLock.password:
 XLock.mode:	matrix
 XLock.erasetime:	3
 XLock.invalidCapsLock:	Invalid login.
-xrenoise.use_xcursors:	1
-xrenoise.display:	:0
-xrenoise.display_resource:	0x00,0x03,0x26,0x22,0x18,0xD8,0x6E,0xAA
-xrenoise.executable_path:	/usr/bin/renoise3
-*cursorColor:	#d0d0d0
-*color11:	#ffba68
-*color2:	#66aa11
-*color10:	#80ff00
-*color1:	#960050
-*color7:	#9999aa
-*color14:	#4eb4fa
-*foreground:	#d0d0d0
-*color8:	#303030
-*color9:	#ff0090
-*color13:	#bb88dd
-*background:	#121212
-*color6:	#89b6e2
-*color4:	#30309b
-*color0:	#101010
-*color5:	#7e40a5
-*color12:	#5f5fee
-*color3:	#c47f2c
-*color15:	#d0d0d0
+

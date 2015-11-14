@@ -17,7 +17,7 @@ set move = no
 set timeout = 15
 
 # Gpg support
-source /usr/share/doc/mutt/samples/gpg.rc
+source ~/.mutt/gpg.mutt
 set pgp_use_gpg_agent = yes
 set pgp_autosign = yes
 
