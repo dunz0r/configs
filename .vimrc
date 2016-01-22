@@ -19,7 +19,7 @@ Bundle 'taglist.vim'
 call vundle#end()
 
 
-"filetype plugin indent on
+filetype plugin indent on
 syntax on
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
