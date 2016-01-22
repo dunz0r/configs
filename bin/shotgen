@@ -23,7 +23,7 @@ SERVER=dunz0r@hax0r.se
 
 scrot -cd 5 -t 10 $tag-scrot.png
 
-scp $FILE $THUMB $SERVER:/www/docs/hax0r.se/files/img/screenshots
+scp $FILE $THUMB $SERVER:/var/www/hax0r.se/files/img/screenshots
 ########################################
 # Perform error checking and exit
 # gracefully.

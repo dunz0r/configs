@@ -82,7 +82,7 @@ static const Rule rules[] = {
 	{ "Wxcam",		NULL,		NULL,		0,		True,		-1 },
 };
 
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -102,6 +102,7 @@ static const char *terminal[]		=	{ "urxvt", NULL };
 static const char *tmuxsplit[]  	=	{ "tmux", "split", NULL };
 static const char *tmuxhsplit[]  	=	{ "tmux", "split", "-h", NULL };
 static const char *tmuxnew[]		=	{ "tmux", "new-window", NULL };
+static const char *passdmenu[]		=	{ "/home/gabriel/bin/passdmenu.py", NULL };
 static const char *surfrawcmd[]		=	{ "/home/gabriel/bin/dmenu-surfraw", dmenu_font, colors[0][2], colors[0][1], colors[1][2], colors[1][1], NULL };
 //static const char *thunarterm[]		=	{ "/home/garry/.scripts/thunarterm", NULL };
 //static const char *composite[]		=	{ "/home/garry/.scripts/composite", NULL };
@@ -109,6 +110,7 @@ static const char *surfrawcmd[]		=	{ "/home/gabriel/bin/dmenu-surfraw", dmenu_fo
 static Key keys[] = {
 	/* modifier                     	key        		function        	argument */
 	{ MODKEY,				XK_t,			spawn,			{.v = terminal } },
+	{ MODKEY,				XK_p,			spawn,			{.v = passdmenu } },
 	{ MODKEY,	 			XK_f,	   		spawn,	   		{.v = fileman} },
 	{ MODKEY,				XK_r,      		spawn,	   		{.v = dmenurun } },
 	{ MODKEY,				XK_4,      		spawn,	   		{.v = surfrawcmd }, },

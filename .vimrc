@@ -1,6 +1,5 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off
 " source from current directory
 set exrc
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,7 +19,7 @@ Bundle 'taglist.vim'
 call vundle#end()
 
 
-filetype plugin indent on
+"filetype plugin indent on
 syntax on
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -116,17 +115,17 @@ set grepprg=grep\ -nH\ $*
 set iskeyword+=:
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
-  augroup END
+augroup END
 
-" Ycm 
+" Ycm
 let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 let &path = "/usr/avr/include,/usr/include,./"
 let g:UltiSnipsExpandTrigger="<c-j>"

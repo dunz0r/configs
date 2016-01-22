@@ -1,6 +1,7 @@
 #!/bin/bash
 urxvtd -o -f
 xset -b
+nitrogen --restore
 start-pulseaudio-x11 &
 unclutter -idle 7&
 wmname LG3D&
