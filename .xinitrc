@@ -8,5 +8,6 @@ wmname LG3D&
 owncloud &
 setxkbmap -layout "us" -variant "altgr-intl" -option "ctrl:nocaps" -option "keypad:pointerkeys"
 xset mouse 6 5&
+nitrogen --restore
 $HOME/.dwm/dwmstatus/dwmstatus&
 $HOME/bin/startdwm

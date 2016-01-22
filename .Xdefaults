@@ -1,6 +1,6 @@
 ! URxvt
-URxvt*font:xft:Inconsolata:size=8:antialias=true
-URxvt*boldFont:xft:Inconsolata:bold:size=8:antialias=true
+URxvt*font: xft:Inconsolata:size=8:antialias=true
+URxvt*boldFont: xft:Inconsolata:bold:size=8:antialias=true
 URxvt*letterSpace: -1
 URxvt*loginShell:       true
 URxvt*saveLines:        5500
@@ -28,32 +28,17 @@ URxvt*colorUL:            green
 URxvt*cursorColor: yellow
 
 Xft*dpi:	96
-Xft*antialias:  true
-Xft*rgba:       rgb
-Xft*hinting:    true
-Xft*hintstyle:  hintlight
-Xft*lcdfilter:  lcddefault
+Xft*rgba:	rgb
+Xft*hinting:	true
+Xft*hintstyle:	hintslight
+XLock.mono:	true
+XLock.info:	
+XLock.username:	
+XLock.program:	fortune -o
+XLock.password:	
+XLock.mode:	matrix
+XLock.erasetime:	3
+XLock.invalidCapsLock:	Invalid login.
 
-! this line makes so that only the SSH-sessions become "Urgent" on bell
-SSH*urgentOnBell: true
 
-! XTerm
-XTerm*Background: black
-XTerm*Foreground: grey90
-XTerm*LoginShell: true
-XTerm*CursorColor: rgb:99/99/00
-XTerm*printerAutoClose: true
-
-! XLock
-XLock.invalidCapsLock: Invalid login.
-XLock.mode: matrix
-XLock.info:  
-XLock.program: fortune -o
-XLock.username:
-XLock.password:
-XLock.erasetime: 3
-XLock.mono: true
-
-! Which theme to use
 #include "/home/gabriel/.xdefaults-colour/molokai"
-! EOF

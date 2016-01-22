@@ -28,7 +28,7 @@ prefix=/usr
 
 # graphical browser? defaults to yes for meatminds. text browser users can
 # work it out how to change it.
-def   SURFRAW_graphical	no
+def   SURFRAW_graphical	yes
 
 # name/path of text browser executable
 # e.g links, lynx, w3m
