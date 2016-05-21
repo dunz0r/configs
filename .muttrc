@@ -36,7 +36,8 @@ bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
 bind index,pager \CP sidebar-open
 # Display
-set sort=threads
+set sort=reverse-date-received
+#set sort_aux= reverse-date-received
 set markers
 ## Don't wrap mid-word
 set smart_wrap
