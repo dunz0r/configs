@@ -7,8 +7,9 @@
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
 	{ "#111111", "#aaaaaa", "#121212" },  // grey
-	{ "#e0e0e0", "#121212", "#aaaaaa" },  // grey
+	//{ "#e0e0e0", "#121212", "#aaaaaa" },  // grey
 	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
+	{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
 	//{ "#1C679C", "#3995BF", "#1c1c1c" },  // 08 - blue
@@ -121,8 +122,8 @@ static Key keys[] = {
 	{ MODKEY,                       	XK_b,      		togglebar,     	        {0} },
 	{ MODKEY,                       	XK_j,      		focusstack,     	{.i = +1 } },
 	{ MODKEY,                       	XK_k,      		focusstack,     	{.i = -1 } },
-	{ MODKEY,ControlMask            	XK_j,      		incnmaster,     	{.i = +1 } },
-	{ MODKEY,ControlMask			XK_k,      		incnmaster,     	{.i = -1 } },
+	{ MODKEY,				XK_i,      		incnmaster,     	{.i = +1 } },
+	{ MODKEY,				XK_d,      		incnmaster,     	{.i = -1 } },
 	{ MODKEY,                       	XK_h,      		setmfact,       	{.f = -0.05} },
 	{ MODKEY,                       	XK_l,      		setmfact,       	{.f = +0.05} },
 	{ MODKEY,                       	XK_Return, 		zoom,           	{0} },

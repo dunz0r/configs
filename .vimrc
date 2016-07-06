@@ -9,12 +9,12 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'aperezdc/vim-template'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
 Plugin 'rhysd/open-pdf.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/openscad.vim'
 Bundle 'scrooloose/nerdtree'
-Plugin 'SirVer/ultisnips.git'
 Bundle 'taglist.vim'
 call vundle#end()
 
@@ -124,13 +124,6 @@ autocmd BufReadPost *
   \ endif
 
 augroup END
-
-" Ycm
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
-let &path = "/usr/avr/include,/usr/include,./"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 " Open MS word doc with antiword
