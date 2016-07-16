@@ -11,13 +11,13 @@ Plugin 'tomasr/molokai'
 Plugin 'aperezdc/vim-template'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'rhysd/open-pdf.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/openscad.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 call vundle#end()
-
 
 filetype plugin indent on
 syntax on
@@ -133,3 +133,6 @@ autocmd BufReadPost *.doc %!antiword "%"
 
 " my own, personal wiki
 let g:vimwiki_list = [{'path' : '/home/gabriel/ownCloud/wiki'}]
+
+" Neocomplete!
+let g:neocomplete#enable_at_startup = 1
