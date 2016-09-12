@@ -6,10 +6,10 @@
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][20] = {
 	// border     fg         bg
-	{ "#111111", "#aaaaaa", "#121212" },  // grey
+	{ "#999999", "#aaaaaa", "#121212" },  // grey
 	//{ "#e0e0e0", "#121212", "#aaaaaa" },  // grey
-	//{ "#4C4C4C", "#4C4C4C", "#020202" },  // 0D - gray
-	{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
+	{ "#eeeeee", "#4C4C4C", "#020202" },  // 0D - gray
+	//{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
 	//{ "#3995BF", "#3995BF", "#020202" },  // 11 - light blue
 	//{ "#f9f2d2", "#f9f2d2", "#212310" },  // Yellowish
 	//{ "#1C679C", "#3995BF", "#1c1c1c" },  // 08 - blue
@@ -17,7 +17,7 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 	//{ "#121212", "#828282", "#020202" },  // 01 - normal
 	//{ "#acacac", "#020202", "#dedede" },  // 02 - selected
 	{ "#B3354C", "#B3354C", "#020202" },  // 03 - urgent
-	{ "#acacac", "#000000", "#c0c0c0" },  // 04 - orange (Occupied Color)
+	{ "#acacac", "#000000", "#303030" },  // 04 - orange (Occupied Color)
 	{ "#20b2e7", "#20b2e7", "#3c3c3c" },  // 05 - Light Blue
 	//    { "#608040", "#608040", "#020202" },  // 06 - green
 	//    { "#877C43", "#877C43", "#020202" },  // 07 - yellow
@@ -40,7 +40,7 @@ static const char colors[NUMCOLORS][ColLast][20] = {
 
 static const char font[]			= "Inconsolata 9";
 static const char dmenu_font[]			= "Xft:Inconsolata:size=9";
-static const unsigned int borderpx  		= 1;        	// border pixel of windows 
+static const unsigned int borderpx  		= 4;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
 static const unsigned int gappx			= 4;
 static const Bool showbar               	= True;  	// False means no bar
@@ -83,7 +83,7 @@ static const Rule rules[] = {
 	{ "Wxcam",		NULL,		NULL,		0,		True,		-1 },
 };
 
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
