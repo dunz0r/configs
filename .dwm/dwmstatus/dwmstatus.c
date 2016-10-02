@@ -10,7 +10,6 @@
 #include <string.h>
 #include <X11/Xlib.h>
 #include <locale.h>
-#include <string.h>
 
 static Display *dpy;
 

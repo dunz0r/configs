@@ -32,11 +32,8 @@ auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # Bindings
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CP sidebar-open
 # Display
-set sort=reverse-date-received
+set sort=date-received
 #set sort_aux= reverse-date-received
 set markers
 ## Don't wrap mid-word
@@ -45,9 +42,6 @@ set smart_wrap
 set pager_context=5
 set status_on_top
 set arrow_cursor=yes
-## Sidebar
-set sidebar_visible=yes
-set sidebar_sort=yes
 ## Colours
 color hdrdefault blue black
 color quoted blue black
