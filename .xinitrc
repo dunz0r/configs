@@ -4,9 +4,9 @@ xset -b
 nitrogen --restore
 start-pulseaudio-x11 &
 unclutter -idle 7&
-wmname LG3D&
-setxkbmap -layout "us" -variant "altgr-intl" -option "ctrl:nocaps" -option "keypad:pointerkeys"
+setxkbmap -layout "us" -variant "altgr-intl"
 xset mouse 6 5&
-$HOME/.dwm/dwmstatus/dwmstatus&
+#$HOME/.dwm/dwmstatus/dwmstatus&
 owncloud &
-$HOME/bin/startdwm
+#$HOME/bin/startdwm
+wmaker
