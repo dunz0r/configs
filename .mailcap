@@ -1,2 +1,2 @@
 application/msword; antiword %s; copiousoutput
-text/html; xlinks -force-html -g %s; namespace=%s.html; copiousoutput
+text/html; elinks -dump -force-html %s; namespace=%s.html; copiousoutput
