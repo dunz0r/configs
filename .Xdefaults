@@ -1,21 +1,18 @@
 XLock.mode:	matrix
-XLock.mono:	true
+#XLock.mono:	true
 XLock.username:	
 XLock.invalidCapsLock:	Invalid login.
 XLock.erasetime:	3
 XLock.password:	
 XLock.program:	fortune -o
 XLock.info:	
-xrenoise.use_xcursors:	1
-xrenoise.display:	:0
-xrenoise.display_resource:	0x00,0x00,0xA7,0x04,0x19,0x9C,0xA2,0x95
-xrenoise.executable_path:	/usr/bin/renoise3
 URxvt*keysym.C-M-u:	perl:url-select:select_next
 URxvt*letterSpace:	-1
 URxvt*cursorBlink:	true
 URxvt*cutchars:	`"()'*<>[]{|}
 URxvt*cursorOnTime:	300
-URxvt*font:	xft:Inconsolata:size=8:antialias=true
+URxvt*font:	xft:Inconsolata:size=9:antialias=true
+URxvt*boldFont:	xft:Inconsolata:bold:size=9:antialias=true
 URxvt*urlLauncher:	firefox -new-tab
 URxvt*colorUL:	green
 URxvt*loginShell:	true
@@ -30,7 +27,6 @@ URxvt*cursorOffTime:	140
 URxvt*scrollBar:	False
 URxvt*depth:	32
 URxvt*perl-ext:	default,url-select
-URxvt*boldFont:	xft:Inconsolata:bold:size=8:antialias=true
 Xft*dpi:	96
 Xft*rgba:	rgb
 Xft*hinting:	true

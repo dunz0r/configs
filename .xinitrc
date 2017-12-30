@@ -5,7 +5,7 @@ nitrogen --restore
 start-pulseaudio-x11 &
 unclutter -idle 7&
 setxkbmap -layout "us" -variant "altgr-intl"
-xset mouse 6 5&
-$HOME/.dwm/dwmstatus/dwmstatus&
+xset mouse 1/6 5&
 owncloud &
-$HOME/bin/startdwm
+tint2&
+openbox

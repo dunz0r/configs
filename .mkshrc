@@ -40,5 +40,13 @@ PS1=$'\001\r''${|
 	(( m > (n = (COLUMNS/3 < 7 ? 7 : COLUMNS/3)) )) && d=${d:(-n)} || p=
 	REPLY+=$p$d
 
+	case $TERM in
+		xterm*|rxvt*)
+		echo -ne "\033]0;mksh:${PWD/$HOME/~}\007"
+		;;
+	*)
+		;;
+	esac
 	return $e
 } '"$PS1";
+t ls

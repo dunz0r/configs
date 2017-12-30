@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-cd /home/gabriel/storage/SteamLibrary/SteamApps/common/Kerbal\ Space\ Program
+cd /home/gabriel/storage/steamlibrary/steamapps/common/Kerbal\ Space\ Program
 ./KSP.x86_64

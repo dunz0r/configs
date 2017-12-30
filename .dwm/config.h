@@ -42,7 +42,7 @@ static const char font[]			= "Inconsolata 9";
 static const char dmenu_font[]			= "Xft:Inconsolata:size=9";
 static const unsigned int borderpx  		= 1;        	// border pixel of windows 
 static const unsigned int snap         		= 2;     	// snap pixel
-static const unsigned int gappx			= 4;
+static const unsigned int gappx			= 0;
 static const Bool showbar               	= True;  	// False means no bar
 static const Bool topbar                	= True;  	// False means bottom bar
 static const unsigned int systrayspacing 	= 2;   		// systray spacing 
