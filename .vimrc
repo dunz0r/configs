@@ -28,7 +28,7 @@ set title
 
 colorscheme molokai
 " use all the wonderful 256 colors that urxvt supply
-"set t_Co=256
+set t_Co=256
 
 " I can has lightline
 set laststatus=2

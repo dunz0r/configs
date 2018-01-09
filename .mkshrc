@@ -32,13 +32,15 @@ HISTSIZE=50000
 HISTFILE="$HOME/.mksh_history"
 PS1=$'\001\r''${|
 	local e=$?
-
 	(( e )) && REPLY+="$e|"
+	REPLY+="$(hostname):"
+
 
 	local d=${PWD:-?} p=~; [[ $p = ?(*/) ]] || d=${d/#$p/~}
 	local m=${%d} n p=...; (( m > 0 )) || m=${#d}
 	(( m > (n = (COLUMNS/3 < 7 ? 7 : COLUMNS/3)) )) && d=${d:(-n)} || p=
-	REPLY+=$p$d
+	REPLY+="$p$d
+"
 
 	case $TERM in
 		xterm*|rxvt*)
@@ -49,4 +51,3 @@ PS1=$'\001\r''${|
 	esac
 	return $e
 } '"$PS1";
-t ls
