@@ -72,6 +72,11 @@ set smartindent
 set copyindent
 set completeopt=menu,longest,preview
 
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
+
 " Set nerdtree to always open on the right
 let g:NERDTreeWinPos = "right"
 
@@ -130,6 +135,14 @@ augroup END
 autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
+
+" I want tabs
+augroup python_files
+       autocmd!
+       autocmd FileType python setlocal noexpandtab
+       autocmd FileType python set tabstop=4
+       autocmd FileType python set shiftwidth=4
+augroup END
 
 " my own, personal wiki
 let g:vimwiki_list = [{'path' : '/home/gabriel/ownCloud/wiki'}]
