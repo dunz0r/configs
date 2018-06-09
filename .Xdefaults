@@ -6,7 +6,9 @@ XLock.erasetime:	3
 XLock.password:	
 XLock.program:	fortune -o
 XLock.info:	
+URxvt*perl-ext:	default,url-select
 URxvt*keysym.C-M-u:	perl:url-select:select_next
+URxvt.url-select.underline: true
 URxvt*letterSpace:	-1
 URxvt*cursorBlink:	true
 URxvt*cutchars:	`"()'*<>[]{|}
@@ -26,7 +28,6 @@ URxvt*transparent:	true
 URxvt*cursorOffTime:	140
 URxvt*scrollBar:	False
 URxvt*depth:	32
-URxvt*perl-ext:	default,url-select
 Xft*dpi:	96
 Xft*rgba:	rgb
 Xft*hinting:	true

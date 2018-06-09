@@ -40,7 +40,7 @@
 		  'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Loma</name>
+    <name>Clearlooks</name>
     <titleLayout>DISLMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -206,16 +206,24 @@
       <action name="SendToDesktop"/>
     </keybind>
     <keybind key="W-1">
-	    <action name="GoToDesktop"><to>1</to></action>
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
     </keybind>
     <keybind key="W-2">
-	    <action name="GoToDesktop"><to>2</to></action>
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
     </keybind>
     <keybind key="W-3">
-	    <action name="GoToDesktop"><to>3</to></action>
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
     </keybind>
     <keybind key="W-4">
-	    <action name="GoToDesktop"><to>4</to></action>
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -297,25 +305,25 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind action="Press" button="A-Left">
+      <mousebind action="Press" button="W-Left">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind action="Click" button="A-Left">
+      <mousebind action="Click" button="W-Left">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="A-Left">
+      <mousebind action="Drag" button="W-Left">
         <action name="Move"/>
       </mousebind>
-      <mousebind action="Press" button="A-Right">
+      <mousebind action="Press" button="W-Right">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="A-Right">
+      <mousebind action="Drag" button="W-Right">
         <action name="Resize"/>
       </mousebind>
-      <mousebind action="Press" button="A-Middle">
+      <mousebind action="Press" button="W-Middle">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
