@@ -1,5 +1,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
 " source from current directory
 set exrc
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,11 +14,14 @@ Plugin 'aperezdc/vim-template'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'srcery-colors/srcery-vim'
 Plugin 'rhysd/open-pdf.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/openscad.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'taglist.vim'
+Plugin 'nathanaelkane/vim-indent-guides' 
+Plugin 'scrooloose/nerdtree'
+Plugin 'taglist.vim'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 
 filetype plugin indent on
@@ -26,20 +31,17 @@ set backspace=indent,eol,start
 " do want title
 set title
 
-colorscheme molokai
 " use all the wonderful 256 colors that urxvt supply
-set t_Co=256
+set termguicolors
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic='1'
+colorscheme gruvbox
 
-" I can has lightline
 set laststatus=2
 let g:lightline = {
-     \ 'colorscheme': 'jellybeans',
-     \ 'component': {
-     \   'readonly': '%{&readonly?"RO":""}',
-     \ },
-     \ 'separator': { 'left': '>', 'right': '<' },
-     \ 'subseparator': { 'left': '->', 'right': '<-' }
-\}
+	\ 'colorscheme': 'wombat',
+	\}
 set fdm=marker
 set incsearch " do incremental searching
 set backupdir=/tmp
@@ -56,9 +58,9 @@ set scrolloff=2      " I like to know what's next
 set wildmenu
 set wildmode=list:longest " wildmode works great this way
 set fillchars=stl:-,stlnc:-,vert:\|,fold:_,diff:-
-set smarttab
 set list
-set listchars=trail:-,tab:\»\ 
+set showbreak=↪\
+set listchars=tab:→·,trail:·,extends:),precedes:(,nbsp:␣,eol:↲
 set hlsearch      " hilight searches
 set showmode
 
@@ -68,22 +70,20 @@ set tags=+~/.vim/systags
 set shortmess+=I
 " Indentation stuff
 set autoindent
-set smartindent
-set copyindent
-set completeopt=menu,longest,preview
-
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 
+set completeopt=menu,longest,preview
 
 " Set nerdtree to always open on the right
 let g:NERDTreeWinPos = "right"
 
+
 " Template settings
 let g:email = 'gf@hax0r.se'
 let g:username = 'Gabriel Fornaeus'
-let g:license = 'GPLv3'
+let g:license = 'GPL3'
 "
 " mappings
 let mapleader=" "
@@ -99,9 +99,12 @@ map <Leader>t :TlistToggle<Return>
 " NERDTree
 map <Leader>n :NERDTreeToggle<Return>
 " input current time and date
-map <Leader>D :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
-" Open PDF
-map <Leader>d :Pdf ~/Documents/Datasheets/
+" map <Leader>D :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
+map <Leader>D :VimwikiTabMakeDiaryNote<Return>
+" open a new tab
+map <Leader>N :tabnew<Return>
+" open the wiki in a new tab
+map <Leader>w :VimwikiTabIndex<Return>
 " Use hjkl you tit!
 map <Up> <NOP>
 map <Down> <NOP>
@@ -124,10 +127,18 @@ set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+			\ if line("'\"") > 0 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
 
+augroup END
+
+" I want tabs
+augroup python_files
+	autocmd!
+	autocmd FileType python setlocal noexpandtab
+	autocmd FileType python set tabstop=4
+	autocmd FileType python set shiftwidth=4
 augroup END
 
 
@@ -136,16 +147,8 @@ autocmd BufReadPre *.doc set ro
 autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
 
-" I want tabs
-augroup python_files
-       autocmd!
-       autocmd FileType python setlocal noexpandtab
-       autocmd FileType python set tabstop=4
-       autocmd FileType python set shiftwidth=4
-augroup END
-
 " my own, personal wiki
-let g:vimwiki_list = [{'path' : '/home/gabriel/ownCloud/wiki'}]
+let g:vimwiki_list = [{'path' : '/mnt/c/Users/forgab/Nextcloud/wiki', 'ext' : '.md', 'syntax' :  'markdown'}]
 
 " Neocomplete!
 let g:neocomplete#enable_at_startup = 1
@@ -157,11 +160,12 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+			\ pumvisible() ? "\<C-n>" :
+			\ neosnippet#expandable_or_jumpable() ?
+			\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 let g:neosnippet#snippets_directory='/home/gabriel/.vim/bundle/neosnippet-snippets/neosnippets/'
 
 set modeline
+let g:indent_guides_enable_on_vim_startup = 1
