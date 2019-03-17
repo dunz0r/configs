@@ -19,12 +19,12 @@ URxvt*urlLauncher:	firefox -new-tab
 URxvt*colorUL:	green
 URxvt*loginShell:	true
 URxvt*cursorColor:	yellow
-!URxvt*shading:	10
+URxvt*shading:	10
 URxvt*colorBD:	lightyellow
 URxvt*underlineURLs:	true
 URxvt*saveLines:	5500
 URxvt*print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
-!URxvt*transparent:	true
+URxvt*transparent:	true
 URxvt*cursorOffTime:	140
 URxvt*scrollBar:	False
 URxvt*depth:	32

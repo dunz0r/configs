@@ -500,12 +500,12 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
     --]]
-    --[[ dmenu
-    awful.key({ modkey }, "x", function ()
-            os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+    -- dmenu
+    awful.key({ modkey }, "r", function ()
+            os.execute(string.format("dmenu_run -i -fn 'Inconsolata' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
             beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
         end,
-        {description = "show dmenu", group = "launcher"})
+        {description = "show dmenu", group = "launcher"}),
     --]]
     -- alternatively use rofi, a dmenu-like application with more features
     -- check https://github.com/DaveDavenport/rofi for more details
@@ -516,10 +516,10 @@ globalkeys = my_table.join(
         end,
         {description = "show rofi", group = "launcher"}),
     --]]
-    -- Prompt
+    --[[ Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
-
+--]]
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -738,7 +738,7 @@ end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = true})
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
 -- No border for maximized clients
