@@ -2,9 +2,9 @@
 set from = "gf@hax0r.se"
 set realname = "Gabriel Fornaeus"
 set imap_user = gf@hax0r.se
-set smtp_url = "smtp://gf@hax0r.se@smtp.gmail.com:587/"
+set smtp_url = "smtp://gf@hax0r.se@is.a.hax0r.se:587/"
 source ~/.mutt/passwords.mutt
-set folder = "imaps://imap.gmail.com:993"
+set folder = "imaps://is.a.hax0r.se:993"
 set spoolfile = "+INBOX"
 set postponed = "Utkast"
 set move = no
