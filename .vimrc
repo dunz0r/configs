@@ -32,6 +32,7 @@ set backspace=indent,eol,start
 set title
 
 " use all the wonderful 256 colors that urxvt supply
+"set t_Co=256
 set termguicolors
 set background=dark
 let g:gruvbox_contrast_dark='hard'
@@ -99,7 +100,6 @@ map <Leader>t :TlistToggle<Return>
 " NERDTree
 map <Leader>n :NERDTreeToggle<Return>
 " input current time and date
-" map <Leader>D :r !date<Return><ESC>o=============<ESC>k$a **<ESC>i
 map <Leader>D :VimwikiTabMakeDiaryNote<Return>
 " open a new tab
 map <Leader>N :tabnew<Return>
@@ -148,7 +148,7 @@ autocmd BufReadPre *.doc set hlsearch!
 autocmd BufReadPost *.doc %!antiword "%"
 
 " my own, personal wiki
-let g:vimwiki_list = [{'path' : '/mnt/c/Users/forgab/Nextcloud/wiki', 'ext' : '.md', 'syntax' :  'markdown'}]
+let g:vimwiki_list = [{'path' : '/home/gabriel/Nextcloud/wiki', 'ext' : '.md', 'syntax' :  'markdown'}]
 
 " Neocomplete!
 let g:neocomplete#enable_at_startup = 1
