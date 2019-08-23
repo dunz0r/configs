@@ -7,4 +7,5 @@ setxkbmap -layout "us" -variant "altgr-intl"
 nextcloud&
 compton -b&
 xset mouse 1/3 5&
-awesome
+nitrogen --restore
+awesome &> ~/.xsession-errors
