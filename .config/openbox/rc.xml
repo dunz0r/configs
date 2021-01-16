@@ -10,7 +10,7 @@
        apply -->
     <followMouse>yes</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
-    <focusLast>no</focusLast>
+    <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
     <underMouse>yes</underMouse>
@@ -23,7 +23,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -32,16 +32,16 @@
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>1</primaryMonitor>
+    <primaryMonitor>Mouse</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
-		  'Active' - where the active window is -->
+                  'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Clearlooks</name>
-    <titleLayout>DISLMC</titleLayout>
+    <name>Nightmare</name>
+    <titleLayout>NDLSIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -52,19 +52,19 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Inconsolata</name>
+      <name>Cantarell</name>
       <size>10</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Inconsolata</name>
+      <name>Cantarell Thin</name>
       <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -73,17 +73,17 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Inconsolata</name>
-      <size>9</size>
+      <name>Cantarell Light</name>
+      <size>10</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Inconsolata</name>
-      <size>9</size>
+      <name>Cantarell</name>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -91,19 +91,19 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Inconsolata</name>
-      <size>9</size>
+      <name>Cantarell</name>
+      <size>10</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Inconsolata</name>
-      <size>9</size>
+      <name>Cantarell</name>
+      <size>10</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -121,17 +121,17 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>one</name>
-      <name>two</name>
-      <name>three</name>
-      <name>four</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
-    <drawContents>yes</drawContents>
+    <drawContents>no</drawContents>
     <popupShow>Nonpixel</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
@@ -140,10 +140,10 @@
       <!-- these are used if popupPosition is set to 'Fixed' -->
       <x>10</x>
       <!-- positive number for distance from left edge, negative number for
-	 distance from right edge, or 'Center' -->
+         distance from right edge, or 'Center' -->
       <y>10</y>
       <!-- positive number for distance from top edge, negative number for
-	 distance from bottom edge, or 'Center' -->
+         distance from bottom edge, or 'Center' -->
     </popupFixedPosition>
   </resize>
   <!-- You can reserve a portion of your screen where windows will not cover when
@@ -157,7 +157,7 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>BottomLeft</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -179,10 +179,16 @@
     <keybind key="C-A-Left">
       <action name="GoToDesktop"/>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-s">
       <action name="Execute">
-        <command>dmenu_run</command>
+        <command>dmenu-surfraw</command>
       </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveToEdgeEast"/>
     </keybind>
     <keybind key="C-A-Right">
       <action name="GoToDesktop"/>
@@ -206,29 +212,39 @@
       <action name="SendToDesktop"/>
     </keybind>
     <keybind key="W-1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-4">
-      <action name="GoToDesktop">
-        <to>4</to>
+      <action name="GoToDesktop"/>
+    </keybind>
+    <keybind key="W-exclam">
+      <action name="SendToDesktop"/>
+    </keybind>
+    <keybind key="W-at">
+      <action name="SendToDesktop">
+        <desktop>2</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-numbersign">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-dollar">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
       </action>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <keybind key="S-W-c">
+    <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -236,30 +252,16 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="A-Tab">
+    <keybind key="W-j">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="A-S-Tab">
+    <keybind key="W-k">
       <action name="PreviousWindow"/>
     </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="ToggleMaximize"/>
-    </keybind>
-    <keybind key="W-k">
+    <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="W-j">
+    <keybind key="W-S-Left">
       <action name="DirectionalCycleWindows"/>
     </keybind>
     <keybind key="W-S-Up">
@@ -268,17 +270,9 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="W-p">
+    <keybind key="W-r">
       <action name="Execute">
-        <command>/home/gabriel/bin/passdmenu.py</command>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="Iconify"/>
-    </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <command>i3lock -i "$(find /home/gabriel/nas/bg -type f -iname '*png'|shuf -n1)" -t</command>
+        <command>dmenu_run</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -286,9 +280,9 @@
         <command>urxvtc</command>
       </action>
     </keybind>
-    <keybind key="W-e">
+    <keybind key="W-p">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>passmenu</command>
       </action>
     </keybind>
   </keyboard>
@@ -305,17 +299,17 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind action="Press" button="W-Left">
+      <mousebind action="Press" button="A-Left">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind action="Click" button="W-Left">
+      <mousebind action="Click" button="A-Left">
         <action name="Unshade"/>
       </mousebind>
       <mousebind action="Drag" button="W-Left">
         <action name="Move"/>
       </mousebind>
-      <mousebind action="Press" button="W-Right">
+      <mousebind action="Press" button="A-Right">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
@@ -323,7 +317,7 @@
       <mousebind action="Drag" button="W-Right">
         <action name="Resize"/>
       </mousebind>
-      <mousebind action="Press" button="W-Middle">
+      <mousebind action="Press" button="A-Middle">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
@@ -659,13 +653,13 @@
   # windows to match
 
   <application name="the window's _OB_APP_NAME property (see obxprop)"
-	      class="the window's _OB_APP_CLASS property (see obxprop)"
-	  groupname="the window's _OB_APP_GROUP_NAME property (see obxprop)"
-	 groupclass="the window's _OB_APP_GROUP_CLASS property (see obxprop)"
-	       role="the window's _OB_APP_ROLE property (see obxprop)"
-	      title="the window's _OB_APP_TITLE property (see obxprop)"
-	       type="the window's _OB_APP_TYPE property (see obxprob)..
-		      (if unspecified, then it is 'dialog' for child windows)">
+              class="the window's _OB_APP_CLASS property (see obxprop)"
+          groupname="the window's _OB_APP_GROUP_NAME property (see obxprop)"
+         groupclass="the window's _OB_APP_GROUP_CLASS property (see obxprop)"
+               role="the window's _OB_APP_ROLE property (see obxprop)"
+              title="the window's _OB_APP_TITLE property (see obxprop)"
+               type="the window's _OB_APP_TYPE property (see obxprob)..
+                      (if unspecified, then it is 'dialog' for child windows)">
   # you may set only one of name/class/role/title/type, or you may use more
   # than one together to restrict your matches.
 

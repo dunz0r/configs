@@ -3,43 +3,49 @@
 # File: shotgen.sh                     #
 ########################################
 if [ $1 == "-f" ] ; then
-    tag=$(date '+%Y-%m-%d-%H%M')-$2
-    forum=1
+	tag=$(date '+%Y-%m-%d-%H%M')-$2
+	THUMB="$tag-scrot-thumb.png"
+	forum=1
 else
-    tag=$(date '+%Y-%m-%d-%H%M')-$1
-    forum=0
+	tag=$(date '+%Y-%m-%d-%H%M')-$1
+	forum=0
 fi
 
 # Constants
 FILE=$tag-scrot.png
-THUMB=$tag-scrot-thumb.png
 LINKFILE=$tag-links.txt
 WALLDIR=$HOME/gfx/bg1
-WEBPAGE=http://hax0r.se/files/img/screenshots
+WEBPAGE=https://hax0r.se/files/img/screenshots
 SERVER=dunz0r@hax0r.se
 ########################################
 # Perform the Screenshot and
 # modify the files as necissary.
 
-scrot -cd 5 -t 10 $tag-scrot.png
+cd $HOME/Documents/site/content/files/img/screenshots
+if [ $1 == "-f" ] ; then
+	scrot -cd 5 -t $THUMB $tag-scrot.png
+else
+	scrot -cd 5 $tag-scrot.png
+fi
+git add $tag-scrot.png
+git commit -m "screenshot $tag added" $tag-scrot.png
+git push
 
-scp $FILE $THUMB $SERVER:/var/www/hax0r.se/files/img/screenshots
 ########################################
 # Perform error checking and exit
 # gracefully.
 
 if [ $? -eq 0 ] ; then
-    if [ $forum -eq 1 ] ; then
-        SHOTLINK="[url=$WEBPAGE/$FILE][img]$WEBPAGE/$THUMB[/img][/url]"
-    else
-        SHOTLINK="$WEBPAGE/$FILE"
-    fi
-    echo "$SHOTLINK" | xclip -i
-    echo $SHOTLINK
-    rm $FILE $THUMB
-    exit 0
+	if [ $forum -eq 1 ] ; then
+		SHOTLINK="[url=$WEBPAGE/$FILE][img]$WEBPAGE/$THUMB[/img][/url]"
+	else
+		SHOTLINK="$WEBPAGE/$FILE"
+	fi
+	echo "$SHOTLINK" | xclip -i
+	echo $SHOTLINK
+	exit 0
 else
-    echo "File upload Failed"
-    rm $FILE $THUMB
-    exit 1
+	echo "File upload Failed"
+	rm $FILE $THUMB
+	exit 1
 fi

@@ -1,11 +1,11 @@
 #!/bin/bash
-urxvtd -o -f
-xset -b
+export DESKTOP_SESSION=gnome
+xset -b&
 start-pulseaudio-x11 &
 unclutter -idle 7&
 setxkbmap -layout "us" -variant "altgr-intl"
+docker-tray -wmaker&
 nextcloud&
-compton -b&
+nm-applet&
 xset mouse 1/3 5&
-nitrogen --restore
-awesome &> ~/.xsession-errors
+exec wmaker

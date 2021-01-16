@@ -32,12 +32,12 @@ set backspace=indent,eol,start
 set title
 
 " use all the wonderful 256 colors that urxvt supply
+"set termguicolors
 "set t_Co=256
-set termguicolors
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italic='1'
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_italic='1'
+colorscheme molokai
 
 set laststatus=2
 let g:lightline = {

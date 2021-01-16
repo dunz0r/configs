@@ -29,29 +29,7 @@ export LANG MANWIDTH LESSHISTFILE PAGER EDITOR GREP_OPTIONS LANGUAGE LC_CTYPE LC
 LC_MONETARY LC_MESSAGES LC_PAPER LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION LC_ALL LS_COLORS GOPATH
 
 HISTSIZE=50000
-HISTFILE="$HOME/.mksh_history"
-PS1=$'\001\r''${|
-	local e=$?
-	(( e )) && REPLY+="$e|"
-	REPLY+="$(hostname):"
-
-
-	local d=${PWD:-?} p=~; [[ $p = ?(*/) ]] || d=${d/#$p/~}
-	local m=${%d} n p=...; (( m > 0 )) || m=${#d}
-	(( m > (n = (COLUMNS/3 < 7 ? 7 : COLUMNS/3)) )) && d=${d:(-n)} || p=
-	REPLY+="$p$d
-"
-
-	case $TERM in
-		xterm*|rxvt*)
-		echo -ne "\033]0;mksh:${PWD/$HOME/~}\007"
-		;;
-	*)
-		;;
-	esac
-	return $e
-} '"$PS1";
-
+#HISTFILE="$HOME/.mksh_history"
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
@@ -79,7 +57,7 @@ if test -f $HOME/.gpg-agent-info && \
         kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
         GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
 else
-        eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
+        eval `gpg-agent --daemon --no-grab $HOME/.gpg-agent-info`
 fi
 
 export GPG_TTY=`tty`

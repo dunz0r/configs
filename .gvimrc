@@ -1,1 +1,1 @@
-set guifont=Inconsolata\ 12
+set guifont=Inconsolata\ 9

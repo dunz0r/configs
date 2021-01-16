@@ -1,62 +1,55 @@
-XLock.mode:	matrix
-#XLock.mono:	true
-XLock.username:	
-XLock.invalidCapsLock:	Invalid login.
-XLock.erasetime:	3
-XLock.password:	
-XLock.program:	fortune -o
-XLock.info:	
-URxvt*perl-ext:	default,url-select
+xrenoise.use_xcursors:	1
+xrenoise.display:	:0.0
+xrenoise.display_resource:	0x00,0x00,0x96,0xBD,0x2B,0x06,0x61,0x1C
+xrenoise.executable_path:	/usr/bin/renoise
 URxvt*keysym.C-M-u:	perl:url-select:select_next
-URxvt.url-select.underline: true
-URxvt*letterSpace:	-1
+URxvt.url-select.underline:	true
 URxvt*cursorBlink:	true
-URxvt*cutchars:	`"()'*<>[]{|}
-URxvt*cursorOnTime:	300
-URxvt*font:	xft:Inconsolata:size=9:antialias=true
-URxvt*boldFont:	xft:Inconsolata:bold:size=9:antialias=true
 URxvt*urlLauncher:	firefox -new-tab
+URxvt*scrollBar:	False
+URxvt*font:	xft:Liberation Mono:pixelsize=10:antialias=true
+URxvt*cursorOnTime:	300
+URxvt*saveLines:	5500
+URxvt*boldFont:	xft:Liberation Mono:bold:pixelsize=10:antialias=true
+URxvt*cursorOffTime:	140
+URxvt*shading:	20
+URxvt*transparent:	true
+URxvt*cutchars:	`"()'*<>[]{|}
+URxvt*perl-ext:	default,url-select
+URxvt*print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+URxvt*cursorColor:	yellow
 URxvt*colorUL:	green
 URxvt*loginShell:	true
-URxvt*cursorColor:	yellow
-URxvt*shading:	10
 URxvt*colorBD:	lightyellow
 URxvt*underlineURLs:	true
-URxvt*saveLines:	5500
-URxvt*print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
-URxvt*transparent:	true
-URxvt*cursorOffTime:	140
-URxvt*scrollBar:	False
 URxvt*depth:	32
-Xft*dpi:	96
-Xft*rgba:	rgb
-Xft*hinting:	true
-Xft*hintstyle:	hintslight
-
-*background: #1d2021
-*foreground: #ebdbb2
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
-
+XLock.password:	
+XLock.erasetime:	3
+XLock.invalidCapsLock:	Invalid login.
+XLock.mode:	matrix
+XLock.info:	
+XLock.program:	fortune -o
+XLock.username:	
+Xft.hintstyle:	hintfull
+Xft.rgba:	rgb
+Xft.dpi:	96
+Xft.hinting:	true
+Xft.antialias:	true
+*color7:	#a89984
+*foreground:	#ebdbb2
+*color12:	#83a598
+*color9:	#fb4934
+*color8:	#928374
+*color15:	#ebdbb2
+*background:	#1d2021
+*color6:	#689d6a
+*color10:	#b8bb26
+*color4:	#458588
+*color5:	#b16286
+*color1:	#cc241d
+*color2:	#98971a
+*color0:	#282828
+*color11:	#fabd2f
+*color3:	#d79921
+*color14:	#8ec07c
+*color13:	#d3869b
